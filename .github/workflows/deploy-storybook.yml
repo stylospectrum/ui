@@ -19,7 +19,8 @@ jobs:
       - name: Install dependencies and build 🔧
         run: yarn && yarn run build-storybook
       - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
-          BRANCH: gh-pages
-          FOLDER: storybook-static
+          branch: gh-pages
+          folder: storybook-statict
+          clean: true
