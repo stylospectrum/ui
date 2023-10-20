@@ -1,11 +1,9 @@
-name: Publish Package to npmjs
+name: Deploy Storybook to Github Page
 on:
-  pull_request:
-    branches:
-      - main
-    types: [closed]
+  push:
+    paths: ['src/**']
 jobs:
-  build-package:
+  build-storybook:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
@@ -16,8 +14,9 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies and build 🔧
-        run: yarn && yarn run build-package
-      - name: Publish package on NPM 📦
-        run: npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: yarn && yarn run build-storybook
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          BRANCH: gh-pages
+          FOLDER: storybook-static
