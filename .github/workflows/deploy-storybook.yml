@@ -1,7 +1,10 @@
 name: Deploy Storybook to Github Page
 on:
-  push:
-    paths: ['src/**']
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+    # paths: ['src/**']
 jobs:
   build-storybook:
     runs-on: ubuntu-latest
