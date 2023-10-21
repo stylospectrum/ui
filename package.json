@@ -21,7 +21,7 @@
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.less": "stylelint --fix",
+    "*.scss": "stylelint --fix",
     "*": "prettier -c --write",
     "*.{.js,.jsx,.ts,.tsx}": "eslint --fix --ext .js,.jsx,.ts,.tsx"
   },
