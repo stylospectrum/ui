@@ -4,20 +4,20 @@ on:
     branches:
       - main
     types: [closed]
-    # paths: ['src/**']
+    paths: ['src/**']
 jobs:
   build-storybook:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - name: Install dependencies and build 🔧
+      - name: Install dependencies and build
         run: yarn && yarn run build-storybook
-      - name: Deploy 🚀
+      - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages

@@ -1,3 +1,8 @@
 :host {
-  outline: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  line-height: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  cursor: pointer;
 }
