@@ -12,3 +12,7 @@ src
 commitlint.config.js
 .stylelintrc.json
 .babelrc.json
+.github
+.env
+.sass-to-string.js
+storybook-static

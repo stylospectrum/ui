@@ -1,6 +1,6 @@
 import React from 'react';
 import {createComponent} from '@lit/react';
-import {StylospectrumButton} from '.';
+import StylospectrumButton from '.';
 
 export default createComponent({
   tagName: 'stylospectrum-button',
