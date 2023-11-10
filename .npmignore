@@ -6,7 +6,9 @@ scripts
 .eslintignore
 .eslintrc.json
 .prettierrc.json
-tsconfig.json
+tsconfig.base.json
+tsconfig.package.json
+tsconfig.storybook.json
 *.map
 src
 commitlint.config.js
@@ -16,3 +18,6 @@ commitlint.config.js
 .env
 .sass-to-string.js
 storybook-static
+.prettierignore
+storybook-types.js
+storybook-types.d.ts

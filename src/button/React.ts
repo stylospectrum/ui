@@ -1,10 +1,10 @@
 import React from 'react';
 import {createComponent} from '@lit/react';
-import StylospectrumButton from '.';
+import Button from '.';
 
 export default createComponent({
   tagName: 'stylospectrum-button',
-  elementClass: StylospectrumButton,
+  elementClass: Button,
   react: React,
   events: {
     onclick: 'onClick',

@@ -1,5 +1,7 @@
 node_modules/*
 scripts/*
 es/*
+dist/*
 storybook-static/*
 commitlint.config.js
+scripts/*

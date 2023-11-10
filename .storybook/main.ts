@@ -43,7 +43,11 @@ const config: StorybookConfig = {
             },
           ],
         },
-        {test: /\.([cm]?ts|tsx)$/, loader: 'ts-loader'},
+        {
+          test: /\.([cm]?ts|tsx)$/,
+          loader: 'ts-loader',
+          options: {configFile: '../tsconfig.storybook.json'},
+        },
       ]
     );
 

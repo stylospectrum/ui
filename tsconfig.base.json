@@ -3,11 +3,6 @@
     "target": "esnext",
     "module": "es2020",
     "lib": ["es2021", "DOM", "DOM.Iterable"],
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "inlineSources": true,
-    "outDir": "./es",
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -23,16 +18,5 @@
     "noImplicitOverride": true,
     "useDefineForClassFields": false,
     "resolveJsonModule": true
-  },
-  "plugins": [
-    {
-      "name": "ts-lit-plugin",
-      "strict": true,
-      "rules": {
-        "no-invalid-directive-binding": "warn"
-      }
-    }
-  ],
-  "include": ["src/*", "typings/*"],
-  "exclude": ["node_modules"]
+  }
 }

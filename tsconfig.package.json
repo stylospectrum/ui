@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "declaration": true,
+    "rootDir": "./src",
+    "outDir": "./dist"
+  },
+  "include": ["src/**/*", "typings/*"],
+  "exclude": ["node_modules"],
+  "plugins": [
+    {
+      "name": "ts-lit-plugin",
+      "strict": true,
+      "rules": {
+        "no-invalid-directive-binding": "warn"
+      }
+    }
+  ]
+}
