@@ -37,7 +37,7 @@ class Button extends LitElement {
    * @defaultvalue Primary
    * @public
    */
-  @property({type: ButtonType, reflect: true})
+  @property({type: String, reflect: true})
   type = ButtonType.Primary;
 
   override render() {
@@ -73,3 +73,9 @@ class Button extends LitElement {
 }
 
 export default Button;
+
+declare global {
+  interface HTMLElementTagNameMap {
+    'stylospectrum-button': Button;
+  }
+}

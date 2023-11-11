@@ -7,7 +7,7 @@ import type Button from '.';
 import {UIStoryArgs} from '../storybook-types';
 
 const handleClick = () => {
-  console.log('123');
+  console.log('clicked!!');
 };
 
 type StoryArgsProps = {
@@ -28,7 +28,7 @@ const Template: UIStoryArgs<Button, StoryArgsProps> = (args) => {
 
   return html`
     <stylospectrum-button
-      ?disabled=${ifDefined(args.disabled)}
+      ?disabled=${args.disabled}
       type=${ifDefined(args.type)}
       icon=${ifDefined(iconName)}
       @click=${handleClick}

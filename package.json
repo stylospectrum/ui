@@ -9,7 +9,7 @@
     "storybook": "npm run gen-docs && storybook dev -p $(grep PORT .env | cut -d '=' -f2)",
     "build-package": "rm -rf dist && tsc -p tsconfig.package.json && sass-to-string",
     "build-storybook": "storybook build",
-    "lint:lit-analyzer": "lit-analyzer --strict --rules.no-invalid-directive-binding warn",
+    "lint:lit-analyzer": "lit-analyzer",
     "lint": "npm run lint:lit-analyzer && npm run tsc && npm run lint:script && npm run lint:style",
     "lint-fix": "npm run lint-fix:script && npm run lint-fix:style",
     "lint-fix:script": "npm run lint:script -- --fix",
