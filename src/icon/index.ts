@@ -47,9 +47,3 @@ class Icon extends LitElement {
 }
 
 export default Icon;
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'stylospectrum-icon': Icon;
-  }
-}

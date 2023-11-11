@@ -4,9 +4,52 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "scripts/generate-icon.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Button",
+          "declaration": {
+            "name": "default",
+            "module": "./button/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Icon",
+          "declaration": {
+            "name": "default",
+            "module": "./icon/React"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/storybook-types.ts",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/React.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/button/React.ts"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -15,7 +58,7 @@
         {
           "kind": "class",
           "description": "",
-          "name": "Button",
+          "name": "mButton",
           "members": [
             {
               "kind": "field",
@@ -83,7 +126,7 @@
           "kind": "custom-element-definition",
           "name": "stylospectrum-button",
           "declaration": {
-            "name": "Button",
+            "name": "mButton",
             "module": "src/button/index.ts"
           }
         },
@@ -91,8 +134,61 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Button",
+            "name": "mButton",
             "module": "src/button/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Basic"
+        },
+        {
+          "kind": "variable",
+          "name": "Icon"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/button/stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Basic",
+          "declaration": {
+            "name": "Basic",
+            "module": "src/button/stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Icon",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/button/stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/React.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/icon/React.ts"
           }
         }
       ]
@@ -148,6 +244,33 @@
           "declaration": {
             "name": "Icon",
             "module": "src/icon/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Basic"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/icon/stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Basic",
+          "declaration": {
+            "name": "Basic",
+            "module": "src/icon/stories.ts"
           }
         }
       ]

@@ -11,7 +11,7 @@ enum ButtonType {
 }
 
 @customElement('stylospectrum-button')
-class Button extends LitElement {
+class mButton extends LitElement {
   static override styles = css`
     ${unsafeCSS(styles)}
   `;
@@ -72,10 +72,4 @@ class Button extends LitElement {
   }
 }
 
-export default Button;
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'stylospectrum-button': Button;
-  }
-}
+export default mButton;
