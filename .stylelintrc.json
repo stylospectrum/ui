@@ -2,10 +2,9 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-rational-order",
-    "stylelint-config-prettier"
+    "stylelint-prettier/recommended"
   ],
   "customSyntax": "postcss-scss",
-  "plugins": ["stylelint-declaration-block-no-ignored-properties"],
   "rules": {
     "function-name-case": ["lower"],
     "function-no-unknown": [true],
@@ -20,7 +19,6 @@
     "color-function-notation": "legacy",
     "selector-class-pattern": null,
     "selector-id-pattern": null,
-    "selector-not-notation": null,
-    "declaration-block-no-redundant-longhand-properties": null
+    "selector-not-notation": null
   }
 }
