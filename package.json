@@ -6,7 +6,7 @@
   "typings": "dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "yarn gen-docs && storybook dev -p $(grep PORT .env | cut -d '=' -f2)",
+    "storybook": "npm run gen-docs && storybook dev -p $(grep PORT .env | cut -d '=' -f2)",
     "build-package": "rm -rf dist && tsc -p tsconfig.package.json && sass-to-string",
     "build-storybook": "storybook build",
     "lint:lit-analyzer": "lit-analyzer --strict --rules.no-invalid-directive-binding warn",
@@ -19,7 +19,7 @@
     "tsc": "tsc -p tsconfig.package.json --noEmit",
     "format": "prettier \"**/*.{cjs,html,js,json,md,ts}\" --ignore-path ./.eslintignore --write",
     "prepare": "husky install",
-    "gen-docs": "custom-elements-manifest analyze --litelement --exclude \"(src/**/(React|stories).ts|src/index.ts)\" --outdir=.storybook"
+    "gen-docs": "custom-elements-manifest analyze --litelement --exclude \"(src/**/(React|stories).ts|src/icon/data/*|src/index.ts|scripts/*)\" --outdir=.storybook"
   },
   "lint-staged": {
     "*.scss": "stylelint --fix",
@@ -44,7 +44,6 @@
     "@types/vfile-message": "^2.0.0",
     "@typescript-eslint/eslint-plugin": "^6.8.0",
     "@typescript-eslint/parser": "^6.9.1",
-    "@whitespace/storybook-addon-html": "^5.1.6",
     "eslint": "^8.51.0",
     "eslint-plugin-storybook": "^0.6.15",
     "husky": "^8.0.3",

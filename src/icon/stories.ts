@@ -2,20 +2,26 @@ import {Meta} from '@storybook/web-components';
 import {html} from 'lit';
 import '.';
 import type Icon from '.';
-import './data/accelerated';
 import {UIStoryArgs} from '../storybook-types';
 import {ifDefined} from 'lit/directives/if-defined.js';
 
-type StoryArgsProps = {
-  name: string;
-};
+const Template: UIStoryArgs<Icon, {}> = (args) => {
+  let iconName = '';
 
-const Template: UIStoryArgs<Icon, StoryArgsProps> = (args) => html`
-  <stylospectrum-icon
-    name="${ifDefined(args.name)}"
-    style="font-size: 10px"
-  ></stylospectrum-icon>
-`;
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    iconName = require(`./data/${args.name}`).default;
+  } catch (err) {
+    console.log(err);
+  }
+
+  return html`
+    <stylospectrum-icon
+      name="${ifDefined(iconName)}"
+      style="color: white"
+    ></stylospectrum-icon>
+  `;
+};
 
 export default {
   title: 'Icon',
@@ -25,5 +31,5 @@ export default {
 
 export const Basic = Template.bind({});
 Basic.args = {
-  name: 'accelerated',
+  name: 'decline',
 };

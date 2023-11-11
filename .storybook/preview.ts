@@ -3,6 +3,7 @@ import {
   setCustomElementsManifest,
   type Preview,
 } from '@storybook/web-components';
+import '../src/style/index.scss';
 
 if (customElements?.modules) {
   setCustomElementsManifest(customElements);

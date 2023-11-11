@@ -1,9 +1,119 @@
+@import '../../style/var';
+
 :host {
+  display: inline-block;
   box-sizing: border-box;
+  min-width: 2rem;
+  height: 1.625rem;
   overflow: hidden;
+  font-weight: 700;
+  font-size: 0.875rem;
+  font-family: $font-family;
   line-height: normal;
   white-space: nowrap;
   text-overflow: ellipsis;
+  vertical-align: middle;
   background-color: transparent;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.5rem;
   cursor: pointer;
+
+  /* stylelint-disable at-rule-no-unknown */
+  @at-root #{&}([disabled]) {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+
+  @at-root #{&}([type="Primary"]) {
+    color: #eaecee;
+    background: #0070f2;
+    border-color: #0070f2;
+  }
+
+  @at-root #{&}([type="Primary"]:not([disabled]):hover) {
+    color: #eaecee;
+    background-color: #0064d8;
+    border-color: #0064d8;
+  }
+
+  @at-root #{&}([type="Primary"]:not([disabled]):active) {
+    color: #4db1ff;
+    background-color: #202932;
+    border-color: #4db1ff;
+  }
+
+  @at-root #{&}([type="Secondary"]) {
+    color: #eaecee;
+    background: #2e3b47;
+    border-color: #2e3b47;
+  }
+
+  @at-root #{&}([type="Secondary"]:not([disabled]):hover) {
+    color: #eaecee;
+    background-color: #1d232a;
+    border-color: #1d232a;
+  }
+
+  @at-root #{&}([type="Secondary"]:not([disabled]):active) {
+    color: #4db1ff;
+    background-color: #202932;
+    border-color: #0070f2;
+  }
+
+  @at-root #{&}([type="Tertiary"]) {
+    color: #4db1ff;
+    background: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+  }
+
+  @at-root #{&}([type="Tertiary"]:not([disabled]):hover) {
+    color: #4db1ff;
+    background-color: #1d232a;
+    border-color: #1d232a;
+    box-shadow: 0 0 4px 0 rgba(169, 180, 190, 0.72);
+  }
+
+  @at-root #{&}([type="Tertiary"]:not([disabled]):active) {
+    color: #4db1ff;
+    background-color: #202932;
+    border-color: #4db1ff;
+  }
+  /* stylelint-enable */
+}
+
+.stylospectrum-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: inherit;
+  height: 100%;
+  padding: 0 0.5rem;
+  overflow: inherit;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  white-space: inherit;
+  text-overflow: inherit;
+  text-shadow: inherit;
+  word-spacing: inherit;
+  background: inherit;
+  border: none;
+  outline: none;
+  cursor: inherit;
+  user-select: none;
+
+  &-icon {
+    font-weight: 400;
+    font-size: 1rem;
+    font-style: normal;
+  }
+
+  &-has-icon {
+    min-width: auto;
+    padding: 0;
+  }
 }

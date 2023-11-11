@@ -6,7 +6,4 @@ export default createComponent({
   tagName: 'stylospectrum-button',
   elementClass: Button,
   react: React,
-  events: {
-    onclick: 'onClick',
-  },
 });

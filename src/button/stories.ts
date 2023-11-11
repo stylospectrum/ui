@@ -14,22 +14,47 @@ type StoryArgsProps = {
   slot: string;
 };
 
-const Template: UIStoryArgs<Button, StoryArgsProps> = (args) => html`
-  <stylospectrum-button
-    ?disabled=${ifDefined(args.disabled)}
-    @click=${handleClick}
-  >
-    ${unsafeHTML(args.slot)}
-  </stylospectrum-button>
-`;
+const Template: UIStoryArgs<Button, StoryArgsProps> = (args) => {
+  let iconName = '';
+
+  if (args.icon) {
+    try {
+      // eslint-disable-next-line @typescript-eslint/no-var-requires
+      iconName = require(`../icon/data/${args.icon}`).default;
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  return html`
+    <stylospectrum-button
+      ?disabled=${ifDefined(args.disabled)}
+      type=${ifDefined(args.type)}
+      icon=${ifDefined(iconName)}
+      @click=${handleClick}
+      >${unsafeHTML(args.slot)}</stylospectrum-button
+    >
+  `;
+};
 
 export default {
   title: 'Button',
   component: 'stylospectrum-button',
   tags: ['autodocs'],
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['Primary', 'Secondary', 'Tertiary'],
+    },
+  },
 } as Meta<Button>;
 
 export const Basic = Template.bind({});
 Basic.args = {
-  slot: 'Button Text',
+  slot: 'Button',
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+  icon: 'decline',
 };

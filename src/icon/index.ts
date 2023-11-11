@@ -10,7 +10,6 @@ class Icon extends LitElement {
   `;
 
   /**
-   * Defines the unique identifier (icon name) of the component.
    * @type {string}
    * @defaultvalue ""
    * @public
@@ -48,9 +47,3 @@ class Icon extends LitElement {
 }
 
 export default Icon;
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'stylospectrum-icon': Icon;
-  }
-}
