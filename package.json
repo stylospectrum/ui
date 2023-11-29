@@ -19,7 +19,7 @@
     "tsc": "tsc -p tsconfig.package.json --noEmit",
     "format": "prettier \"**/*.{cjs,html,js,json,md,ts}\" --ignore-path ./.eslintignore --write",
     "prepare": "husky install",
-    "gen-docs": "custom-elements-manifest analyze --litelement --exclude \"src/icon/data/*\" --outdir=.storybook"
+    "gen-docs": "custom-elements-manifest analyze --litelement --config \"./custom-elements-manifest.config.mjs\""
   },
   "lint-staged": {
     "*.scss": "stylelint --fix",

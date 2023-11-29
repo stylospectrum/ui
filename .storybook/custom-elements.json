@@ -4,12 +4,6 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "scripts/generate-icon.js",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/index.ts",
       "declarations": [],
       "exports": [
@@ -39,57 +33,13 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/button/React.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/button/React.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/button/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
           "name": "mButton",
-          "members": [
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "public",
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "icon",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "public",
-              "attribute": "icon"
-            },
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "ButtonType"
-              },
-              "privacy": "public",
-              "attribute": "type",
-              "reflects": true
-            }
-          ],
+          "members": [],
           "attributes": [
             {
               "name": "disabled",
@@ -142,76 +92,13 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/button/stories.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "Basic"
-        },
-        {
-          "kind": "variable",
-          "name": "Icon"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/button/stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Basic",
-          "declaration": {
-            "name": "Basic",
-            "module": "src/button/stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Icon",
-          "declaration": {
-            "name": "Icon",
-            "module": "src/button/stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icon/React.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/icon/React.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/icon/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
           "name": "Icon",
-          "members": [
-            {
-              "kind": "field",
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "public",
-              "attribute": "name"
-            }
-          ],
+          "members": [],
           "attributes": [
             {
               "name": "name",
@@ -250,33 +137,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/icon/stories.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "Basic"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/icon/stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Basic",
-          "declaration": {
-            "name": "Basic",
-            "module": "src/icon/stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/icon/util.ts",
       "declarations": [
         {
@@ -295,7 +155,8 @@
                 "text": "IconData"
               }
             }
-          ]
+          ],
+          "members": []
         },
         {
           "kind": "function",
@@ -307,7 +168,8 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "members": []
         }
       ],
       "exports": [
@@ -325,6 +187,118 @@
           "declaration": {
             "name": "getIconData",
             "module": "src/icon/util.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/input/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Input",
+          "members": [],
+          "events": [
+            {
+              "name": "input",
+              "type": {
+                "text": "EventEmitter<string>"
+              },
+              "description": "Fired when the value of the component changes at each keystroke,\nand when a suggestion item has been selected.",
+              "fieldName": "input"
+            },
+            {
+              "name": "enter",
+              "type": {
+                "text": "EventEmitter<void>"
+              },
+              "fieldName": "enter"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is in disabled state.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Defines a short hint intended to aid the user with data entry when the\ncomponent has no value.",
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the value of the component.",
+              "fieldName": "value"
+            },
+            {
+              "name": "valueState",
+              "description": "Defines the value state of the component.",
+              "type": {
+                "text": "ValueState"
+              },
+              "fieldName": "valueState"
+            },
+            {
+              "name": "valueStateMessage",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the value state message that will be displayed as pop up under the component.",
+              "fieldName": "valueStateMessage"
+            },
+            {
+              "name": "allowClear",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If allow to remove input content with clear icon.",
+              "fieldName": "allowClear"
+            },
+            {
+              "name": "type",
+              "description": "Defines the HTML type of the component.",
+              "type": {
+                "text": "InputType"
+              },
+              "fieldName": "type"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-input",
+          "declaration": {
+            "name": "Input",
+            "module": "src/input/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Input",
+            "module": "src/input/index.ts"
           }
         }
       ]
