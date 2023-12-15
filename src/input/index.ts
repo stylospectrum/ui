@@ -120,14 +120,14 @@ class Input extends LitElement {
    * @event
    * @public
    */
-  @event({name: 'input'})
+  @event({name: 'ss-input'})
   inputEvent!: EventEmitter<string>;
 
   /**
    * @event
    * @public
    */
-  @event({name: 'enter'})
+  @event({name: 'ss-enter'})
   enterEvent!: EventEmitter<void>;
 
   @query('input')
