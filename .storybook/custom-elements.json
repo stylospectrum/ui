@@ -38,7 +38,7 @@
         {
           "kind": "class",
           "description": "",
-          "name": "mButton",
+          "name": "Button",
           "members": [],
           "attributes": [
             {
@@ -46,6 +46,7 @@
               "type": {
                 "text": "boolean"
               },
+              "description": "Defines whether the component is disabled.\nA disabled component can't be pressed or\nfocused, and it is not in the tab chain.",
               "fieldName": "disabled"
             },
             {
@@ -53,14 +54,23 @@
               "type": {
                 "text": "string"
               },
+              "description": "Defines the icon, displayed as graphical element within the component.",
               "fieldName": "icon"
             },
             {
               "name": "type",
               "type": {
-                "text": "ButtonType"
+                "text": "ButtonDesign"
               },
               "fieldName": "type"
+            },
+            {
+              "name": "htmlType",
+              "description": "Defines whether the button has special form-related functionality.",
+              "type": {
+                "text": "ButtonType"
+              },
+              "fieldName": "htmlType"
             }
           ],
           "superclass": {
@@ -76,7 +86,7 @@
           "kind": "custom-element-definition",
           "name": "stylospectrum-button",
           "declaration": {
-            "name": "mButton",
+            "name": "Button",
             "module": "src/button/index.ts"
           }
         },
@@ -84,7 +94,7 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "mButton",
+            "name": "Button",
             "module": "src/button/index.ts"
           }
         }

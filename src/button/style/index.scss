@@ -15,71 +15,84 @@
   border: 0.0625rem solid transparent;
   border-radius: 0.5rem;
   cursor: pointer;
-
-  /* stylelint-disable at-rule-no-unknown */
-  @at-root #{&}([disabled]) {
-    cursor: not-allowed;
-    opacity: 0.4;
-  }
-
-  @at-root #{&}([type="Primary"]) {
-    color: #eaecee;
-    background: #0070f2;
-    border-color: #0070f2;
-  }
-
-  @at-root #{&}([type="Primary"]:not([disabled]):hover) {
-    color: #eaecee;
-    background-color: #0064d8;
-    border-color: #0064d8;
-  }
-
-  @at-root #{&}([type="Primary"]:not([disabled]):active) {
-    color: #4db1ff;
-    background-color: #202932;
-    border-color: #4db1ff;
-  }
-
-  @at-root #{&}([type="Secondary"]) {
-    color: #eaecee;
-    background: #2e3b47;
-    border-color: #2e3b47;
-  }
-
-  @at-root #{&}([type="Secondary"]:not([disabled]):hover) {
-    color: #eaecee;
-    background-color: #1d232a;
-    border-color: #1d232a;
-  }
-
-  @at-root #{&}([type="Secondary"]:not([disabled]):active) {
-    color: #4db1ff;
-    background-color: #202932;
-    border-color: #0070f2;
-  }
-
-  @at-root #{&}([type="Tertiary"]) {
-    color: #4db1ff;
-    background: rgba(0, 0, 0, 0);
-    border-color: rgba(0, 0, 0, 0);
-  }
-
-  @at-root #{&}([type="Tertiary"]:not([disabled]):hover) {
-    color: #4db1ff;
-    background-color: #1d232a;
-    border-color: #1d232a;
-    box-shadow: 0 0 4px 0 rgba(169, 180, 190, 0.72);
-  }
-
-  @at-root #{&}([type="Tertiary"]:not([disabled]):active) {
-    color: #4db1ff;
-    background-color: #202932;
-    border-color: #4db1ff;
-  }
-  /* stylelint-enable */
 }
 
-.stylospectrum-btn {
+:host([disabled]) {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+:host([type='Primary']) {
+  color: #eaecee;
+  background: #0070f2;
+  border-color: #0070f2;
+}
+
+:host([type='Primary']:not([disabled]):hover) {
+  color: #eaecee;
+  background-color: #0064d8;
+  border-color: #0064d8;
+}
+
+:host([type='Primary']:not([disabled]):active) {
+  color: #4db1ff;
+  background-color: #202932;
+  border-color: #4db1ff;
+}
+
+:host([type='Secondary']) {
+  color: #4db1ff;
+  background: #1c242c;
+  border: 0.0625rem solid #3a4a5a;
+}
+
+:host([type='Secondary']:not([disabled]):hover) {
+  color: #4db1ff;
+  background-color: #222b35;
+  border-color: #3a4a5a;
+}
+
+:host([type='Secondary']:not([disabled]):active) {
+  color: #4db1ff;
+  background-color: #213131;
+  border-color: #4db1ff;
+}
+
+:host([type='Tertiary']) {
+  color: #4db1ff;
+  background: transparent;
+  border-color: transparent;
+}
+
+:host([type='Tertiary']:not([disabled]):hover) {
+  color: #4db1ff;
+  background-color: #222b35;
+  border-color: #3a4a5a;
+}
+
+:host([type='Tertiary']:not([disabled]):active) {
+  color: #4db1ff;
+  background-color: #213131;
+  border-color: #4db1ff;
+}
+
+:host([focused]:not(:active)) .stylospectrum-button:after {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+  left: 0.0625rem;
+  top: 0.0625rem;
+  right: 0.0625rem;
+  bottom: 0.0625rem;
+  border: 0.125rem solid #9ad3ff;
+  border-radius: 0.375rem;
+}
+
+:host([type='Primary'][focused]) .stylospectrum-button:after {
+  border-color: #000;
+}
+
+.stylospectrum-button {
   position: relative;
   display: flex;
   align-items: center;

@@ -31,6 +31,7 @@ const Template: UIStoryArgs<Button, StoryArgsProps> = (args) => {
       ?disabled=${args.disabled}
       type=${ifDefined(args.type)}
       icon=${ifDefined(iconName)}
+      html-type=${ifDefined(args.htmlType)}
       @click=${handleClick}
       >${unsafeHTML(args.slot)}</stylospectrum-button
     >
@@ -45,6 +46,10 @@ export default {
     type: {
       control: 'select',
       options: ['Primary', 'Secondary', 'Tertiary'],
+    },
+    htmlType: {
+      control: 'select',
+      options: ['Button', 'Submit', 'Reset'],
     },
   },
 } as Meta<Button>;
