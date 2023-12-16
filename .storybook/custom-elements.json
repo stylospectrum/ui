@@ -212,19 +212,19 @@
           "members": [],
           "events": [
             {
-              "name": "input",
+              "name": "ss-input",
               "type": {
                 "text": "EventEmitter<string>"
               },
               "description": "Fired when the value of the component changes at each keystroke,\nand when a suggestion item has been selected.",
-              "fieldName": "input"
+              "fieldName": "ss-input"
             },
             {
-              "name": "enter",
+              "name": "ss-enter",
               "type": {
                 "text": "EventEmitter<void>"
               },
-              "fieldName": "enter"
+              "fieldName": "ss-enter"
             }
           ],
           "attributes": [

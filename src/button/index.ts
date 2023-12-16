@@ -1,9 +1,9 @@
 import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {classMap} from 'lit/directives/class-map.js';
-import '../icon';
-import styles from './style/index.scss';
 import {ButtonDesign, ButtonType} from '../enums';
+import styles from './style/index.scss';
+import '../icon';
 
 @customElement('stylospectrum-button')
 class Button extends LitElement {

@@ -1,10 +1,11 @@
 import {LitElement, html, css, unsafeCSS, nothing, PropertyValues} from 'lit';
 import {customElement, property, query, state} from 'lit/decorators.js';
 import {InputType, ValueState} from '../enums';
+import {EventEmitter, event} from '../utils';
 import styles from './style/index.scss';
 import '../icon';
 import '../icon/data/decline';
-import {EventEmitter, event} from '../utils';
+import '../icon/data/error';
 
 @customElement('stylospectrum-input')
 class Input extends LitElement {
@@ -109,8 +110,6 @@ class Input extends LitElement {
    * @private
    */
   @property({type: Boolean, reflect: true})
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   private focused!: boolean;
 
   /**
@@ -120,15 +119,15 @@ class Input extends LitElement {
    * @event
    * @public
    */
-  @event({name: 'ss-input'})
-  inputEvent!: EventEmitter<string>;
+  @event({name: 'change'})
+  changeEvent!: EventEmitter<string>;
 
   /**
    * @event
    * @public
    */
-  @event({name: 'ss-enter'})
-  enterEvent!: EventEmitter<void>;
+  @event({name: 'enter'})
+  enterEvent!: EventEmitter<string>;
 
   @query('input')
   input!: HTMLInputElement;
@@ -136,7 +135,7 @@ class Input extends LitElement {
   private _handleClear() {
     this._innerValue = '';
     this._showClearIcon = false;
-    this.inputEvent.emit(this._innerValue);
+    this.changeEvent.emit(this._innerValue);
     this.input?.focus();
   }
 
@@ -145,7 +144,7 @@ class Input extends LitElement {
     this._showClearIcon =
       this.allowClear && !!this._innerValue && !this.disabled;
 
-    this.inputEvent.emit(this._innerValue);
+    this.changeEvent.emit(this._innerValue);
   }
 
   private _handleFocus() {
@@ -158,7 +157,7 @@ class Input extends LitElement {
 
   private _handleKeyDown(e: KeyboardEvent) {
     if (e.key === 'Enter') {
-      this.enterEvent.emit();
+      this.enterEvent.emit(this._innerValue);
     }
   }
 
@@ -193,6 +192,22 @@ class Input extends LitElement {
         </span>`
       : nothing;
 
+    const valueStateMessageNode =
+      this.valueStateMessage &&
+      this.valueState === ValueState.Error &&
+      this.focused
+        ? html` <div class="stylospectrum-input-value-state-message-wrapper">
+            <stylospectrum-icon
+              class="stylospectrum-input-value-state-message-icon"
+              name="error"
+            >
+            </stylospectrum-icon>
+            <span class="stylospectrum-input-value-state-message">
+              ${this.valueStateMessage}
+            </span>
+          </div>`
+        : nothing;
+
     return html`
       <span class="stylospectrum-input-wrapper">
         <input
@@ -206,7 +221,7 @@ class Input extends LitElement {
           class="stylospectrum-input"
           ?disabled=${this.disabled}
         />
-        ${clearIconNode}
+        ${clearIconNode} ${valueStateMessageNode}
       </span>
     `;
   }

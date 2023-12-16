@@ -10,15 +10,15 @@ type StoryArgsProps = {};
 const Template: UIStoryArgs<Input, StoryArgsProps> = (args) => {
   return html`
     <stylospectrum-input
-      @ss-input="${(e: InputEvent) => console.log('change:', e.detail)}"
-      @ss-enter=${() => console.log('enter')}
+      @change="${(e: InputEvent) => console.log('change:', e.detail)}"
+      @enter=${(e: InputEvent) => console.log('enter:', e.detail)}
       .value=${ifDefined(args.value)}
       .placeholder=${ifDefined(args.placeholder)}
-      .value-state-message=${ifDefined(args.valueStateMessage)}
-      .type=${ifDefined(args.type)}
+      type=${ifDefined(args.type)}
+      value-state-message=${ifDefined(args.valueStateMessage)}
+      value-state=${ifDefined(args.valueState)}
       ?allow-clear=${args.allowClear}
       ?disabled=${args.disabled}
-      value-state=${ifDefined(args.valueState)}
     >
     </stylospectrum-input>
   `;

@@ -103,7 +103,6 @@
     justify-content: flex-end;
     box-sizing: border-box;
     height: 100%;
-    overflow: hidden;
     color: inherit;
     background: transparent;
     border-radius: 0.25rem;
@@ -129,6 +128,39 @@
       outline: none;
       cursor: pointer;
       border-inline-start: none;
+    }
+  }
+
+  &-value-state-message {
+    display: inline-block;
+    color: #eaecee;
+    font-weight: 400;
+    font-size: 0.75rem;
+    font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
+    line-height: normal;
+
+    &-icon {
+      display: inline-block;
+      color: #fa6161;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    &-wrapper {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      display: flex;
+      gap: 0.375rem;
+      align-items: center;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.5rem;
+      background: #350000;
+      border-radius: 0.5rem;
+      box-shadow:
+        0 2px 8px 0 rgba(0, 0, 0, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.35);
     }
   }
 }
