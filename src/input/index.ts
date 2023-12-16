@@ -2,6 +2,7 @@ import {LitElement, html, css, unsafeCSS, nothing, PropertyValues} from 'lit';
 import {customElement, property, query, state} from 'lit/decorators.js';
 import {InputType, ValueState} from '../enums';
 import {EventEmitter, event} from '../utils';
+import {isEnter} from '../utils/Keys';
 import styles from './style/index.scss';
 import '../icon';
 import '../icon/data/decline';
@@ -113,8 +114,7 @@ class Input extends LitElement {
   private focused!: boolean;
 
   /**
-   * Fired when the value of the component changes at each keystroke,
-   * and when a suggestion item has been selected.
+   * Fired when the value of the component changes at each keystroke.
    *
    * @event
    * @public
@@ -140,6 +140,10 @@ class Input extends LitElement {
   }
 
   private _handleInput(e: InputEvent) {
+    if (this.value) {
+      return;
+    }
+
     this._innerValue = (e.target as HTMLInputElement).value;
     this._showClearIcon =
       this.allowClear && !!this._innerValue && !this.disabled;
@@ -156,7 +160,7 @@ class Input extends LitElement {
   }
 
   private _handleKeyDown(e: KeyboardEvent) {
-    if (e.key === 'Enter') {
+    if (isEnter(e)) {
       this.enterEvent.emit(this._innerValue);
     }
   }
@@ -166,6 +170,7 @@ class Input extends LitElement {
 
     if (_changedProperties.has('value')) {
       this._innerValue = this.value;
+      this.changeEvent.emit(this._innerValue);
     }
 
     if (

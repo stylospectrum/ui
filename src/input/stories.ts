@@ -12,8 +12,8 @@ const Template: UIStoryArgs<Input, StoryArgsProps> = (args) => {
     <stylospectrum-input
       @change="${(e: InputEvent) => console.log('change:', e.detail)}"
       @enter=${(e: InputEvent) => console.log('enter:', e.detail)}
-      .value=${ifDefined(args.value)}
-      .placeholder=${ifDefined(args.placeholder)}
+      .value=${args.value || ''}
+      .placeholder=${args.placeholder || ''}
       type=${ifDefined(args.type)}
       value-state-message=${ifDefined(args.valueStateMessage)}
       value-state=${ifDefined(args.valueState)}

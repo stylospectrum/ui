@@ -1,0 +1,131 @@
+:host {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  outline: none;
+  cursor: pointer;
+  transition: unset;
+  user-select: none;
+}
+
+:host([indeterminate]:not([checked])) .stylospectrum-checkbox-inner::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: currentcolor;
+  transform: translate(-50%, -50%);
+  content: '';
+}
+
+/* disabled */
+:host([disabled]) {
+  cursor: default;
+}
+
+:host([disabled]) .stylospectrum-checkbox-wrapper {
+  opacity: 0.4;
+}
+
+:host([disabled]) .stylospectrum-checkbox-inner {
+  border-color: #a9b4be;
+}
+
+:host([disabled]) .stylospectrum-checkbox-label {
+  color: #8396a8;
+}
+
+/* focused */
+:host([text]) .stylospectrum-checkbox-wrapper {
+  padding-inline-end: 0.3125rem;
+
+  &:focus::before {
+    inset-inline-end: 0;
+  }
+}
+
+/* hover */
+:host(:hover:not([disabled])) {
+  background: transparent;
+
+  .stylospectrum-checkbox-inner {
+    background-color: #002b4d;
+    border-color: #4db1ff;
+  }
+}
+
+.stylospectrum-checkbox {
+  &-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 2rem;
+    min-height: 2rem;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    transition: unset;
+
+    &:focus {
+      border: none;
+      border-radius: 0.5rem;
+
+      &::before {
+        position: absolute;
+        display: block;
+        border: 0.125rem solid #9ad3ff;
+        border-radius: 0.5rem;
+        content: '';
+        inset-inline: 0.25rem;
+        inset-block: 0.25rem;
+      }
+    }
+  }
+
+  &-inner {
+    position: relative;
+    box-sizing: border-box;
+    min-width: 1rem;
+    max-width: 1rem;
+    height: 1rem;
+    max-height: 1rem;
+    color: #4db1ff;
+    background: #161c22;
+    border: 0.0625rem solid #a9b4be;
+    border-radius: 0.25rem;
+    cursor: inherit;
+  }
+
+  &-inner input {
+    position: absolute;
+    left: 0;
+    width: 0;
+    font-size: inherit;
+    visibility: hidden;
+    appearance: none;
+  }
+
+  &-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: currentcolor;
+    font-size: 0.75rem;
+    transform: translate(-50%, -50%);
+    cursor: inherit;
+  }
+
+  &-label {
+    overflow: hidden;
+    color: #eaecee;
+    text-overflow: ellipsis;
+    cursor: inherit;
+    pointer-events: none;
+    margin-inline-start: 0.5rem;
+  }
+}

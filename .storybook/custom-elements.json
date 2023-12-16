@@ -22,6 +22,30 @@
             "name": "default",
             "module": "./icon/React"
           }
+        },
+        {
+          "kind": "js",
+          "name": "Input",
+          "declaration": {
+            "name": "default",
+            "module": "./input/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "default",
+            "module": "./label/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Checkbox",
+          "declaration": {
+            "name": "default",
+            "module": "./checkbox/React"
+          }
         }
       ]
     },
@@ -96,6 +120,86 @@
           "declaration": {
             "name": "Button",
             "module": "src/button/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/checkbox/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Checkbox",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.\n<br><br>\n<b>Note:</b> The indeterminate state can be set only programmatically and can’t be achieved by user\ninteraction and the resulting visual state depends on the values of the <code>indeterminate</code>\nand <code>checked</code> properties:\n<ul>\n<li> If the component is checked and indeterminate, it will be displayed as partially checked </li>\n<li> If the component is checked and it is not indeterminate, it will be displayed as checked </li>\n<li> If the component is not checked, it will be displayed as not checked regardless value of the indeterminate attribute</li>\n</ul>",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-checkbox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-checkbox",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -212,19 +316,19 @@
           "members": [],
           "events": [
             {
-              "name": "ss-input",
+              "name": "change",
               "type": {
                 "text": "EventEmitter<string>"
               },
-              "description": "Fired when the value of the component changes at each keystroke,\nand when a suggestion item has been selected.",
-              "fieldName": "ss-input"
+              "description": "Fired when the value of the component changes at each keystroke.",
+              "fieldName": "change"
             },
             {
-              "name": "ss-enter",
+              "name": "enter",
               "type": {
-                "text": "EventEmitter<void>"
+                "text": "EventEmitter<string>"
               },
-              "fieldName": "ss-enter"
+              "fieldName": "enter"
             }
           ],
           "attributes": [
@@ -309,6 +413,68 @@
           "declaration": {
             "name": "Input",
             "module": "src/input/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/label/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Label",
+          "members": [],
+          "attributes": [
+            {
+              "name": "for",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the labeled input by providing its ID.",
+              "fieldName": "for"
+            },
+            {
+              "name": "showColon",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether colon is added to the component text.",
+              "fieldName": "showColon"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
+              "fieldName": "required"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
           }
         }
       ]
