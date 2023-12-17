@@ -18,7 +18,7 @@ class Input extends LitElement {
    * Defines whether the component is in disabled state.
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean})
@@ -29,7 +29,7 @@ class Input extends LitElement {
    * component has no value.
    *
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @public
    */
   @property()
@@ -39,7 +39,7 @@ class Input extends LitElement {
    * Defines the value of the component.
    *
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @public
    */
   @property({type: String})
@@ -49,7 +49,7 @@ class Input extends LitElement {
    * Defines the value state of the component.
    *
    * @type {ValueState}
-   * @defaultvalue "None"
+   * @defaultValue "None"
    * @public
    */
   @property({type: String, attribute: 'value-state', reflect: true})
@@ -59,7 +59,7 @@ class Input extends LitElement {
    * Defines the value state message that will be displayed as pop up under the component.
    *
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @public
    */
   @property({type: String, attribute: 'value-state-message'})
@@ -69,7 +69,7 @@ class Input extends LitElement {
    * If allow to remove input content with clear icon.
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean, attribute: 'allow-clear'})
@@ -79,7 +79,7 @@ class Input extends LitElement {
    * Defines the HTML type of the component.
    *
    * @type {InputType}
-   * @defaultvalue "Text"
+   * @defaultValue "Text"
    * @public
    */
   @property({type: String})
@@ -89,7 +89,7 @@ class Input extends LitElement {
    * Defines whether the clear icon is visible.
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @private
    */
   @state()
@@ -99,7 +99,7 @@ class Input extends LitElement {
    * Defines the inner stored value of the component.
    *
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @private
    */
   @state()
@@ -107,7 +107,7 @@ class Input extends LitElement {
 
   /**
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @private
    */
   @property({type: Boolean, reflect: true})

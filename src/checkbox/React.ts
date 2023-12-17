@@ -6,4 +6,7 @@ export default createComponent({
   tagName: 'stylospectrum-checkbox',
   elementClass: Checkbox,
   react: React,
+  events: {
+    onChange: 'change',
+  },
 });

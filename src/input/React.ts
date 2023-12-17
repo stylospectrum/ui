@@ -6,4 +6,8 @@ export default createComponent({
   tagName: 'stylospectrum-input',
   elementClass: Input,
   react: React,
+  events: {
+    onChange: 'change',
+    onEnter: 'enter',
+  },
 });

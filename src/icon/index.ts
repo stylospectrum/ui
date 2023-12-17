@@ -11,7 +11,7 @@ class Icon extends LitElement {
 
   /**
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @public
    */
   @property({type: String})

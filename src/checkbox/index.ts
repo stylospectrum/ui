@@ -18,7 +18,7 @@ class Checkbox extends LitElement {
    * Defines whether the component is disabled.
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean})
@@ -37,7 +37,7 @@ class Checkbox extends LitElement {
    * </ul>
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean})
@@ -51,7 +51,7 @@ class Checkbox extends LitElement {
    * pressing the Enter or Space key.
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean})
@@ -61,7 +61,7 @@ class Checkbox extends LitElement {
    * Defines the text of the component.
    *
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @public
    */
   @property()
@@ -71,7 +71,7 @@ class Checkbox extends LitElement {
    * Defines the inner stored value of the component.
    *
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @private
    */
   @state()

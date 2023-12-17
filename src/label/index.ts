@@ -13,7 +13,7 @@ class Label extends LitElement {
   /**
    * Defines the labeled input by providing its ID.
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @public
    */
   @property()
@@ -22,7 +22,7 @@ class Label extends LitElement {
   /**
    * Defines whether colon is added to the component text.
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean, attribute: 'show-colon'})
@@ -36,7 +36,7 @@ class Label extends LitElement {
    * the corresponding input should also be set.
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean})

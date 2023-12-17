@@ -17,7 +17,7 @@ class Button extends LitElement {
    * focused, and it is not in the tab chain.
    *
    * @type {boolean}
-   * @defaultvalue false
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean, reflect: true})
@@ -27,7 +27,7 @@ class Button extends LitElement {
    * Defines the icon, displayed as graphical element within the component.
    *
    * @type {string}
-   * @defaultvalue ""
+   * @defaultValue ""
    * @public
    */
   @property()
@@ -35,7 +35,7 @@ class Button extends LitElement {
 
   /**
    * @type {ButtonDesign}
-   * @defaultvalue "Primary"
+   * @defaultValue "Primary"
    * @public
    */
   @property({type: String, reflect: true})
@@ -45,7 +45,7 @@ class Button extends LitElement {
    * Defines whether the button has special form-related functionality.
    *
    * @type {ButtonType}
-   * @defaultvalue "Button"
+   * @defaultValue "Button"
    * @public
    */
   @property({type: String, attribute: 'html-type', reflect: true})
