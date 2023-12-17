@@ -1,0 +1,35 @@
+:host {
+  color: #eaecee;
+  font-size: 0.875rem;
+  font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
+}
+
+:host([open]) .stylospectrum-toast {
+  display: block;
+}
+
+.stylospectrum-toast {
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  display: none;
+  box-sizing: border-box;
+  max-width: 15rem;
+  padding: 1rem;
+  overflow: hidden;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  text-align: center;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  background: #1d232a;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 0 0 0.0625rem hsla(0deg, 0%, 100%, 0.35),
+    0 0.625rem 1.875rem 0 rgba(0, 0, 0, 0.6);
+  transform: translateX(-50%);
+  opacity: 1;
+  transition-property: opacity;
+}
