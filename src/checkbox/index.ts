@@ -47,7 +47,7 @@ class Checkbox extends LitElement {
    * Defines if the component is checked.
    * <br><br>
    * <b>Note:</b> The property can be changed with user interaction,
-   * either by cliking/tapping on the component, or by
+   * either by clicking/tapping on the component, or by
    * pressing the Enter or Space key.
    *
    * @type {boolean}
