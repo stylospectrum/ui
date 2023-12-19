@@ -47,11 +47,14 @@ class Label extends LitElement {
       return;
     }
 
-    const elementToFocus = (this.getRootNode() as HTMLElement).querySelector(
-      `[id="${this.for}"]`
-    ) as HTMLElement;
-    if (elementToFocus) {
-      elementToFocus.focus();
+    const slotNode = (this.getRootNode() as HTMLElement).querySelector(
+      'slot'
+    ) as HTMLSlotElement;
+    const assignedElements = slotNode.assignedElements({flatten: true});
+    const inputNode = assignedElements?.[0]?.shadowRoot?.querySelector('input');
+
+    if (inputNode) {
+      inputNode.focus();
     }
   }
 

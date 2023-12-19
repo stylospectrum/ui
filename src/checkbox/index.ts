@@ -1,5 +1,5 @@
 import {LitElement, html, css, unsafeCSS, PropertyValues, nothing} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
+import {customElement, property, query, state} from 'lit/decorators.js';
 import {EventEmitter, event} from '../utils';
 import {ifDefined} from 'lit/directives/if-defined.js';
 import styles from './style/index.scss';
@@ -86,13 +86,12 @@ class Checkbox extends LitElement {
   @event({name: 'change'})
   changeEvent!: EventEmitter<boolean>;
 
+  @query('input')
+  inputEle!: HTMLInputElement;
+
   get effectiveTabIndex() {
     const tabindex = this.getAttribute('tabindex');
     return this.disabled ? undefined : tabindex || '0';
-  }
-
-  private _handleClick() {
-    this.toggle();
   }
 
   private _handleKeyDown(e: KeyboardEvent) {
@@ -101,21 +100,32 @@ class Checkbox extends LitElement {
     }
 
     if (isEnter(e)) {
-      this.toggle();
+      this.toggle(true);
     }
   }
 
   private _handleKeyUp(e: KeyboardEvent) {
     if (isSpace(e)) {
-      this.toggle();
+      this.toggle(true);
     }
   }
 
-  private toggle() {
-    if (!this.disabled && !this.checked && !this.indeterminate) {
-      this._innerChecked = !this._innerChecked;
-      this.changeEvent.emit(this._innerChecked);
+  private toggle(_key = false) {
+    if (_key) {
+      this.inputEle.checked = !this.inputEle.checked;
     }
+
+    const checked = this.inputEle.checked;
+
+    if (this.disabled || this.indeterminate) {
+      return;
+    }
+
+    if (!this.checked) {
+      this._innerChecked = checked;
+    }
+
+    this.changeEvent.emit(checked);
   }
 
   override willUpdate(_changedProperties: PropertyValues<this>): void {
@@ -123,7 +133,6 @@ class Checkbox extends LitElement {
 
     if (_changedProperties.has('checked') && !this.indeterminate) {
       this._innerChecked = this.checked;
-      this.changeEvent.emit(this.checked);
     }
   }
 
@@ -144,20 +153,20 @@ class Checkbox extends LitElement {
       : nothing;
 
     return html`
-      <span
+      <label
         class="stylospectrum-checkbox-wrapper"
         role="checkbox"
         part="root"
         tabindex="${ifDefined(this.effectiveTabIndex)}"
-        @click="${this._handleClick}"
         @keydown="${this._handleKeyDown}"
         @keyup="${this._handleKeyUp}"
       >
         <span class="stylospectrum-checkbox-inner">
           ${checkNode}
           <input
+            @input=${() => this.toggle()}
             type="checkbox"
-            ?checked="${this.checked}"
+            ?checked="${this._innerChecked}"
             ?disabled="${this.disabled}"
             tabindex="-1"
             aria-hidden="true"
@@ -165,7 +174,7 @@ class Checkbox extends LitElement {
         </span>
 
         ${textNode}
-      </span>
+      </label>
     `;
   }
 }

@@ -1,4 +1,12 @@
-import {LitElement, html, css, unsafeCSS, nothing, PropertyValues} from 'lit';
+import {
+  LitElement,
+  html,
+  css,
+  unsafeCSS,
+  nothing,
+  PropertyValues,
+  TemplateResult,
+} from 'lit';
 import {customElement, property, query, state} from 'lit/decorators.js';
 import {InputType, ValueState} from '../enums';
 import {EventEmitter, event} from '../utils';
@@ -32,7 +40,7 @@ class Input extends LitElement {
    * @defaultValue ""
    * @public
    */
-  @property()
+  @property({type: String})
   placeholder: string = '';
 
   /**
@@ -140,15 +148,12 @@ class Input extends LitElement {
   }
 
   private _handleInput(e: InputEvent) {
-    if (this.value) {
-      return;
+    const value = (e.target as HTMLInputElement).value;
+    if (!this.value) {
+      this._innerValue = value;
     }
-
-    this._innerValue = (e.target as HTMLInputElement).value;
-    this._showClearIcon =
-      this.allowClear && !!this._innerValue && !this.disabled;
-
-    this.changeEvent.emit(this._innerValue);
+    this._showClearIcon = this.allowClear && !!value && !this.disabled;
+    this.changeEvent.emit(value);
   }
 
   private _handleFocus() {
@@ -169,8 +174,7 @@ class Input extends LitElement {
     super.willUpdate(_changedProperties);
 
     if (_changedProperties.has('value')) {
-      this._innerValue = this.value;
-      this.changeEvent.emit(this._innerValue);
+      this._innerValue = this.value || '';
     }
 
     if (
@@ -183,7 +187,7 @@ class Input extends LitElement {
     }
   }
 
-  override render() {
+  override render(): TemplateResult {
     const clearIconNode = this._showClearIcon
       ? html`<span
           class="stylospectrum-input-clear-icon-wrapper"
@@ -222,7 +226,7 @@ class Input extends LitElement {
           @input=${this._handleInput}
           @keydown=${this._handleKeyDown}
           type=${this.type.toLowerCase()}
-          placeholder=${this.placeholder}
+          .placeholder=${this.placeholder}
           class="stylospectrum-input"
           ?disabled=${this.disabled}
         />

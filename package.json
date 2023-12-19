@@ -35,7 +35,6 @@
     "@commitlint/cli": "^17.8.0",
     "@commitlint/config-conventional": "^17.8.0",
     "@custom-elements-manifest/analyzer": "^0.9.0",
-    "@lit/react": "^1.0.0",
     "@storybook/addon-essentials": "^7.6.5",
     "@storybook/addon-links": "^7.6.5",
     "@storybook/blocks": "^7.6.5",
@@ -48,7 +47,6 @@
     "eslint-plugin-storybook": "^0.6.15",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
-    "lit": "^3.0.0",
     "lit-analyzer": "^1.2.1",
     "node-sass": "^9.0.0",
     "prettier": "^3.0.3",
@@ -66,5 +64,10 @@
     "ts-lit-plugin": "^2.0.1",
     "ts-loader": "^9.5.0",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "async-validator": "^4.2.5",
+    "lit": "^3.0.0",
+    "@lit/react": "^1.0.0"
   }
 }

@@ -54,6 +54,30 @@
             "name": "default",
             "module": "./toast/React"
           }
+        },
+        {
+          "kind": "js",
+          "name": "MessageStrip",
+          "declaration": {
+            "name": "default",
+            "module": "./message-strip/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Form",
+          "declaration": {
+            "name": "default",
+            "module": "./form/FormReact"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FormItem",
+          "declaration": {
+            "name": "default",
+            "module": "./form/FormItemReact"
+          }
         }
       ]
     },
@@ -315,6 +339,129 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/form/FormItemReact.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/FormItemReact.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/FormReact.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/FormReact.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/form-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FormItem",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "rules",
+              "type": {
+                "text": "Array<Rule>"
+              },
+              "fieldName": "rules"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form-item",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Form",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/label/index.ts",
       "declarations": [
         {
@@ -377,42 +524,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/message-strip/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "MessageStrip",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-message-strip",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-message-strip",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/input/index.ts",
       "declarations": [
         {
@@ -451,7 +562,6 @@
               "type": {
                 "text": "string"
               },
-              "default": "''",
               "description": "Defines a short hint intended to aid the user with data entry when the\ncomponent has no value.",
               "fieldName": "placeholder"
             },
@@ -519,6 +629,42 @@
           "declaration": {
             "name": "Input",
             "module": "src/input/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/message-strip/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MessageStrip",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-message-strip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-message-strip",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
           }
         }
       ]

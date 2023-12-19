@@ -21,3 +21,4 @@ storybook-static
 .prettierignore
 storybook-types.js
 storybook-types.d.ts
+custom-elements-manifest.config.mjs
