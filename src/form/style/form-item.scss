@@ -4,4 +4,11 @@
   gap: 0.125rem;
   align-items: flex-start;
   align-self: stretch;
+  margin-bottom: 16px;
+
+  &-label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
 }

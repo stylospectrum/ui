@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/stylospectrum/ui/compare/v0.0.5...v0.0.6) (2023-12-20)
+
+### Features
+
+- introduce new component: Link ([ffd635d](https://github.com/stylospectrum/ui/commit/ffd635d50f1be141371c720ec5564cf23e887da9))
+
 ### 0.0.5 (2023-12-19)
 
 ### Features

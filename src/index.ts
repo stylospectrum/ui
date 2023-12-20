@@ -7,3 +7,4 @@ export {default as Toast} from './toast/React';
 export {default as MessageStrip} from './message-strip/React';
 export {default as Form} from './form/FormReact';
 export {default as FormItem} from './form/FormItemReact';
+export {default as Link} from './link/React';

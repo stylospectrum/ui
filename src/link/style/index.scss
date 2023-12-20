@@ -1,0 +1,63 @@
+:host(:not([hidden])) {
+  display: inline-flex;
+}
+
+:host {
+  color: #4db1ff;
+  cursor: pointer;
+  font-family: '72', '72full', Arial, Helvetica, sans-serif;
+  font-size: 0.875rem;
+  max-width: 100%;
+  outline: none;
+  overflow-wrap: normal;
+  text-decoration: none;
+  text-shadow: 0 0 0.125rem #000;
+  white-space: nowrap;
+}
+
+:host(:hover) {
+  color: #4db1ff;
+  text-decoration: underline;
+}
+
+:host([focused]) {
+  color: #1d232a;
+  text-decoration: underline;
+}
+
+:host([focused]) .stylospectrum-link {
+  background-color: #9ad3ff;
+  border: 0.125rem solid #9ad3ff;
+  border-radius: 0.125rem;
+  text-shadow: none;
+}
+
+:host .stylospectrum-link {
+  border: 0.125rem solid transparent;
+  border-radius: 0.125rem;
+}
+
+:host([disabled]) {
+  pointer-events: none;
+}
+
+:host([disabled]) .stylospectrum-link {
+  cursor: default;
+  opacity: 0.4;
+  outline: none;
+  pointer-events: none;
+  text-shadow: none;
+}
+
+.stylospectrum-link {
+  color: inherit;
+  display: inline-block;
+  max-width: 100%;
+  outline: none;
+  overflow: hidden;
+  overflow-wrap: inherit;
+  position: relative;
+  text-decoration: inherit;
+  text-overflow: ellipsis;
+  white-space: inherit;
+}
