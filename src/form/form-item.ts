@@ -153,7 +153,10 @@ class FormItem extends LitElement {
 
     return html`
       <div class="stylospectrum-form-item">
-        ${labelNode}
+        <div class="stylospectrum-form-item-label-wrapper">
+          ${labelNode}
+          <slot name="suffix-label"></slot>
+        </div>
         <slot
           @slotchange=${this._handleSlotChange}
           @change="${this._handleChange}"
