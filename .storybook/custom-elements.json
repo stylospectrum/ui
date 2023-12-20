@@ -78,6 +78,14 @@
             "name": "default",
             "module": "./form/FormItemReact"
           }
+        },
+        {
+          "kind": "js",
+          "name": "Link",
+          "declaration": {
+            "name": "default",
+            "module": "./link/React"
+          }
         }
       ]
     },
@@ -238,6 +246,130 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/form/FormItemReact.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/FormItemReact.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/FormReact.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/FormReact.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/form-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FormItem",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "rules",
+              "type": {
+                "text": "Array<Rule>"
+              },
+              "default": "[]",
+              "fieldName": "rules"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form-item",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Form",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icon/index.ts",
       "declarations": [
         {
@@ -339,123 +471,112 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/FormItemReact.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/form/FormItemReact.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/FormReact.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/form/FormReact.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/form-item.ts",
+      "path": "src/input/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "FormItem",
+          "name": "Input",
           "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<string>"
+              },
+              "description": "Fired when the value of the component changes at each keystroke.",
+              "fieldName": "change"
+            },
+            {
+              "name": "enter",
+              "type": {
+                "text": "EventEmitter<string>"
+              },
+              "fieldName": "enter"
+            }
+          ],
           "attributes": [
             {
-              "name": "name",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is in disabled state.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "placeholder",
               "type": {
                 "text": "string"
               },
-              "fieldName": "name"
+              "default": "''",
+              "description": "Defines a short hint intended to aid the user with data entry when the\ncomponent has no value.",
+              "fieldName": "placeholder"
             },
             {
-              "name": "label",
+              "name": "value",
               "type": {
                 "text": "string"
               },
-              "fieldName": "label"
+              "description": "Defines the value of the component.",
+              "fieldName": "value"
             },
             {
-              "name": "rules",
+              "name": "valueState",
+              "description": "Defines the value state of the component.",
               "type": {
-                "text": "Array<Rule>"
+                "text": "ValueState"
               },
-              "fieldName": "rules"
+              "fieldName": "valueState"
+            },
+            {
+              "name": "valueStateMessage",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the value state message that will be displayed as pop up under the component.",
+              "fieldName": "valueStateMessage"
+            },
+            {
+              "name": "allowClear",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "If allow to remove input content with clear icon.",
+              "fieldName": "allowClear"
+            },
+            {
+              "name": "type",
+              "description": "Defines the HTML type of the component.",
+              "type": {
+                "text": "InputType"
+              },
+              "fieldName": "type"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-form-item",
+          "tagName": "stylospectrum-input",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-form-item",
+          "name": "stylospectrum-input",
           "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
+            "name": "Input",
+            "module": "src/input/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Form",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
+            "name": "Input",
+            "module": "src/input/index.ts"
           }
         }
       ]
@@ -524,111 +645,62 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/input/index.ts",
+      "path": "src/link/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Input",
+          "name": "Link",
           "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<string>"
-              },
-              "description": "Fired when the value of the component changes at each keystroke.",
-              "fieldName": "change"
-            },
-            {
-              "name": "enter",
-              "type": {
-                "text": "EventEmitter<string>"
-              },
-              "fieldName": "enter"
-            }
-          ],
           "attributes": [
             {
               "name": "disabled",
               "type": {
                 "text": "boolean"
               },
-              "description": "Defines whether the component is in disabled state.",
+              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
               "fieldName": "disabled"
             },
             {
-              "name": "placeholder",
+              "name": "href",
               "type": {
                 "text": "string"
               },
-              "description": "Defines a short hint intended to aid the user with data entry when the\ncomponent has no value.",
-              "fieldName": "placeholder"
+              "description": "Defines the component href.",
+              "fieldName": "href"
             },
             {
-              "name": "value",
+              "name": "target",
               "type": {
                 "text": "string"
               },
-              "description": "Defines the value of the component.",
-              "fieldName": "value"
-            },
-            {
-              "name": "valueState",
-              "description": "Defines the value state of the component.",
-              "type": {
-                "text": "ValueState"
-              },
-              "fieldName": "valueState"
-            },
-            {
-              "name": "valueStateMessage",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the value state message that will be displayed as pop up under the component.",
-              "fieldName": "valueStateMessage"
-            },
-            {
-              "name": "allowClear",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "If allow to remove input content with clear icon.",
-              "fieldName": "allowClear"
-            },
-            {
-              "name": "type",
-              "description": "Defines the HTML type of the component.",
-              "type": {
-                "text": "InputType"
-              },
-              "fieldName": "type"
+              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
+              "fieldName": "target"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-input",
+          "tagName": "stylospectrum-link",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-input",
+          "name": "stylospectrum-link",
           "declaration": {
-            "name": "Input",
-            "module": "src/input/index.ts"
+            "name": "Link",
+            "module": "src/link/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Input",
-            "module": "src/input/index.ts"
+            "name": "Link",
+            "module": "src/link/index.ts"
           }
         }
       ]

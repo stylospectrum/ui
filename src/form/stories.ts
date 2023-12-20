@@ -1,17 +1,23 @@
 import {html} from 'lit';
 import {createRef, ref} from 'lit/directives/ref.js';
 import type Form from '.';
+import type Input from '../input';
+import type Link from '../link';
 import '.';
 import './form-item';
 import '../input';
 import '../checkbox';
 import '../button';
+import '../link';
 
 const Template = () => {
   const formRef = createRef<Form>();
+  const passwordRef = createRef<Input>();
+  const forgotPassRef = createRef<Link>();
+  const createAnAccRef = createRef<Link>();
 
   return html`
-    <stylospectrum-form ${ref(formRef)}>
+    <stylospectrum-form ${ref(formRef)} style="width: 27.75rem; display:block">
       <stylospectrum-form-item
         label="Email"
         name="email"
@@ -24,7 +30,14 @@ const Template = () => {
           },
         ]}"
       >
-        <stylospectrum-input></stylospectrum-input>
+        <stylospectrum-input
+          style="width: 100%"
+          @keydown="${() => {
+            requestAnimationFrame(() => {
+              passwordRef.value?.shadowRoot?.querySelector('input')?.focus();
+            });
+          }}"
+        ></stylospectrum-input>
       </stylospectrum-form-item>
 
       <stylospectrum-form-item
@@ -32,20 +45,45 @@ const Template = () => {
         name="password"
         .rules="${[{required: true, message: 'Enter your password'}]}"
       >
-        <stylospectrum-input type="Password"></stylospectrum-input>
+        <stylospectrum-link
+          ${ref(forgotPassRef)}
+          slot="suffix-label"
+          @keydown="${() => {
+            requestAnimationFrame(() => {
+              createAnAccRef.value?.shadowRoot?.querySelector('a')?.focus();
+            });
+          }}"
+        >
+          Forgot your password?
+        </stylospectrum-link>
+        <stylospectrum-input
+          style="width: 100%"
+          ${ref(passwordRef)}
+          type="Password"
+        >
+        </stylospectrum-input>
       </stylospectrum-form-item>
 
       <stylospectrum-form-item name="keep-me-signed-in">
         <stylospectrum-checkbox text="Keep me signed in">
         </stylospectrum-checkbox>
       </stylospectrum-form-item>
-
-      <stylospectrum-button
-        @click=${async () => console.log(await formRef.value?.validateFields())}
-      >
-        Submit
-      </stylospectrum-button>
     </stylospectrum-form>
+
+    <stylospectrum-button
+      @click=${async () => console.log(await formRef.value?.validateFields())}
+      @keydown="${() => {
+        requestAnimationFrame(() => {
+          forgotPassRef.value?.shadowRoot?.querySelector('a')?.focus();
+        });
+      }}"
+    >
+      Submit
+    </stylospectrum-button>
+    <br />
+    <stylospectrum-link ${ref(createAnAccRef)}>
+      Create an account!
+    </stylospectrum-link>
   `;
 };
 
