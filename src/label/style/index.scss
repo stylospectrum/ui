@@ -11,12 +11,6 @@
   cursor: text;
 }
 
-.stylospectrum-label-wrapper {
-  width: 100%;
-  white-space: normal;
-  cursor: inherit;
-}
-
 :host([required]) .stylospectrum-label-required-colon::after {
   position: relative;
   color: #ff78a4;
@@ -37,5 +31,23 @@
 
   &::before {
     content: attr(data-colon);
+  }
+}
+
+.stylospectrum-label {
+  &-wrapper {
+    display: inline-flex;
+    width: 100%;
+    white-space: normal;
+    cursor: inherit;
+  }
+
+  &-text {
+    display: inline-block;
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
   }
 }
