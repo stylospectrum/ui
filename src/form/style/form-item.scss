@@ -1,10 +1,14 @@
+:host {
+  display: block;
+  margin-bottom: 1rem;
+}
+
 .stylospectrum-form-item {
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
   align-items: flex-start;
   align-self: stretch;
-  margin-bottom: 16px;
 
   &-label-wrapper {
     display: flex;

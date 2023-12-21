@@ -146,17 +146,17 @@ class FormItem extends LitElement {
 
   override render(): TemplateResult {
     const labelNode = this.label
-      ? html`<stylospectrum-label show-colon for="${this.name}">
-          ${this.label}
-        </stylospectrum-label>`
+      ? html`<div class="stylospectrum-form-item-label-wrapper">
+          <stylospectrum-label show-colon for="${this.name}">
+            ${this.label}
+          </stylospectrum-label>
+          <slot name="suffix-label"></slot>
+        </div>`
       : nothing;
 
     return html`
       <div class="stylospectrum-form-item">
-        <div class="stylospectrum-form-item-label-wrapper">
-          ${labelNode}
-          <slot name="suffix-label"></slot>
-        </div>
+        ${labelNode}
         <slot
           @slotchange=${this._handleSlotChange}
           @change="${this._handleChange}"

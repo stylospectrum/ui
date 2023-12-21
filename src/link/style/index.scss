@@ -3,16 +3,16 @@
 }
 
 :host {
-  color: #4db1ff;
-  cursor: pointer;
-  font-family: '72', '72full', Arial, Helvetica, sans-serif;
-  font-size: 0.875rem;
   max-width: 100%;
-  outline: none;
-  overflow-wrap: normal;
+  color: #4db1ff;
+  font-size: 0.875rem;
+  font-family: '72', '72full', Arial, Helvetica, sans-serif;
+  white-space: nowrap;
   text-decoration: none;
   text-shadow: 0 0 0.125rem #000;
-  white-space: nowrap;
+  overflow-wrap: normal;
+  outline: none;
+  cursor: pointer;
 }
 
 :host(:hover) {
@@ -26,14 +26,12 @@
 }
 
 :host([focused]) .stylospectrum-link {
-  background-color: #9ad3ff;
-  border: 0.125rem solid #9ad3ff;
-  border-radius: 0.125rem;
   text-shadow: none;
+  background-color: #9ad3ff;
+  border-radius: 0.125rem;
 }
 
 :host .stylospectrum-link {
-  border: 0.125rem solid transparent;
   border-radius: 0.125rem;
 }
 
@@ -42,22 +40,23 @@
 }
 
 :host([disabled]) .stylospectrum-link {
+  text-shadow: none;
+  outline: none;
   cursor: default;
   opacity: 0.4;
-  outline: none;
   pointer-events: none;
-  text-shadow: none;
 }
 
 .stylospectrum-link {
-  color: inherit;
-  display: inline-block;
-  max-width: 100%;
-  outline: none;
-  overflow: hidden;
-  overflow-wrap: inherit;
   position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: hidden;
+  color: inherit;
+  white-space: inherit;
   text-decoration: inherit;
   text-overflow: ellipsis;
-  white-space: inherit;
+  overflow-wrap: inherit;
+  outline: none;
 }
