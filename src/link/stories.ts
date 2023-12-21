@@ -1,4 +1,5 @@
 import {Meta} from '@storybook/web-components';
+import {ifDefined} from 'lit/directives/if-defined.js';
 import {html} from 'lit';
 import type Link from '.';
 import {UIStoryArgs} from '../storybook-types';
@@ -9,8 +10,8 @@ type StoryArgsProps = {};
 const Template: UIStoryArgs<Link, StoryArgsProps> = (args) => {
   return html`
     <stylospectrum-link
-      href=${args.href}
-      target=${args.target}
+      href=${ifDefined(args.href)}
+      target=${ifDefined(args.target)}
       ?disabled=${args.disabled}
       @click=${() => console.log('clicked')}
     >
