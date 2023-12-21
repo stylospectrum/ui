@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/stylospectrum/ui/compare/v0.0.6...v0.0.7) (2023-12-21)
+
+### Bug Fixes
+
+- **Form:** reduce height of form control ([bf29cff](https://github.com/stylospectrum/ui/commit/bf29cffc3dc9561224618a54dc2732c8be7e20f7))
+
 ### [0.0.6](https://github.com/stylospectrum/ui/compare/v0.0.5...v0.0.6) (2023-12-20)
 
 ### Features
