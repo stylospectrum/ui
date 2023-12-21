@@ -12,10 +12,10 @@ const Template: UIStoryArgs<Toast, StoryArgsProps> = () => {
   const toastRef = createRef<Toast>();
 
   return html`
-    <stylospectrum-button @click="${() => toastRef.value?.show()}">
+    <stylospectrum-button @click="${() => toastRef.value?.show('Basic Toast')}">
       Show Toast
     </stylospectrum-button>
-    <stylospectrum-toast ${ref(toastRef)}> Basic Toast </stylospectrum-toast>
+    <stylospectrum-toast ${ref(toastRef)}> </stylospectrum-toast>
   `;
 };
 
