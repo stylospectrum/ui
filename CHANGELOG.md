@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/stylospectrum/ui/compare/v0.0.7...v0.0.8) (2023-12-21)
+
+### Bug Fixes
+
+- **Toast:** change slot to text parameter of show function ([84b901e](https://github.com/stylospectrum/ui/commit/84b901ef534eaf123fb659291c1d3c0146086134))
+
 ### [0.0.7](https://github.com/stylospectrum/ui/compare/v0.0.6...v0.0.7) (2023-12-21)
 
 ### Bug Fixes

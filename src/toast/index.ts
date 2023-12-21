@@ -48,10 +48,18 @@ class Toast extends LitElement {
   private _opacity: number | undefined = 1;
 
   /**
+   * @type {string}
+   * @private
+   */
+  @state()
+  private text = '';
+
+  /**
    * Shows the component.
    * @public
    */
-  public show() {
+  public show(text: string) {
+    this.text = text;
     if (this._open) {
       this._open = false;
       this._reopen = true;
@@ -125,7 +133,7 @@ class Toast extends LitElement {
         @mouseover="${this._handleMouseOver}"
         @mouseleave="${this._handleMouseLeave}"
       >
-        <slot></slot>
+        ${this.text}
       </div>`;
     }
 

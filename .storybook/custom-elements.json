@@ -777,6 +777,93 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "IButton",
+          "declaration": {
+            "name": "default",
+            "module": "../button"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IIcon",
+          "declaration": {
+            "name": "default",
+            "module": "../icon"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IInput",
+          "declaration": {
+            "name": "default",
+            "module": "../input"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ILabel",
+          "declaration": {
+            "name": "default",
+            "module": "../label"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ICheckbox",
+          "declaration": {
+            "name": "default",
+            "module": "../checkbox"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IToast",
+          "declaration": {
+            "name": "default",
+            "module": "../toast"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IMessageStrip",
+          "declaration": {
+            "name": "default",
+            "module": "../message-strip"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IForm",
+          "declaration": {
+            "name": "default",
+            "module": "../form"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IFormItem",
+          "declaration": {
+            "name": "default",
+            "module": "../form"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ILink",
+          "declaration": {
+            "name": "default",
+            "module": "../link"
+          }
+        }
+      ]
     }
   ]
 }
