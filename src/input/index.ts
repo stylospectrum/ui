@@ -8,7 +8,7 @@ import {
   TemplateResult,
 } from 'lit';
 import {customElement, property, query, state} from 'lit/decorators.js';
-import {InputType, ValueState} from '../enums';
+import {InputType, ValueState} from '../types';
 import {EventEmitter, event} from '../utils';
 import {isEnter} from '../utils/Keys';
 import styles from './style/index.scss';
