@@ -1,12 +1,12 @@
 import {LitElement, html, css, unsafeCSS, PropertyValues, nothing} from 'lit';
 import {customElement, property, query, state} from 'lit/decorators.js';
-import {EventEmitter, event} from '../utils';
 import {ifDefined} from 'lit/directives/if-defined.js';
 import styles from './style/index.scss';
+import {EventEmitter, event} from '../utils';
+import {isEnter, isSpace} from '../utils/Keys';
 import '../icon';
 import '../label';
 import '../icon/data/accept';
-import {isEnter, isSpace} from '../utils/Keys';
 
 @customElement('stylospectrum-checkbox')
 class Checkbox extends LitElement {
@@ -26,15 +26,6 @@ class Checkbox extends LitElement {
 
   /**
    * Defines whether the component is displayed as partially checked.
-   * <br><br>
-   * <b>Note:</b> The indeterminate state can be set only programmatically and can’t be achieved by user
-   * interaction and the resulting visual state depends on the values of the <code>indeterminate</code>
-   * and <code>checked</code> properties:
-   * <ul>
-   * <li> If the component is checked and indeterminate, it will be displayed as partially checked </li>
-   * <li> If the component is checked and it is not indeterminate, it will be displayed as checked </li>
-   * <li> If the component is not checked, it will be displayed as not checked regardless value of the indeterminate attribute</li>
-   * </ul>
    *
    * @type {boolean}
    * @defaultValue false

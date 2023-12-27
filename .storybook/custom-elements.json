@@ -94,6 +94,14 @@
             "name": "default",
             "module": "./popover/React/Popover"
           }
+        },
+        {
+          "kind": "js",
+          "name": "PopoverListItem",
+          "declaration": {
+            "name": "default",
+            "module": "./popover/React/LIstItem"
+          }
         }
       ]
     },
@@ -102,6 +110,60 @@
       "path": "src/storybook-types.ts",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/avatar/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Avatar",
+          "members": [],
+          "attributes": [
+            {
+              "name": "interactive",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the avatar is interactive (focusable and pressable).",
+              "fieldName": "interactive"
+            },
+            {
+              "name": "initials",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the displayed initials.\n<br>\nUp to three Latin letters can be displayed as initials.",
+              "fieldName": "initials"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-avatar",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-avatar",
+          "declaration": {
+            "name": "Avatar",
+            "module": "src/avatar/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Avatar",
+            "module": "src/avatar/index.ts"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -205,7 +267,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "Defines whether the component is displayed as partially checked.\n<br><br>\n<b>Note:</b> The indeterminate state can be set only programmatically and can’t be achieved by user\ninteraction and the resulting visual state depends on the values of the <code>indeterminate</code>\nand <code>checked</code> properties:\n<ul>\n<li> If the component is checked and indeterminate, it will be displayed as partially checked </li>\n<li> If the component is checked and it is not indeterminate, it will be displayed as checked </li>\n<li> If the component is not checked, it will be displayed as not checked regardless value of the indeterminate attribute</li>\n</ul>",
+              "description": "Defines whether the component is displayed as partially checked.",
               "fieldName": "indeterminate"
             },
             {
@@ -350,42 +412,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/dialog/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Dialog",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/icon/index.ts",
       "declarations": [
         {
@@ -481,6 +507,68 @@
           "declaration": {
             "name": "getIconData",
             "module": "src/icon/util.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/label/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Label",
+          "members": [],
+          "attributes": [
+            {
+              "name": "for",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the labeled input by providing its ID.",
+              "fieldName": "for"
+            },
+            {
+              "name": "showColon",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether colon is added to the component text.",
+              "fieldName": "showColon"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
+              "fieldName": "required"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
           }
         }
       ]
@@ -600,68 +688,6 @@
           "declaration": {
             "name": "Input",
             "module": "src/input/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/label/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Label",
-          "members": [],
-          "attributes": [
-            {
-              "name": "for",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the labeled input by providing its ID.",
-              "fieldName": "for"
-            },
-            {
-              "name": "showColon",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether colon is added to the component text.",
-              "fieldName": "showColon"
-            },
-            {
-              "name": "required",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
-              "fieldName": "required"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-label",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-label",
-          "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
           }
         }
       ]
@@ -825,7 +851,7 @@
         {
           "kind": "class",
           "description": "",
-          "name": "Label",
+          "name": "PopoverListItem",
           "members": [],
           "attributes": [
             {
@@ -840,7 +866,7 @@
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-label",
+          "tagName": "stylospectrum-popover-list-item",
           "customElement": true
         }
       ],
@@ -849,7 +875,7 @@
           "kind": "custom-element-definition",
           "name": "stylospectrum-popover-list-item",
           "declaration": {
-            "name": "Label",
+            "name": "PopoverListItem",
             "module": "src/popover/list-item.ts"
           }
         },
@@ -857,7 +883,7 @@
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Label",
+            "name": "PopoverListItem",
             "module": "src/popover/list-item.ts"
           }
         }
@@ -1134,6 +1160,20 @@
           "name": "default",
           "declaration": {
             "module": "src/form/React/FormItem.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/popover/React/LIstItem.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/popover/React/LIstItem.ts"
           }
         }
       ]
