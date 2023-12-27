@@ -1,6 +1,6 @@
 import {LitElement, TemplateResult, html} from 'lit';
 import {customElement, queryAssignedElements} from 'lit/decorators.js';
-import {ValueState} from '../enums';
+import {ValueState} from '../types';
 import Input from '../input';
 import FormItem from './form-item';
 

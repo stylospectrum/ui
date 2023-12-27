@@ -68,7 +68,7 @@
           "name": "Form",
           "declaration": {
             "name": "default",
-            "module": "./form/FormReact"
+            "module": "./form/React/Form"
           }
         },
         {
@@ -76,7 +76,7 @@
           "name": "FormItem",
           "declaration": {
             "name": "default",
-            "module": "./form/FormItemReact"
+            "module": "./form/React/FormItem"
           }
         },
         {
@@ -85,6 +85,14 @@
           "declaration": {
             "name": "default",
             "module": "./link/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Popover",
+          "declaration": {
+            "name": "default",
+            "module": "./popover/React/Popover"
           }
         }
       ]
@@ -246,34 +254,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/FormItemReact.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/form/FormItemReact.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/FormReact.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/form/FormReact.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/form/form-item.ts",
       "declarations": [
         {
@@ -364,6 +344,42 @@
           "declaration": {
             "name": "Form",
             "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Dialog",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -544,6 +560,13 @@
               },
               "description": "If allow to remove input content with clear icon.",
               "fieldName": "allowClear"
+            },
+            {
+              "name": "showSearch",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "showSearch"
             },
             {
               "name": "type",
@@ -743,6 +766,105 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/popover/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Popover",
+          "members": [],
+          "attributes": [
+            {
+              "name": "headerText",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the header text.",
+              "fieldName": "headerText"
+            },
+            {
+              "name": "horizontalAlign",
+              "description": "Determines the horizontal alignment of the component.",
+              "type": {
+                "text": "PopoverHorizontalAlign"
+              },
+              "fieldName": "horizontalAlign"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-popover",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-popover",
+          "declaration": {
+            "name": "Popover",
+            "module": "src/popover/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Popover",
+            "module": "src/popover/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/popover/list-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Label",
+          "members": [],
+          "attributes": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "icon"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-popover-list-item",
+          "declaration": {
+            "name": "Label",
+            "module": "src/popover/list-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Label",
+            "module": "src/popover/list-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/toast/index.ts",
       "declarations": [
         {
@@ -780,9 +902,124 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/types/ButtonDesign.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ButtonDesign",
+            "module": "src/types/ButtonDesign.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/ButtonType.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ButtonType",
+            "module": "src/types/ButtonType.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/InputType.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "InputType",
+            "module": "src/types/InputType.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/PopoverHorizontalAlign.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "PopoverHorizontalAlign",
+            "module": "src/types/PopoverHorizontalAlign.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/ValueState.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ValueState",
+            "module": "src/types/ValueState.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/types/index.ts",
       "declarations": [],
       "exports": [
+        {
+          "kind": "js",
+          "name": "ButtonDesign",
+          "declaration": {
+            "name": "default",
+            "module": "./ButtonDesign"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ButtonType",
+          "declaration": {
+            "name": "default",
+            "module": "./ButtonType"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InputType",
+          "declaration": {
+            "name": "default",
+            "module": "./InputType"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ValueState",
+          "declaration": {
+            "name": "default",
+            "module": "./ValueState"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "PopoverHorizontalAlign",
+          "declaration": {
+            "name": "default",
+            "module": "./PopoverHorizontalAlign"
+          }
+        },
         {
           "kind": "js",
           "name": "IButton",
@@ -861,6 +1098,56 @@
           "declaration": {
             "name": "default",
             "module": "../link"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IPopover",
+          "declaration": {
+            "name": "default",
+            "module": "../popover"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/React/Form.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/React/Form.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/React/FormItem.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/React/FormItem.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/popover/React/Popover.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/popover/React/Popover.ts"
           }
         }
       ]

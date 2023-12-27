@@ -16,7 +16,7 @@ import AsyncValidator from 'async-validator';
 import Checkbox from '../checkbox';
 import type Input from '../input';
 import styles from './style/form-item.scss';
-import {ValueState} from '../enums';
+import {ValueState} from '../types';
 
 interface Rule {
   /** validate from a regular expression */

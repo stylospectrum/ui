@@ -1,0 +1,39 @@
+.stylospectrum-popover-list-item {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  background-color: #1d232a;
+  cursor: pointer;
+
+  &-icon {
+    color: #a9b4be;
+    font-size: 1rem;
+
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.75rem;
+      height: 2rem;
+    }
+  }
+
+  &-text {
+    display: block;
+    overflow: hidden;
+    color: #eaecee;
+    font-weight: 400;
+    font-size: 0.875rem;
+    font-family: 72;
+    font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
+    text-overflow: ellipsis;
+  }
+
+  &:hover {
+    background-color: #222b35;
+  }
+
+  &:active {
+    background-color: #020303;
+  }
+}

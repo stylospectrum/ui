@@ -1,9 +1,9 @@
 import React from 'react';
 import {createComponent} from '@lit/react';
-import FormItem from './form-item';
+import PopoverListItem from '../list-item';
 
 export default createComponent({
-  tagName: 'stylospectrum-form-item',
-  elementClass: FormItem,
+  tagName: 'stylospectrum-popover-list-item',
+  elementClass: PopoverListItem,
   react: React,
 });

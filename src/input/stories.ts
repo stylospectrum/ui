@@ -18,6 +18,7 @@ const Template: UIStoryArgs<Input, StoryArgsProps> = (args) => {
       value-state-message=${ifDefined(args.valueStateMessage)}
       value-state=${ifDefined(args.valueState)}
       ?allow-clear=${args.allowClear}
+      ?show-search=${args.showSearch}
       ?disabled=${args.disabled}
     >
     </stylospectrum-input>
