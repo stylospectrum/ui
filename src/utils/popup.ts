@@ -17,3 +17,18 @@ export const isClickInRect = (e: MouseEvent | TouchEvent, rect: DOMRect) => {
 
   return isPointInRect(x, y, rect);
 };
+
+const getActiveElement = () => {
+  let element = document.activeElement;
+
+  while (element && element.shadowRoot && element.shadowRoot.activeElement) {
+    element = element.shadowRoot.activeElement;
+  }
+
+  return element;
+};
+
+export const getFocusedElement = () => {
+  const element = getActiveElement() as HTMLElement;
+  return element && typeof element.focus === 'function' ? element : null;
+};

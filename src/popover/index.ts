@@ -11,7 +11,8 @@ import {PopoverHorizontalAlign} from '../types';
 import clamp from '../utils/clamp';
 import getParentElement from '../utils/getParentElement';
 import isElementContainingBlock from '../utils/isElementContainingBlock';
-import {isClickInRect} from '../utils/popup';
+import {getFocusedElement, isClickInRect} from '../utils/popup';
+import {getFirstFocusableElement} from '../utils/focusableElements';
 
 type PopupSize = {
   width: number;
@@ -84,6 +85,7 @@ class Popover extends LitElement {
 
   _top?: number;
   _left?: number;
+  _focusedElementBeforeOpen?: HTMLElement | null;
 
   private _isOpenerClicked(e: MouseEvent) {
     const target = e.target as HTMLElement;
@@ -325,8 +327,16 @@ class Popover extends LitElement {
     };
   }
 
+  resetFocus() {
+    if (!this._focusedElementBeforeOpen) {
+      return;
+    }
+
+    this._focusedElementBeforeOpen.focus();
+    this._focusedElementBeforeOpen = null;
+  }
+
   public show() {
-    console.log(this.opened);
     if (this.opened) {
       return;
     }
@@ -367,6 +377,10 @@ class Popover extends LitElement {
 
     this._addOpenedPopover(this);
     this.opened = true;
+    this._focusedElementBeforeOpen = getFocusedElement();
+
+    const ele = getFirstFocusableElement(this);
+    ele?.focus();
 
     Object.assign(this.popup!.style, {
       top: `${top}px`,
@@ -381,6 +395,7 @@ class Popover extends LitElement {
 
     this._removeOpenedPopover(this);
     this.opened = false;
+    this.resetFocus();
 
     Object.assign(this.popup!.style, {
       top: '-10000px',

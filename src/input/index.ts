@@ -184,6 +184,10 @@ class Input extends LitElement {
     }
   }
 
+  public getFocusDomRef() {
+    return this.input;
+  }
+
   override willUpdate(_changedProperties: PropertyValues<this>): void {
     super.willUpdate(_changedProperties);
 
