@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/stylospectrum/ui/compare/v0.0.9...v0.0.10) (2023-12-27)
+
+### Features
+
+- introduce new component: Avatar ([99c3c92](https://github.com/stylospectrum/ui/commit/99c3c928e1aa44d2b9cdc2d84603c146852ff475))
+
 ### [0.0.9](https://github.com/stylospectrum/ui/compare/v0.0.8...v0.0.9) (2023-12-27)
 
 ### Features
