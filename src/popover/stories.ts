@@ -4,8 +4,10 @@ import {createRef, ref} from 'lit/directives/ref.js';
 import type Popover from '.';
 import {UIStoryArgs} from '../storybook-types';
 import '.';
+import './list-item';
 import '../button';
 import '../input';
+import '../icon/data/account';
 
 type StoryArgsProps = {};
 
@@ -24,20 +26,24 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
 
       <stylospectrum-input slot="sub-header" show-search> </stylospectrum-input>
 
-      <div style="padding:1rem">
+      <div>
         <stylospectrum-popover ${ref(popoverRef_1)} header-text="Header">
-          <stylospectrum-button
-            @click=${() => popoverRef_1.value?.show()}
+          <stylospectrum-popover-list-item
             slot="opener"
+            icon="account"
+            @click=${() => popoverRef_1.value?.show()}
           >
-            Open Popover 1
-          </stylospectrum-button>
+            Open Popover
+          </stylospectrum-popover-list-item>
           <div style="padding:1rem">Content</div>
         </stylospectrum-popover>
 
-        <stylospectrum-button @click=${() => popoverRef.value?.hide()}>
-          Close
-        </stylospectrum-button>
+        <stylospectrum-popover-list-item
+          icon="account"
+          @click=${() => popoverRef.value?.hide()}
+        >
+          Close Popover
+        </stylospectrum-popover-list-item>
       </div>
     </stylospectrum-popover>
   `;

@@ -68,7 +68,7 @@
           "name": "Form",
           "declaration": {
             "name": "default",
-            "module": "./form/FormReact"
+            "module": "./form/React/Form"
           }
         },
         {
@@ -76,7 +76,7 @@
           "name": "FormItem",
           "declaration": {
             "name": "default",
-            "module": "./form/FormItemReact"
+            "module": "./form/React/FormItem"
           }
         },
         {
@@ -85,6 +85,14 @@
           "declaration": {
             "name": "default",
             "module": "./link/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Popover",
+          "declaration": {
+            "name": "default",
+            "module": "./popover/React/Popover"
           }
         }
       ]
@@ -166,28 +174,80 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/FormItemReact.ts",
-      "declarations": [],
-      "exports": [
+      "path": "src/checkbox/index.ts",
+      "declarations": [
         {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/form/FormItemReact.ts"
-          }
+          "kind": "class",
+          "description": "",
+          "name": "Checkbox",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.\n<br><br>\n<b>Note:</b> The indeterminate state can be set only programmatically and can’t be achieved by user\ninteraction and the resulting visual state depends on the values of the <code>indeterminate</code>\nand <code>checked</code> properties:\n<ul>\n<li> If the component is checked and indeterminate, it will be displayed as partially checked </li>\n<li> If the component is checked and it is not indeterminate, it will be displayed as checked </li>\n<li> If the component is not checked, it will be displayed as not checked regardless value of the indeterminate attribute</li>\n</ul>",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-checkbox",
+          "customElement": true
         }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/FormReact.ts",
-      "declarations": [],
+      ],
       "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-checkbox",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
+          }
+        },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "module": "src/form/FormReact.ts"
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -290,80 +350,36 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/checkbox/index.ts",
+      "path": "src/dialog/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Checkbox",
+          "name": "Dialog",
           "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<boolean>"
-              },
-              "description": "Fired when the component checked state changes.",
-              "fieldName": "change"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is displayed as partially checked.\n<br><br>\n<b>Note:</b> The indeterminate state can be set only programmatically and can’t be achieved by user\ninteraction and the resulting visual state depends on the values of the <code>indeterminate</code>\nand <code>checked</code> properties:\n<ul>\n<li> If the component is checked and indeterminate, it will be displayed as partially checked </li>\n<li> If the component is checked and it is not indeterminate, it will be displayed as checked </li>\n<li> If the component is not checked, it will be displayed as not checked regardless value of the indeterminate attribute</li>\n</ul>",
-              "fieldName": "indeterminate"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
-              "fieldName": "checked"
-            },
-            {
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the text of the component.",
-              "fieldName": "text"
-            }
-          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-checkbox",
+          "tagName": "stylospectrum-dialog",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-checkbox",
+          "name": "stylospectrum-dialog",
           "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -590,68 +606,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/link/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Link",
-          "members": [],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "href",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component href.",
-              "fieldName": "href"
-            },
-            {
-              "name": "target",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
-              "fieldName": "target"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-link",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-link",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/label/index.ts",
       "declarations": [
         {
@@ -708,6 +662,68 @@
           "declaration": {
             "name": "Label",
             "module": "src/label/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/link/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Link",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component href.",
+              "fieldName": "href"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
+              "fieldName": "target"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-link",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
           }
         }
       ]
@@ -798,6 +814,51 @@
           "declaration": {
             "name": "Popover",
             "module": "src/popover/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/popover/list-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Label",
+          "members": [],
+          "attributes": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "icon"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-popover-list-item",
+          "declaration": {
+            "name": "Label",
+            "module": "src/popover/list-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Label",
+            "module": "src/popover/list-item.ts"
           }
         }
       ]
@@ -1037,6 +1098,56 @@
           "declaration": {
             "name": "default",
             "module": "../link"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "IPopover",
+          "declaration": {
+            "name": "default",
+            "module": "../popover"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/React/Form.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/React/Form.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/React/FormItem.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/form/React/FormItem.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/popover/React/Popover.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/popover/React/Popover.ts"
           }
         }
       ]
