@@ -55,7 +55,8 @@
 
   &-header {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     margin: 0;
     padding: 0 1rem;
     color: #eaecee;
@@ -76,7 +77,6 @@
       font-size: 1rem;
       line-height: 2.5rem;
       white-space: nowrap;
-      text-align: center;
       text-overflow: ellipsis;
     }
   }

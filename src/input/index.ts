@@ -15,6 +15,7 @@ import styles from './style/index.scss';
 import '../icon';
 import '../icon/data/decline';
 import '../icon/data/error';
+import '../icon/data/search';
 
 @customElement('stylospectrum-input')
 class Input extends LitElement {
@@ -84,6 +85,14 @@ class Input extends LitElement {
   allowClear!: boolean;
 
   /**
+   * @type {boolean}
+   * @defaultValue false
+   * @public
+   */
+  @property({type: Boolean, attribute: 'show-search'})
+  showSearch!: boolean;
+
+  /**
    * Defines the HTML type of the component.
    *
    * @type {InputType}
@@ -147,6 +156,11 @@ class Input extends LitElement {
     this.input?.focus();
   }
 
+  private _handleSearchIconClick() {
+    this.focused = true;
+    this.input.focus();
+  }
+
   private _handleInput(e: InputEvent) {
     const value = (e.target as HTMLInputElement).value;
     if (!this.value) {
@@ -190,12 +204,20 @@ class Input extends LitElement {
   override render(): TemplateResult {
     const clearIconNode = this._showClearIcon
       ? html`<span
-          class="stylospectrum-input-clear-icon-wrapper"
+          class="stylospectrum-input-icon-wrapper"
           @click=${this._handleClear}
         >
+          <stylospectrum-icon class="stylospectrum-input-icon" name="decline">
+          </stylospectrum-icon>
+        </span>`
+      : nothing;
+
+    const searchIconNode = this.showSearch
+      ? html`<span class="stylospectrum-input-icon-wrapper">
           <stylospectrum-icon
-            class="stylospectrum-input-clear-icon"
-            name="decline"
+            class="stylospectrum-input-icon"
+            name="search"
+            @click=${this._handleSearchIconClick}
           >
           </stylospectrum-icon>
         </span>`
@@ -230,7 +252,7 @@ class Input extends LitElement {
           class="stylospectrum-input"
           ?disabled=${this.disabled}
         />
-        ${clearIconNode} ${valueStateMessageNode}
+        ${clearIconNode} ${valueStateMessageNode} ${searchIconNode}
       </span>
     `;
   }

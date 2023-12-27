@@ -4,6 +4,8 @@ import {createRef, ref} from 'lit/directives/ref.js';
 import type Popover from '.';
 import {UIStoryArgs} from '../storybook-types';
 import '.';
+import '../button';
+import '../input';
 
 type StoryArgsProps = {};
 
@@ -19,6 +21,8 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
       >
         Open Popover
       </stylospectrum-button>
+
+      <stylospectrum-input slot="sub-header" show-search> </stylospectrum-input>
 
       <div style="padding:1rem">
         <stylospectrum-popover ${ref(popoverRef_1)} header-text="Header">

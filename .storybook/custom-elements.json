@@ -246,107 +246,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/icon/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Icon",
-          "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-icon",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-icon",
-          "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icon/util.ts",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "registerIcon",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "data",
-              "type": {
-                "text": "IconData"
-              }
-            }
-          ],
-          "members": []
-        },
-        {
-          "kind": "function",
-          "name": "getIconData",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "members": []
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "registerIcon",
-          "declaration": {
-            "name": "registerIcon",
-            "module": "src/icon/util.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getIconData",
-          "declaration": {
-            "name": "getIconData",
-            "module": "src/icon/util.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/form/FormItemReact.ts",
       "declarations": [],
       "exports": [
@@ -471,6 +370,107 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icon/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Icon",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-icon",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/util.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "registerIcon",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "IconData"
+              }
+            }
+          ],
+          "members": []
+        },
+        {
+          "kind": "function",
+          "name": "getIconData",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "registerIcon",
+          "declaration": {
+            "name": "registerIcon",
+            "module": "src/icon/util.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getIconData",
+          "declaration": {
+            "name": "getIconData",
+            "module": "src/icon/util.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/label/index.ts",
       "declarations": [
         {
@@ -527,6 +527,68 @@
           "declaration": {
             "name": "Label",
             "module": "src/label/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/link/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Link",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component href.",
+              "fieldName": "href"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
+              "fieldName": "target"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-link",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
           }
         }
       ]
@@ -608,6 +670,13 @@
               "fieldName": "allowClear"
             },
             {
+              "name": "showSearch",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "showSearch"
+            },
+            {
               "name": "type",
               "description": "Defines the HTML type of the component.",
               "type": {
@@ -639,68 +708,6 @@
           "declaration": {
             "name": "Input",
             "module": "src/input/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/link/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Link",
-          "members": [],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "href",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component href.",
-              "fieldName": "href"
-            },
-            {
-              "name": "target",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
-              "fieldName": "target"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-link",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-link",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
           }
         }
       ]
