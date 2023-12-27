@@ -246,6 +246,107 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icon/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Icon",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-icon",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/util.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "registerIcon",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "IconData"
+              }
+            }
+          ],
+          "members": []
+        },
+        {
+          "kind": "function",
+          "name": "getIconData",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "registerIcon",
+          "declaration": {
+            "name": "registerIcon",
+            "module": "src/icon/util.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getIconData",
+          "declaration": {
+            "name": "getIconData",
+            "module": "src/icon/util.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/form/FormItemReact.ts",
       "declarations": [],
       "exports": [
@@ -370,101 +471,62 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/icon/index.ts",
+      "path": "src/label/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Icon",
+          "name": "Label",
           "members": [],
           "attributes": [
             {
-              "name": "name",
+              "name": "for",
               "type": {
                 "text": "string"
               },
-              "fieldName": "name"
+              "description": "Defines the labeled input by providing its ID.",
+              "fieldName": "for"
+            },
+            {
+              "name": "showColon",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether colon is added to the component text.",
+              "fieldName": "showColon"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
+              "fieldName": "required"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-icon",
+          "tagName": "stylospectrum-label",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-icon",
+          "name": "stylospectrum-label",
           "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
+            "name": "Label",
+            "module": "src/label/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icon/util.ts",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "registerIcon",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "data",
-              "type": {
-                "text": "IconData"
-              }
-            }
-          ],
-          "members": []
-        },
-        {
-          "kind": "function",
-          "name": "getIconData",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "members": []
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "registerIcon",
-          "declaration": {
-            "name": "registerIcon",
-            "module": "src/icon/util.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getIconData",
-          "declaration": {
-            "name": "getIconData",
-            "module": "src/icon/util.ts"
+            "name": "Label",
+            "module": "src/label/index.ts"
           }
         }
       ]
@@ -583,68 +645,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/label/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Label",
-          "members": [],
-          "attributes": [
-            {
-              "name": "for",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the labeled input by providing its ID.",
-              "fieldName": "for"
-            },
-            {
-              "name": "showColon",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether colon is added to the component text.",
-              "fieldName": "showColon"
-            },
-            {
-              "name": "required",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
-              "fieldName": "required"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-label",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-label",
-          "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/link/index.ts",
       "declarations": [
         {
@@ -743,6 +743,60 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/popover/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Popover",
+          "members": [],
+          "attributes": [
+            {
+              "name": "headerText",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the header text.",
+              "fieldName": "headerText"
+            },
+            {
+              "name": "horizontalAlign",
+              "description": "Determines the horizontal alignment of the component.",
+              "type": {
+                "text": "PopoverHorizontalAlign"
+              },
+              "fieldName": "horizontalAlign"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-popover",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-popover",
+          "declaration": {
+            "name": "Popover",
+            "module": "src/popover/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Popover",
+            "module": "src/popover/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/toast/index.ts",
       "declarations": [
         {
@@ -780,9 +834,124 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/types/ButtonDesign.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ButtonDesign",
+            "module": "src/types/ButtonDesign.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/ButtonType.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ButtonType",
+            "module": "src/types/ButtonType.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/InputType.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "InputType",
+            "module": "src/types/InputType.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/PopoverHorizontalAlign.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "PopoverHorizontalAlign",
+            "module": "src/types/PopoverHorizontalAlign.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/ValueState.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "ValueState",
+            "module": "src/types/ValueState.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/types/index.ts",
       "declarations": [],
       "exports": [
+        {
+          "kind": "js",
+          "name": "ButtonDesign",
+          "declaration": {
+            "name": "default",
+            "module": "./ButtonDesign"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ButtonType",
+          "declaration": {
+            "name": "default",
+            "module": "./ButtonType"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "InputType",
+          "declaration": {
+            "name": "default",
+            "module": "./InputType"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ValueState",
+          "declaration": {
+            "name": "default",
+            "module": "./ValueState"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "PopoverHorizontalAlign",
+          "declaration": {
+            "name": "default",
+            "module": "./PopoverHorizontalAlign"
+          }
+        },
         {
           "kind": "js",
           "name": "IButton",
