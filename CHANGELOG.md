@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/stylospectrum/ui/compare/v0.0.8...v0.0.9) (2023-12-27)
+
+### Features
+
+- **Input:** add search icon ([5923e56](https://github.com/stylospectrum/ui/commit/5923e564c9c1a8918e717cc1ff2770776bcae550))
+- introduce new component: Popover ([a7d1e50](https://github.com/stylospectrum/ui/commit/a7d1e50748484edf552e5a968c130b2406c54578))
+- introduce new component: PopoverListItem ([b6e67d0](https://github.com/stylospectrum/ui/commit/b6e67d0621c87718847d6d215825eeda28d56c16))
+- **Popover:** support focus ([217dbca](https://github.com/stylospectrum/ui/commit/217dbca31407ec38eb41d3c756d4b88f9767ac50))
+
 ### [0.0.8](https://github.com/stylospectrum/ui/compare/v0.0.7...v0.0.8) (2023-12-21)
 
 ### Bug Fixes
