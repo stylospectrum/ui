@@ -1,9 +1,15 @@
-.stylospectrum-popover-list-item {
+.stylospectrum-list-item {
   display: flex;
   align-items: center;
   height: 2rem;
   background-color: #1d232a;
+  border-bottom: 1px solid transparent;
   cursor: pointer;
+
+  &-selected {
+    border-bottom-color: #4db1ff;
+    background: #1d2d3e;
+  }
 
   &-icon {
     color: #a9b4be;

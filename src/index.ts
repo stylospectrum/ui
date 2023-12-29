@@ -8,5 +8,6 @@ export {default as MessageStrip} from './message-strip/React';
 export {default as Form} from './form/React/Form';
 export {default as FormItem} from './form/React/FormItem';
 export {default as Link} from './link/React';
-export {default as Popover} from './popover/React/Popover';
-export {default as PopoverListItem} from './popover/React/LIstItem';
+export {default as Popover} from './popover/React';
+export {default as List} from './list/React/List';
+export {default as ListItem} from './list/React/ListItem';
