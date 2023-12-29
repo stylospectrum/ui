@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.12](https://github.com/stylospectrum/ui/compare/v0.0.11...v0.0.12) (2023-12-29)
+
+### Features
+
+- introduce new component: List ([c3ff984](https://github.com/stylospectrum/ui/commit/c3ff984dcff3886deda61d46e1ffa2541424a562))
+
 ### [0.0.11](https://github.com/stylospectrum/ui/compare/v0.0.10...v0.0.11) (2023-12-29)
 
 ### Features
