@@ -14,3 +14,5 @@ export type {default as IForm} from '../form';
 export type {default as IFormItem} from '../form';
 export type {default as ILink} from '../link';
 export type {default as IPopover} from '../popover';
+export type {default as IList} from '../list';
+export type {default as IListItem} from '../list/list-item';

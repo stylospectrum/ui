@@ -92,15 +92,15 @@
           "name": "Popover",
           "declaration": {
             "name": "default",
-            "module": "./popover/React/Popover"
+            "module": "./popover/React"
           }
         },
         {
           "kind": "js",
-          "name": "PopoverListItem",
+          "name": "ListItem",
           "declaration": {
             "name": "default",
-            "module": "./popover/React/LIstItem"
+            "module": "./list/React"
           }
         }
       ]
@@ -126,7 +126,7 @@
               "type": {
                 "text": "boolean"
               },
-              "description": "Defines if the avatar is interactive (focusable and pressable).",
+              "description": "Defines if the avatar is interactive (focusable).",
               "fieldName": "interactive"
             },
             {
@@ -230,86 +230,6 @@
           "declaration": {
             "name": "Button",
             "module": "src/button/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/checkbox/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Checkbox",
-          "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<boolean>"
-              },
-              "description": "Fired when the component checked state changes.",
-              "fieldName": "change"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is displayed as partially checked.",
-              "fieldName": "indeterminate"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
-              "fieldName": "checked"
-            },
-            {
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the text of the component.",
-              "fieldName": "text"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-checkbox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-checkbox",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -513,62 +433,80 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/label/index.ts",
+      "path": "src/checkbox/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Label",
+          "name": "Checkbox",
           "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
           "attributes": [
             {
-              "name": "for",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
               "type": {
                 "text": "string"
               },
-              "description": "Defines the labeled input by providing its ID.",
-              "fieldName": "for"
-            },
-            {
-              "name": "showColon",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether colon is added to the component text.",
-              "fieldName": "showColon"
-            },
-            {
-              "name": "required",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
-              "fieldName": "required"
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-label",
+          "tagName": "stylospectrum-checkbox",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-label",
+          "name": "stylospectrum-checkbox",
           "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -694,6 +632,68 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/label/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Label",
+          "members": [],
+          "attributes": [
+            {
+              "name": "for",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the labeled input by providing its ID.",
+              "fieldName": "for"
+            },
+            {
+              "name": "showColon",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether colon is added to the component text.",
+              "fieldName": "showColon"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
+              "fieldName": "required"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/link/index.ts",
       "declarations": [
         {
@@ -792,6 +792,87 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/list/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PopoverListItem",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-list",
+          "declaration": {
+            "name": "PopoverListItem",
+            "module": "src/list/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "PopoverListItem",
+            "module": "src/list/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/list/list-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "PopoverListItem",
+          "members": [],
+          "attributes": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "icon"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-list-item",
+          "declaration": {
+            "name": "PopoverListItem",
+            "module": "src/list/list-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "PopoverListItem",
+            "module": "src/list/list-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/popover/index.ts",
       "declarations": [
         {
@@ -840,51 +921,6 @@
           "declaration": {
             "name": "Popover",
             "module": "src/popover/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/popover/list-item.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "PopoverListItem",
-          "members": [],
-          "attributes": [
-            {
-              "name": "icon",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "icon"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-popover-list-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-popover-list-item",
-          "declaration": {
-            "name": "PopoverListItem",
-            "module": "src/popover/list-item.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "PopoverListItem",
-            "module": "src/popover/list-item.ts"
           }
         }
       ]
@@ -1160,34 +1196,6 @@
           "name": "default",
           "declaration": {
             "module": "src/form/React/FormItem.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/popover/React/LIstItem.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/popover/React/LIstItem.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/popover/React/Popover.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/popover/React/Popover.ts"
           }
         }
       ]
