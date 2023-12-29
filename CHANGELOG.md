@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/stylospectrum/ui/compare/v0.0.10...v0.0.11) (2023-12-29)
+
+### Features
+
+- **Popover:** hide header when headerText prop is not passed ([5e05183](https://github.com/stylospectrum/ui/commit/5e05183271a1ce70b67a107ae9621e5ae6e2cb54))
+
 ### [0.0.10](https://github.com/stylospectrum/ui/compare/v0.0.9...v0.0.10) (2023-12-27)
 
 ### Features
