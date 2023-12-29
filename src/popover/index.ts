@@ -1,4 +1,4 @@
-import {LitElement, html, css, unsafeCSS} from 'lit';
+import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
 import {
   customElement,
   property,
@@ -404,6 +404,13 @@ class Popover extends LitElement {
   }
 
   override render() {
+    const headerNode = this.headerText
+      ? html`<header class="stylospectrum-popover-header" part="header">
+          <h1 class="stylospectrum-popover-header-text">${this.headerText}</h1>
+          <slot name="sub-header"></slot>
+        </header>`
+      : nothing;
+
     return html`
       <slot name="opener"></slot>
 
@@ -416,12 +423,7 @@ class Popover extends LitElement {
           >
           </span>
 
-          <header class="stylospectrum-popover-header" part="header">
-            <h1 class="stylospectrum-popover-header-text">
-              ${this.headerText}
-            </h1>
-            <slot name="sub-header"></slot>
-          </header>
+          ${headerNode}
 
           <div part="content" class="stylospectrum-popover-content">
             <slot></slot>
