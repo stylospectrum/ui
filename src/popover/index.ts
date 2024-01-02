@@ -68,6 +68,14 @@ class Popover extends LitElement {
   @property({type: String, attribute: 'horizontal-align'})
   horizontalAlign = PopoverHorizontalAlign.Center;
 
+  /**
+   * @type {number}
+   * @defaultValue 0
+   * @private
+   */
+  @property({type: Number, attribute: 'offset-x'})
+  offsetX = 0;
+
   @state()
   arrowTranslateX = 0;
 
@@ -229,7 +237,7 @@ class Popover extends LitElement {
         left = targetRect.left - (popoverSize.width - targetRect.width) / 2;
         break;
       case PopoverHorizontalAlign.Right:
-        left = targetRect.right - popoverSize.width;
+        left = targetRect.right - popoverSize.width + this.offsetX;
         break;
     }
 
