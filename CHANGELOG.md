@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.14](https://github.com/stylospectrum/ui/compare/v0.0.13...v0.0.14) (2024-01-02)
+
+### Features
+
+- **Button:** support icon slot ([cece8be](https://github.com/stylospectrum/ui/commit/cece8be9ecdf1897934da60b7e8482eff6fb34ea))
+
 ### [0.0.13](https://github.com/stylospectrum/ui/compare/v0.0.12...v0.0.13) (2024-01-02)
 
 ### Features
