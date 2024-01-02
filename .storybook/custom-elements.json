@@ -640,68 +640,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/link/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Link",
-          "members": [],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "href",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component href.",
-              "fieldName": "href"
-            },
-            {
-              "name": "target",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
-              "fieldName": "target"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-link",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-link",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/label/index.ts",
       "declarations": [
         {
@@ -758,6 +696,68 @@
           "declaration": {
             "name": "Label",
             "module": "src/label/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/link/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Link",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component href.",
+              "fieldName": "href"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
+              "fieldName": "target"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-link",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
           }
         }
       ]
@@ -959,6 +959,43 @@
           "declaration": {
             "name": "Popover",
             "module": "src/popover/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Toast",
+          "members": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
           }
         }
       ]
@@ -1185,43 +1222,6 @@
           "declaration": {
             "name": "default",
             "module": "../list/list-item"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/toast/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Toast",
-          "members": [],
-          "attributes": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-toast",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
           }
         }
       ]

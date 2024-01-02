@@ -58,11 +58,24 @@ class Button extends LitElement {
   @property({type: Boolean, reflect: true})
   focused!: boolean;
 
+  /**
+   * @private
+   */
+  @property({type: Boolean, attribute: 'disable-internal-focus', reflect: true})
+  disableInternalFocus!: boolean;
+
   handleFocusIn() {
+    if (this.disableInternalFocus) {
+      return;
+    }
     this.focused = true;
   }
 
   handleFocusOut() {
+    if (this.disableInternalFocus) {
+      return;
+    }
+
     this.focused = false;
   }
 
@@ -73,7 +86,7 @@ class Button extends LitElement {
           name=${this.icon}
         >
         </stylospectrum-icon>`
-      : nothing;
+      : html`<slot name="icon"></slot>`;
 
     const textNode = this.icon
       ? nothing
@@ -95,7 +108,7 @@ class Button extends LitElement {
         @focusout=${this.handleFocusOut}
         @focusin=${this.handleFocusIn}
       >
-        ${iconNode} ${textNode}
+        ${textNode} ${iconNode}
       </button>
     `;
   }
