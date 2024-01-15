@@ -175,6 +175,75 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/button/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Button",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\nA disabled component can't be pressed or\nfocused, and it is not in the tab chain.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the icon, displayed as graphical element within the component.",
+              "fieldName": "icon"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "ButtonDesign"
+              },
+              "fieldName": "type"
+            },
+            {
+              "name": "htmlType",
+              "description": "Defines whether the button has special form-related functionality.",
+              "type": {
+                "text": "ButtonType"
+              },
+              "fieldName": "htmlType"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-button",
+          "declaration": {
+            "name": "Button",
+            "module": "src/button/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Button",
+            "module": "src/button/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/checkbox/index.ts",
       "declarations": [
         {
@@ -356,75 +425,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/button/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Button",
-          "members": [],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.\nA disabled component can't be pressed or\nfocused, and it is not in the tab chain.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "icon",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the icon, displayed as graphical element within the component.",
-              "fieldName": "icon"
-            },
-            {
-              "name": "type",
-              "type": {
-                "text": "ButtonDesign"
-              },
-              "fieldName": "type"
-            },
-            {
-              "name": "htmlType",
-              "description": "Defines whether the button has special form-related functionality.",
-              "type": {
-                "text": "ButtonType"
-              },
-              "fieldName": "htmlType"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-button",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-button",
-          "declaration": {
-            "name": "Button",
-            "module": "src/button/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Button",
-            "module": "src/button/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/form/form-item.ts",
       "declarations": [
         {
@@ -515,6 +515,98 @@
           "declaration": {
             "name": "Form",
             "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/BlockLayer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DialogBlockLayer",
+          "members": [],
+          "attributes": [
+            {
+              "name": "blockLayerHidden",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "blockLayerHidden"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog-block-layer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog-block-layer",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Dialog",
+          "members": [],
+          "attributes": [
+            {
+              "name": "headerText",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the header text.",
+              "default": "\"\"",
+              "fieldName": "headerText"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -640,68 +732,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/link/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Link",
-          "members": [],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "href",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component href.",
-              "fieldName": "href"
-            },
-            {
-              "name": "target",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
-              "fieldName": "target"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-link",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-link",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/label/index.ts",
       "declarations": [
         {
@@ -758,6 +788,68 @@
           "declaration": {
             "name": "Label",
             "module": "src/label/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/link/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Link",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component href.",
+              "fieldName": "href"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
+              "fieldName": "target"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-link",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
           }
         }
       ]
