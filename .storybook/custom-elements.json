@@ -36,7 +36,7 @@
           "name": "Label",
           "declaration": {
             "name": "default",
-            "module": "./label/React"
+            "module": "./tooltip/React"
           }
         },
         {
@@ -105,6 +105,22 @@
         },
         {
           "kind": "js",
+          "name": "Textarea",
+          "declaration": {
+            "name": "default",
+            "module": "./textarea/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Dialog",
+          "declaration": {
+            "name": "default",
+            "module": "./dialog/React"
+          }
+        },
+        {
+          "kind": "js",
           "name": "ListItem",
           "declaration": {
             "name": "default",
@@ -169,6 +185,89 @@
           "declaration": {
             "name": "Avatar",
             "module": "src/avatar/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Button",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\nA disabled component can't be pressed or\nfocused, and it is not in the tab chain.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the icon, displayed as graphical element within the component.",
+              "fieldName": "icon"
+            },
+            {
+              "name": "tooltip",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "tooltip"
+            },
+            {
+              "name": "tooltipPlacement",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "tooltipPlacement"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "ButtonDesign"
+              },
+              "fieldName": "type"
+            },
+            {
+              "name": "htmlType",
+              "description": "Defines whether the button has special form-related functionality.",
+              "type": {
+                "text": "ButtonType"
+              },
+              "fieldName": "htmlType"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-button",
+          "declaration": {
+            "name": "Button",
+            "module": "src/button/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Button",
+            "module": "src/button/index.ts"
           }
         }
       ]
@@ -255,165 +354,83 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/form-item.ts",
+      "path": "src/dialog/BlockLayer.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "FormItem",
+          "name": "DialogBlockLayer",
           "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "label"
-            },
-            {
-              "name": "rules",
-              "type": {
-                "text": "Array<Rule>"
-              },
-              "default": "[]",
-              "fieldName": "rules"
-            }
-          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-form-item",
+          "tagName": "stylospectrum-dialog-block-layer",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-form-item",
+          "name": "stylospectrum-dialog-block-layer",
           "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/index.ts",
+      "path": "src/dialog/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Form",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/button/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Button",
+          "name": "Dialog",
           "members": [],
           "attributes": [
             {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.\nA disabled component can't be pressed or\nfocused, and it is not in the tab chain.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "icon",
+              "name": "headerText",
               "type": {
                 "text": "string"
               },
-              "description": "Defines the icon, displayed as graphical element within the component.",
-              "fieldName": "icon"
-            },
-            {
-              "name": "type",
-              "type": {
-                "text": "ButtonDesign"
-              },
-              "fieldName": "type"
-            },
-            {
-              "name": "htmlType",
-              "description": "Defines whether the button has special form-related functionality.",
-              "type": {
-                "text": "ButtonType"
-              },
-              "fieldName": "htmlType"
+              "description": "Defines the header text.",
+              "default": "\"\"",
+              "fieldName": "headerText"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-button",
+          "tagName": "stylospectrum-dialog",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-button",
+          "name": "stylospectrum-dialog",
           "declaration": {
-            "name": "Button",
-            "module": "src/button/index.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Button",
-            "module": "src/button/index.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -521,83 +538,158 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/dialog/BlockLayer.ts",
+      "path": "src/form/form-item.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "DialogBlockLayer",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog-block-layer",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog-block-layer",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/dialog/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Dialog",
+          "name": "FormItem",
           "members": [],
           "attributes": [
             {
-              "name": "headerText",
+              "name": "name",
               "type": {
                 "text": "string"
               },
-              "description": "Defines the header text.",
-              "default": "\"\"",
-              "fieldName": "headerText"
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "rules",
+              "type": {
+                "text": "Array<Rule>"
+              },
+              "default": "[]",
+              "fieldName": "rules"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-dialog",
+          "tagName": "stylospectrum-form-item",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog",
+          "name": "stylospectrum-form-item",
           "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Form",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/label/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Label",
+          "members": [],
+          "attributes": [
+            {
+              "name": "for",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the labeled input by providing its ID.",
+              "fieldName": "for"
+            },
+            {
+              "name": "showColon",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether colon is added to the component text.",
+              "fieldName": "showColon"
+            },
+            {
+              "name": "required",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
+              "fieldName": "required"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-label",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Label",
+            "module": "src/label/index.ts"
           }
         }
       ]
@@ -717,68 +809,6 @@
           "declaration": {
             "name": "Input",
             "module": "src/input/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/label/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Label",
-          "members": [],
-          "attributes": [
-            {
-              "name": "for",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the labeled input by providing its ID.",
-              "fieldName": "for"
-            },
-            {
-              "name": "showColon",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether colon is added to the component text.",
-              "fieldName": "showColon"
-            },
-            {
-              "name": "required",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
-              "fieldName": "required"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-label",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-label",
-          "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
           }
         }
       ]
@@ -1184,6 +1214,58 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/tooltip/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Tooltip",
+          "members": [],
+          "attributes": [
+            {
+              "name": "openerRect",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "openerRect"
+            },
+            {
+              "name": "placement",
+              "type": {
+                "text": "TooltipPlacement"
+              },
+              "fieldName": "placement"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-tooltip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-tooltip",
+          "declaration": {
+            "name": "Tooltip",
+            "module": "src/tooltip/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Tooltip",
+            "module": "src/tooltip/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/types/ButtonDesign.ts",
       "declarations": [],
       "exports": [
@@ -1238,6 +1320,21 @@
           "declaration": {
             "name": "PopoverHorizontalAlign",
             "module": "src/types/PopoverHorizontalAlign.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/types/TooltipPlacement.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "TooltipPlacement",
+            "module": "src/types/TooltipPlacement.ts"
           }
         }
       ]
@@ -1304,6 +1401,14 @@
         },
         {
           "kind": "js",
+          "name": "TooltipPlacement",
+          "declaration": {
+            "name": "default",
+            "module": "./TooltipPlacement"
+          }
+        },
+        {
+          "kind": "js",
           "name": "IButton",
           "declaration": {
             "name": "default",
@@ -1331,7 +1436,7 @@
           "name": "ILabel",
           "declaration": {
             "name": "default",
-            "module": "../label"
+            "module": "../tooltip"
           }
         },
         {

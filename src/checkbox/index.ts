@@ -5,7 +5,7 @@ import styles from './style/index.scss';
 import {EventEmitter, event} from '../utils';
 import {isEnter, isSpace} from '../utils/Keys';
 import '../icon';
-import '../label';
+import '../tooltip';
 import '../icon/data/accept';
 
 @customElement('stylospectrum-checkbox')

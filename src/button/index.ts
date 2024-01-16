@@ -1,9 +1,10 @@
-import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
+import {LitElement, html, css, unsafeCSS, nothing, render} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {classMap} from 'lit/directives/class-map.js';
-import {ButtonDesign, ButtonType} from '../types';
+import {ButtonDesign, ButtonType, TooltipPlacement} from '../types';
 import styles from './style/index.scss';
 import '../icon';
+import '../tooltip';
 
 @customElement('stylospectrum-button')
 class Button extends LitElement {
@@ -34,6 +35,22 @@ class Button extends LitElement {
   icon!: string;
 
   /**
+   * @type {string}
+   * @defaultValue ""
+   * @public
+   */
+  @property()
+  tooltip!: string;
+
+  /**
+   * @type {string}
+   * @defaultValue ""
+   * @public
+   */
+  @property({type: String})
+  tooltipPlacement!: TooltipPlacement;
+
+  /**
    * @type {ButtonDesign}
    * @defaultValue "Primary"
    * @public
@@ -58,12 +75,33 @@ class Button extends LitElement {
   @property({type: Boolean, reflect: true})
   focused!: boolean;
 
+  tooltipTemplate(hovered = false) {
+    if (!this.tooltip || !hovered) {
+      return nothing;
+    }
+
+    return html`<stylospectrum-tooltip
+      openerRect=${JSON.stringify(this.getBoundingClientRect())}
+      placement=${this.tooltipPlacement}
+    >
+      ${this.tooltip}
+    </stylospectrum-tooltip>`;
+  }
+
   handleFocusIn() {
     this.focused = true;
   }
 
   handleFocusOut() {
     this.focused = false;
+  }
+
+  handleMouseOver() {
+    render(this.tooltipTemplate(true), document.body);
+  }
+
+  handleMouseLeave() {
+    render(this.tooltipTemplate(), document.body);
   }
 
   override render() {
@@ -94,6 +132,8 @@ class Button extends LitElement {
         class=${classMap(classes)}
         @focusout=${this.handleFocusOut}
         @focusin=${this.handleFocusIn}
+        @mouseover=${this.handleMouseOver}
+        @mouseleave=${this.handleMouseLeave}
       >
         ${textNode} ${iconNode}
       </button>
