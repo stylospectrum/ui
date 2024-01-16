@@ -175,75 +175,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/button/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Button",
-          "members": [],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.\nA disabled component can't be pressed or\nfocused, and it is not in the tab chain.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "icon",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the icon, displayed as graphical element within the component.",
-              "fieldName": "icon"
-            },
-            {
-              "name": "type",
-              "type": {
-                "text": "ButtonDesign"
-              },
-              "fieldName": "type"
-            },
-            {
-              "name": "htmlType",
-              "description": "Defines whether the button has special form-related functionality.",
-              "type": {
-                "text": "ButtonType"
-              },
-              "fieldName": "htmlType"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-button",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-button",
-          "declaration": {
-            "name": "Button",
-            "module": "src/button/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Button",
-            "module": "src/button/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/checkbox/index.ts",
       "declarations": [
         {
@@ -318,6 +249,171 @@
           "declaration": {
             "name": "Checkbox",
             "module": "src/checkbox/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/form-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FormItem",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "rules",
+              "type": {
+                "text": "Array<Rule>"
+              },
+              "default": "[]",
+              "fieldName": "rules"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form-item",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Form",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/button/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Button",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\nA disabled component can't be pressed or\nfocused, and it is not in the tab chain.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the icon, displayed as graphical element within the component.",
+              "fieldName": "icon"
+            },
+            {
+              "name": "type",
+              "type": {
+                "text": "ButtonDesign"
+              },
+              "fieldName": "type"
+            },
+            {
+              "name": "htmlType",
+              "description": "Defines whether the button has special form-related functionality.",
+              "type": {
+                "text": "ButtonType"
+              },
+              "fieldName": "htmlType"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-button",
+          "declaration": {
+            "name": "Button",
+            "module": "src/button/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Button",
+            "module": "src/button/index.ts"
           }
         }
       ]
@@ -425,96 +521,83 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/form-item.ts",
+      "path": "src/dialog/BlockLayer.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "FormItem",
+          "name": "DialogBlockLayer",
           "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "label"
-            },
-            {
-              "name": "rules",
-              "type": {
-                "text": "Array<Rule>"
-              },
-              "default": "[]",
-              "fieldName": "rules"
-            }
-          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-form-item",
+          "tagName": "stylospectrum-dialog-block-layer",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-form-item",
+          "name": "stylospectrum-dialog-block-layer",
           "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/index.ts",
+      "path": "src/dialog/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Form",
+          "name": "Dialog",
           "members": [],
+          "attributes": [
+            {
+              "name": "headerText",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the header text.",
+              "default": "\"\"",
+              "fieldName": "headerText"
+            }
+          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-form",
+          "tagName": "stylospectrum-dialog",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-form",
+          "name": "stylospectrum-dialog",
           "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -959,6 +1042,105 @@
           "declaration": {
             "name": "Popover",
             "module": "src/popover/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/textarea/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Textarea",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<string>"
+              },
+              "description": "Fired when the value of the component changes at each keystroke.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Indicates whether the user can interact with the component or not.",
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Defines a short hint intended to aid the user with data entry when the component has no value.",
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the value of the component.",
+              "fieldName": "value"
+            },
+            {
+              "name": "valueState",
+              "description": "Defines the value state of the component.",
+              "type": {
+                "text": "ValueState"
+              },
+              "fieldName": "valueState"
+            },
+            {
+              "name": "valueStateMessage",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the value state message that will be displayed as pop up under the component.",
+              "fieldName": "valueStateMessage"
+            },
+            {
+              "name": "growing",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Enables the component to automatically grow and shrink dynamically with its content.",
+              "default": "false",
+              "fieldName": "growing"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-textarea",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-textarea",
+          "declaration": {
+            "name": "Textarea",
+            "module": "src/textarea/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Textarea",
+            "module": "src/textarea/index.ts"
           }
         }
       ]

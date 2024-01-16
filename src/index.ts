@@ -10,4 +10,6 @@ export {default as FormItem} from './form/React/FormItem';
 export {default as Link} from './link/React';
 export {default as Popover} from './popover/React';
 export {default as List} from './list/React/List';
+export {default as Textarea} from './textarea/React';
+export {default as Dialog} from './dialog/React';
 export {default as ListItem} from './list/React/ListItem';

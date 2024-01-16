@@ -58,24 +58,11 @@ class Button extends LitElement {
   @property({type: Boolean, reflect: true})
   focused!: boolean;
 
-  /**
-   * @private
-   */
-  @property({type: Boolean, attribute: 'disable-internal-focus', reflect: true})
-  disableInternalFocus!: boolean;
-
   handleFocusIn() {
-    if (this.disableInternalFocus) {
-      return;
-    }
     this.focused = true;
   }
 
   handleFocusOut() {
-    if (this.disableInternalFocus) {
-      return;
-    }
-
     this.focused = false;
   }
 

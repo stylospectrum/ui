@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/stylospectrum/ui/compare/v0.0.14...v0.0.15) (2024-01-16)
+
+### Features
+
+- introduce new component: Dialog ([a592ee0](https://github.com/stylospectrum/ui/commit/a592ee0f53aadb3b05c28ac11dd644722dd63546))
+- introduce new component: Textarea ([5050755](https://github.com/stylospectrum/ui/commit/5050755da0f3593a18da67eb00af2ba075602b23))
+
 ### [0.0.14](https://github.com/stylospectrum/ui/compare/v0.0.13...v0.0.14) (2024-01-02)
 
 ### Features
