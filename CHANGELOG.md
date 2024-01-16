@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.16](https://github.com/stylospectrum/ui/compare/v0.0.15...v0.0.16) (2024-01-16)
+
+### Features
+
+- introduce new component: Tooltip ([5edc97b](https://github.com/stylospectrum/ui/commit/5edc97b059a898bbc794fe32c25a0f50bef2cbf0))
+
 ### [0.0.15](https://github.com/stylospectrum/ui/compare/v0.0.14...v0.0.15) (2024-01-16)
 
 ### Features

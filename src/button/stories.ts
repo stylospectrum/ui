@@ -31,6 +31,8 @@ const Template: UIStoryArgs<Button, StoryArgsProps> = (args) => {
       ?disabled=${args.disabled}
       type=${ifDefined(args.type)}
       icon=${ifDefined(iconName)}
+      tooltip=${ifDefined(args.tooltip)}
+      tooltipPlacement=${ifDefined(args.tooltipPlacement)}
       html-type=${ifDefined(args.htmlType)}
       @click=${handleClick}
     >
@@ -51,6 +53,10 @@ export default {
     htmlType: {
       control: 'select',
       options: ['Button', 'Submit', 'Reset'],
+    },
+    tooltipPlacement: {
+      control: 'select',
+      options: ['Top', 'Bottom'],
     },
   },
 } as Meta<Button>;
