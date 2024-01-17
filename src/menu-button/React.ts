@@ -6,4 +6,8 @@ export default createComponent({
   tagName: 'stylospectrum-menu-button',
   elementClass: MenuButton,
   react: React,
+  events: {
+    onButtonClick: 'button-click',
+    onArrowClick: 'arrow-click',
+  },
 });

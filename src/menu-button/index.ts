@@ -16,7 +16,7 @@ class MenuButton extends LitElement {
    * @public
    */
   @event({name: 'arrow-click'})
-  arrowClickEvent!: EventEmitter<void>;
+  arrowClickEvent!: EventEmitter<HTMLElement>;
 
   /**
    * @event
@@ -40,7 +40,7 @@ class MenuButton extends LitElement {
             type="Secondary"
             class="stylospectrum-menu-button-arrow"
             icon="navigation-down-arrow"
-            @click=${() => this.arrowClickEvent.emit()}
+            @click=${() => this.arrowClickEvent.emit(this)}
           >
           </stylospectrum-button>
         </div>

@@ -100,17 +100,18 @@ class Popover extends LitElement {
   @query('.stylospectrum-popover-wrapper')
   popup?: HTMLElement;
 
+  _openerFromOutside?: HTMLElement;
   _top?: number;
   _left?: number;
   _focusedElementBeforeOpen?: HTMLElement | null;
 
   private _isOpenerClicked(e: MouseEvent) {
     const target = e.target as HTMLElement;
-    if (target === this.opener?.[0]) {
+    if (target === this.mergedOpener) {
       return true;
     }
 
-    return e.composedPath().indexOf(this.opener?.[0] as EventTarget) > -1;
+    return e.composedPath().indexOf(this.mergedOpener as EventTarget) > -1;
   }
 
   private _clickHandler = (event: MouseEvent) => {
@@ -305,7 +306,7 @@ class Popover extends LitElement {
   ): CalculatedPlacement {
     const clientWidth = document.documentElement.clientWidth;
     const isVertical = true;
-    const arrowOffset = ARROW_SIZE;
+    const arrowOffset = this.hideArrow ? 0 : ARROW_SIZE;
 
     let left = this._getVerticalLeft(targetRect, popoverSize);
     const top = targetRect.bottom + arrowOffset;
@@ -353,13 +354,22 @@ class Popover extends LitElement {
     this._focusedElementBeforeOpen = null;
   }
 
+  get mergedOpener() {
+    return this.opener?.[0] || this._openerFromOutside;
+  }
+
+  public showAt(opener: HTMLElement) {
+    this._openerFromOutside = opener;
+    this.show();
+  }
+
   public show() {
     if (this.opened) {
       return;
     }
 
     const popupSize = this._getPopupSize();
-    const openerRect = this.opener?.[0].getBoundingClientRect();
+    const openerRect = this.mergedOpener!.getBoundingClientRect();
 
     if (popupSize.width === 0 || popupSize.height === 0) {
       return;
