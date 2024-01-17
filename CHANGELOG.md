@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.18](https://github.com/stylospectrum/ui/compare/v0.0.17...v0.0.18) (2024-01-17)
+
+### Features
+
+- **Popover:** add PopoverHorizontalAlign.Left ([ff47a50](https://github.com/stylospectrum/ui/commit/ff47a502891c1f3fc402aa8d4b3f5306c9b381e2))
+
 ### [0.0.17](https://github.com/stylospectrum/ui/compare/v0.0.16...v0.0.17) (2024-01-17)
 
 ### Features
