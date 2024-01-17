@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/stylospectrum/ui/compare/v0.0.19...v0.0.20) (2024-01-17)
+
+### Bug Fixes
+
+- **Button:** hide dialog block layer when hovering ([c4ead08](https://github.com/stylospectrum/ui/commit/c4ead080a02005970bf5821e2b75c2ecf3b3b5d4))
+
 ### [0.0.19](https://github.com/stylospectrum/ui/compare/v0.0.18...v0.0.19) (2024-01-17)
 
 ### [0.0.18](https://github.com/stylospectrum/ui/compare/v0.0.17...v0.0.18) (2024-01-17)
