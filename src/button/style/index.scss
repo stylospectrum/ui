@@ -85,8 +85,17 @@
   content: '';
 }
 
+:host([circle][focused]:not(:active)) .stylospectrum-button::after {
+  border-radius: 50%;
+}
+
 :host([type='Primary'][focused]) .stylospectrum-button::after {
   border-color: #000;
+}
+
+:host([circle]) {
+  height: 2rem;
+  border-radius: 50%;
 }
 
 .stylospectrum-button {

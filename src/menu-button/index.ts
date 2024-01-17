@@ -40,7 +40,8 @@ class MenuButton extends LitElement {
             type="Secondary"
             class="stylospectrum-menu-button-arrow"
             icon="navigation-down-arrow"
-            @click=${() => this.arrowClickEvent.emit(this)}
+            @click=${(e: MouseEvent) =>
+              this.arrowClickEvent.emit(e.target as HTMLElement)}
           >
           </stylospectrum-button>
         </div>

@@ -1,7 +1,7 @@
 import {LitElement, html, css, unsafeCSS, nothing, render} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {classMap} from 'lit/directives/class-map.js';
-import {ButtonDesign, ButtonType, TooltipPlacement} from '../types';
+import {ButtonDesign, ButtonType, Placement} from '../types';
 import styles from './style/index.scss';
 import '../icon';
 import '../tooltip';
@@ -48,7 +48,7 @@ class Button extends LitElement {
    * @public
    */
   @property({type: String, attribute: 'tooltip-placement'})
-  tooltipPlacement!: TooltipPlacement;
+  tooltipPlacement!: Placement;
 
   /**
    * @type {ButtonDesign}
@@ -74,6 +74,12 @@ class Button extends LitElement {
    */
   @property({type: Boolean, reflect: true})
   focused!: boolean;
+
+  /**
+   * @private
+   */
+  @property({type: Boolean})
+  circle!: boolean;
 
   tooltipTemplate(hovered = false) {
     if (!this.tooltip || !hovered) {

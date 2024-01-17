@@ -3,7 +3,7 @@ export {default as ButtonType} from './ButtonType';
 export {default as InputType} from './InputType';
 export {default as ValueState} from './ValueState';
 export {default as PopoverHorizontalAlign} from './PopoverHorizontalAlign';
-export {default as TooltipPlacement} from './TooltipPlacement';
+export {default as Placement} from './Placement';
 export type {default as IButton} from '../button';
 export type {default as IIcon} from '../icon';
 export type {default as IInput} from '../input';
