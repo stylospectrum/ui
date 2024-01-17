@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/stylospectrum/ui/compare/v0.0.16...v0.0.17) (2024-01-17)
+
+### Features
+
+- introduce new component: Menu ([d4a63ef](https://github.com/stylospectrum/ui/commit/d4a63ef55e02d2296ece2f4e31f43749bc80098b))
+- introduce new component: MenuButton ([e9b9d6d](https://github.com/stylospectrum/ui/commit/e9b9d6d13dca9c4a69c9b90a2f9a0a8599be6dff))
+
 ### [0.0.16](https://github.com/stylospectrum/ui/compare/v0.0.15...v0.0.16) (2024-01-16)
 
 ### Features
