@@ -1,7 +1,7 @@
 import {LitElement, html, css, unsafeCSS} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import styles from './style/index.scss';
-import {TooltipPlacement} from '../types';
+import {Placement} from '../types';
 
 @customElement('stylospectrum-tooltip')
 class Tooltip extends LitElement {
@@ -13,7 +13,7 @@ class Tooltip extends LitElement {
   openerRect!: string;
 
   @property({type: String})
-  placement!: TooltipPlacement;
+  placement!: Placement;
 
   override connectedCallback(): void {
     super.connectedCallback();
@@ -24,7 +24,7 @@ class Tooltip extends LitElement {
       this.style.left =
         openerRect.left + (openerRect.width - this.offsetWidth) / 2 + 'px';
 
-      if (this.placement === TooltipPlacement.Top) {
+      if (this.placement === Placement.Top) {
         this.style.top = openerRect.top - this.offsetHeight - 8 + 'px';
       } else {
         this.style.top = openerRect.bottom + 8 + 'px';

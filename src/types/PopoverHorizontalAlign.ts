@@ -7,6 +7,12 @@
  */
 enum PopoverHorizontalAlign {
   /**
+   * Popover is aligned with the left side of the target. When direction is RTL, it is right aligned.
+   * @public
+   */
+  Left = 'Left',
+
+  /**
    * Popover is centered.
    * @public
    * @type {Center}

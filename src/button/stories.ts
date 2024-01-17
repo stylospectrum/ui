@@ -32,7 +32,7 @@ const Template: UIStoryArgs<Button, StoryArgsProps> = (args) => {
       type=${ifDefined(args.type)}
       icon=${ifDefined(iconName)}
       tooltip=${ifDefined(args.tooltip)}
-      tooltipPlacement=${ifDefined(args.tooltipPlacement)}
+      tooltip-placement=${ifDefined(args.tooltipPlacement)}
       html-type=${ifDefined(args.htmlType)}
       @click=${handleClick}
     >

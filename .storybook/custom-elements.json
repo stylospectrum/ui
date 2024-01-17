@@ -126,6 +126,30 @@
             "name": "default",
             "module": "./list/React/ListItem"
           }
+        },
+        {
+          "kind": "js",
+          "name": "MenuButton",
+          "declaration": {
+            "name": "default",
+            "module": "./menu-button/React"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Menu",
+          "declaration": {
+            "name": "default",
+            "module": "./menu/React/Menu"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "MenuItem",
+          "declaration": {
+            "name": "default",
+            "module": "./menu/React/MenuItem"
+          }
         }
       ]
     },
@@ -268,6 +292,86 @@
           "declaration": {
             "name": "Button",
             "module": "src/button/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/checkbox/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Checkbox",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-checkbox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-checkbox",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -548,86 +652,6 @@
           "declaration": {
             "name": "getIconData",
             "module": "src/icon/util.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/checkbox/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Checkbox",
-          "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<boolean>"
-              },
-              "description": "Fired when the component checked state changes.",
-              "fieldName": "change"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is displayed as partially checked.",
-              "fieldName": "indeterminate"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
-              "fieldName": "checked"
-            },
-            {
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the text of the component.",
-              "fieldName": "text"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-checkbox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-checkbox",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -983,6 +1007,27 @@
           "declaration": {
             "name": "ListItem",
             "module": "src/list/list-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/menu/context.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "menuContext",
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "menuContext",
+          "declaration": {
+            "name": "menuContext",
+            "module": "src/menu/context.ts"
           }
         }
       ]
@@ -1376,7 +1421,7 @@
             {
               "name": "placement",
               "type": {
-                "text": "TooltipPlacement"
+                "text": "Placement"
               },
               "fieldName": "placement"
             }
@@ -1455,6 +1500,21 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/types/Placement.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Placement",
+            "module": "src/types/Placement.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/types/PopoverHorizontalAlign.ts",
       "declarations": [],
       "exports": [
@@ -1464,21 +1524,6 @@
           "declaration": {
             "name": "PopoverHorizontalAlign",
             "module": "src/types/PopoverHorizontalAlign.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/types/TooltipPlacement.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "TooltipPlacement",
-            "module": "src/types/TooltipPlacement.ts"
           }
         }
       ]
@@ -1545,10 +1590,10 @@
         },
         {
           "kind": "js",
-          "name": "TooltipPlacement",
+          "name": "Placement",
           "declaration": {
             "name": "default",
-            "module": "./TooltipPlacement"
+            "module": "./Placement"
           }
         },
         {
@@ -1731,6 +1776,20 @@
           "name": "default",
           "declaration": {
             "module": "src/menu/React/Menu.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/menu/React/MenuItem.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/menu/React/MenuItem.ts"
           }
         }
       ]

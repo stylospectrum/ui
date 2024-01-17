@@ -243,6 +243,9 @@ class Popover extends LitElement {
     let left = 0;
 
     switch (this.horizontalAlign) {
+      case PopoverHorizontalAlign.Left:
+        left = targetRect.left;
+        break;
       case PopoverHorizontalAlign.Center:
         left = targetRect.left - (popoverSize.width - targetRect.width) / 2;
         break;
@@ -345,7 +348,7 @@ class Popover extends LitElement {
     };
   }
 
-  resetFocus() {
+  private _resetFocus() {
     if (!this._focusedElementBeforeOpen) {
       return;
     }
@@ -422,7 +425,7 @@ class Popover extends LitElement {
 
     this._removeOpenedPopover(this);
     this.opened = false;
-    this.resetFocus();
+    this._resetFocus();
 
     Object.assign(this.popup!.style, {
       top: '-10000px',
