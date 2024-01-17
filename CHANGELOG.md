@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/stylospectrum/ui/compare/v0.0.20...v0.0.21) (2024-01-17)
+
+### Features
+
+- **Dialog:** add hideFooter prop ([c239319](https://github.com/stylospectrum/ui/commit/c239319e17c595621226b6e0b22a4aa031dcc887))
+
 ### [0.0.20](https://github.com/stylospectrum/ui/compare/v0.0.19...v0.0.20) (2024-01-17)
 
 ### Bug Fixes
