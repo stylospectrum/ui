@@ -1,4 +1,4 @@
-import {LitElement, html, css, unsafeCSS, render} from 'lit';
+import {LitElement, html, css, unsafeCSS, render, nothing} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import styles from './style/index.scss';
 import './BlockLayer';
@@ -17,6 +17,13 @@ class Dialog extends LitElement {
    */
   @property({type: String, attribute: 'header-text'})
   headerText!: string;
+
+  /**
+   * @default false
+   * @public
+   */
+  @property({type: Boolean, attribute: 'hide-footer'})
+  hideFooter!: boolean;
 
   @state()
   opened = false;
@@ -43,6 +50,14 @@ class Dialog extends LitElement {
   }
 
   override render() {
+    const footerNode = this.hideFooter
+      ? nothing
+      : html`<footer part="footer" class="stylospectrum-dialog-footer">
+          <div class="stylospectrum-dialog-footer-space"></div>
+          <slot name="ok-button"></slot>
+          <slot name="cancel-button"></slot>
+        </footer>`;
+
     return html`
       <slot name="second-dialog"></slot>
 
@@ -56,11 +71,7 @@ class Dialog extends LitElement {
           <slot></slot>
         </div>
 
-        <footer part="footer" class="stylospectrum-dialog-footer">
-          <div class="stylospectrum-dialog-footer-space"></div>
-          <slot name="ok-button"></slot>
-          <slot name="cancel-button"></slot>
-        </footer>
+        ${footerNode}
       </section>
     `;
   }
