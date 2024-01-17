@@ -78,7 +78,7 @@ class Button extends LitElement {
   /**
    * @private
    */
-  @property({type: Boolean})
+  @property({type: Boolean, reflect: true})
   circle!: boolean;
 
   tooltipTemplate(hovered = false) {
