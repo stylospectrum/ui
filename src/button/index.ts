@@ -82,7 +82,7 @@ class Button extends LitElement {
   circle!: boolean;
 
   tooltipTemplate(hovered = false) {
-    if (!this.tooltip || !hovered) {
+    if (!hovered) {
       return nothing;
     }
 
@@ -103,10 +103,18 @@ class Button extends LitElement {
   }
 
   handleMouseEnter() {
+    if (!this.tooltip) {
+      return;
+    }
+
     render(this.tooltipTemplate(true), document.body);
   }
 
   handleMouseLeave() {
+    if (!this.tooltip) {
+      return;
+    }
+
     render(this.tooltipTemplate(), document.body);
   }
 
