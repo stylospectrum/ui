@@ -12,8 +12,19 @@ class ListItem extends LitElement {
     ${unsafeCSS(styles)}
   `;
 
+  /**
+   * @default ""
+   * @public
+   */
   @property({type: String})
   icon!: string;
+
+  /**
+   * @default false
+   * @private
+   */
+  @property({type: Boolean})
+  focused!: boolean;
 
   @consume({context: listContext, subscribe: true})
   _consumer!: ListContext;
@@ -21,10 +32,11 @@ class ListItem extends LitElement {
   override render() {
     const selected = this._consumer?.selectedId === this.id;
 
-    return html`<div
+    return html`<li
       class=${classMap({
         'stylospectrum-list-item': true,
         'stylospectrum-list-item-selected': selected,
+        'stylospectrum-list-item-focused': this.focused,
       })}
       @click=${() => {
         this._consumer?.onChangeId?.(this.id);
@@ -39,7 +51,7 @@ class ListItem extends LitElement {
       </span>
 
       <span class="stylospectrum-list-item-text"><slot></slot></span>
-    </div>`;
+    </li>`;
   }
 }
 

@@ -16,7 +16,7 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
   const popoverRef_1 = createRef<Popover>();
 
   return html`
-    <stylospectrum-popover ${ref(popoverRef)} header-text="Header">
+    <stylospectrum-popover hide-arrow ${ref(popoverRef)} header-text="Header">
       <stylospectrum-button
         @click=${() => popoverRef.value?.show()}
         slot="opener"

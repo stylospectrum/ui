@@ -37,7 +37,9 @@ class List extends LitElement {
   }
 
   override render() {
-    return html`<div class="stylospectrum-list"><slot></slot></div>`;
+    return html`<ul class="stylospectrum-list">
+      <slot></slot>
+    </ul>`;
   }
 }
 

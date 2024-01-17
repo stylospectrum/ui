@@ -47,7 +47,7 @@ class Button extends LitElement {
    * @defaultValue ""
    * @public
    */
-  @property({type: String})
+  @property({type: String, attribute: 'tooltip-placement'})
   tooltipPlacement!: TooltipPlacement;
 
   /**
@@ -96,7 +96,7 @@ class Button extends LitElement {
     this.focused = false;
   }
 
-  handleMouseOver() {
+  handleMouseEnter() {
     render(this.tooltipTemplate(true), document.body);
   }
 
@@ -132,7 +132,7 @@ class Button extends LitElement {
         class=${classMap(classes)}
         @focusout=${this.handleFocusOut}
         @focusin=${this.handleFocusIn}
-        @mouseover=${this.handleMouseOver}
+        @mouseenter=${this.handleMouseEnter}
         @mouseleave=${this.handleMouseLeave}
       >
         ${textNode} ${iconNode}

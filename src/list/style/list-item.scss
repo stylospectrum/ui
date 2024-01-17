@@ -1,14 +1,30 @@
 .stylospectrum-list-item {
+  position: relative;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
   height: 2rem;
+  padding-right: 0.75rem;
   background-color: #1d232a;
   border-bottom: 1px solid transparent;
   cursor: pointer;
 
+  &-focused {
+    background-color: #222b35;
+
+    &::after {
+      position: absolute;
+      border: 0.125rem solid #9ad3ff;
+      border-radius: 0;
+      content: '';
+      pointer-events: none;
+      inset: 0.125rem;
+    }
+  }
+
   &-selected {
-    border-bottom-color: #4db1ff;
     background: #1d2d3e;
+    border-bottom-color: #4db1ff;
   }
 
   &-icon {

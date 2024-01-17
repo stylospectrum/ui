@@ -13,3 +13,6 @@ export {default as List} from './list/React/List';
 export {default as Textarea} from './textarea/React';
 export {default as Dialog} from './dialog/React';
 export {default as ListItem} from './list/React/ListItem';
+export {default as MenuButton} from './menu-button/React';
+export {default as Menu} from './menu/React/Menu';
+export {default as MenuItem} from './menu/React/MenuItem';
