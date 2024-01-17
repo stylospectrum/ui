@@ -49,6 +49,15 @@ class Popover extends LitElement {
   }
 
   /**
+   * Determines whether the component arrow is hidden.
+   *
+   * @default false
+   * @public
+   */
+  @property({type: Boolean, attribute: 'hide-arrow'})
+  hideArrow!: boolean;
+
+  /**
    * Defines the header text.
    *
    * @type {string}
@@ -418,20 +427,21 @@ class Popover extends LitElement {
           <slot name="sub-header"></slot>
         </header>`
       : nothing;
+    const arrowNode = this.hideArrow
+      ? nothing
+      : html`<span
+          class="stylospectrum-popover-arrow"
+          style="transform:translate(${this.arrowTranslateX}px, ${this
+            .arrowTranslateY}px)"
+        >
+        </span>`;
 
     return html`
       <slot name="opener"></slot>
 
       <div class="stylospectrum-popover-wrapper">
         <section class="stylospectrum-popover">
-          <span
-            class="stylospectrum-popover-arrow"
-            style="transform:translate(${this.arrowTranslateX}px, ${this
-              .arrowTranslateY}px)"
-          >
-          </span>
-
-          ${headerNode}
+          ${arrowNode} ${headerNode}
 
           <div part="content" class="stylospectrum-popover-content">
             <slot></slot>

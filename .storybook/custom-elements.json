@@ -988,6 +988,58 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/menu-button/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MenuButton",
+          "members": [],
+          "events": [
+            {
+              "name": "arrow-click",
+              "type": {
+                "text": "EventEmitter<void>"
+              },
+              "fieldName": "arrow-click"
+            },
+            {
+              "name": "button-click",
+              "type": {
+                "text": "EventEmitter<void>"
+              },
+              "fieldName": "button-click"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-menu-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-menu-button",
+          "declaration": {
+            "name": "MenuButton",
+            "module": "src/menu-button/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MenuButton",
+            "module": "src/menu-button/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/message-strip/index.ts",
       "declarations": [
         {
@@ -1032,6 +1084,15 @@
           "name": "Popover",
           "members": [],
           "attributes": [
+            {
+              "name": "hideArrow",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Determines whether the component arrow is hidden.",
+              "default": "false",
+              "fieldName": "hideArrow"
+            },
             {
               "name": "headerText",
               "type": {
@@ -1177,43 +1238,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/toast/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Toast",
-          "members": [],
-          "attributes": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-toast",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/tooltip/index.ts",
       "declarations": [
         {
@@ -1260,6 +1284,43 @@
           "declaration": {
             "name": "Tooltip",
             "module": "src/tooltip/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Toast",
+          "members": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
           }
         }
       ]
