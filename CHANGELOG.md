@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/stylospectrum/ui/compare/v0.0.22...v0.0.23) (2024-01-18)
+
+### Features
+
+- introduce new component: ProgressIndicator ([9fe30a2](https://github.com/stylospectrum/ui/commit/9fe30a262bb49932938116e52fe70d51c65d9767))
+
 ### [0.0.22](https://github.com/stylospectrum/ui/compare/v0.0.21...v0.0.22) (2024-01-18)
 
 ### Features
