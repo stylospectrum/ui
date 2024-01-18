@@ -76,7 +76,7 @@
   border-color: #4db1ff;
 }
 
-:host([focused]:not(:active)) .stylospectrum-button::after {
+:host([focused]:not(:active):not([tab-selected])) .stylospectrum-button::after {
   position: absolute;
   inset: 0.0625rem;
   box-sizing: border-box;
@@ -96,6 +96,21 @@
 :host([circle]) {
   height: 2rem;
   border-radius: 50%;
+}
+
+:host([tab-selected]) {
+  border: none !important;
+
+  .stylospectrum-button {
+    &::after {
+      position: absolute;
+      inset: 0 !important;
+      box-sizing: border-box;
+      border: 0.125rem solid #9ad3ff;
+      border-radius: 50%;
+      content: '';
+    }
+  }
 }
 
 .stylospectrum-button {

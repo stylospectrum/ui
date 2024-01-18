@@ -298,169 +298,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/checkbox/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Checkbox",
-          "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<boolean>"
-              },
-              "description": "Fired when the component checked state changes.",
-              "fieldName": "change"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is displayed as partially checked.",
-              "fieldName": "indeterminate"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
-              "fieldName": "checked"
-            },
-            {
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the text of the component.",
-              "fieldName": "text"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-checkbox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-checkbox",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/dialog/BlockLayer.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "DialogBlockLayer",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog-block-layer",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog-block-layer",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/dialog/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Dialog",
-          "members": [],
-          "attributes": [
-            {
-              "name": "headerText",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the header text.",
-              "default": "\"\"",
-              "fieldName": "headerText"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/form/form-item.ts",
       "declarations": [
         {
@@ -551,6 +388,97 @@
           "declaration": {
             "name": "Form",
             "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/BlockLayer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DialogBlockLayer",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog-block-layer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog-block-layer",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Dialog",
+          "members": [],
+          "attributes": [
+            {
+              "name": "headerText",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the header text.",
+              "default": "\"\"",
+              "fieldName": "headerText"
+            },
+            {
+              "name": "hideFooter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideFooter"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -652,6 +580,86 @@
           "declaration": {
             "name": "getIconData",
             "module": "src/icon/util.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/checkbox/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Checkbox",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-checkbox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-checkbox",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         }
       ]
