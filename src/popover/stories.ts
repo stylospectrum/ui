@@ -16,36 +16,45 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
   const popoverRef_1 = createRef<Popover>();
 
   return html`
-    <stylospectrum-popover hide-arrow ${ref(popoverRef)} header-text="Header">
-      <stylospectrum-button
-        @click=${() => popoverRef.value?.show()}
-        slot="opener"
+    <div
+      style="display:flex;justify-content: center;align-items: center;height:500px"
+    >
+      <stylospectrum-popover
+        ${ref(popoverRef)}
+        header-text="Header"
+        placement="Left"
       >
-        Open Popover
-      </stylospectrum-button>
-
-      <stylospectrum-input slot="sub-header" show-search> </stylospectrum-input>
-
-      <div>
-        <stylospectrum-popover ${ref(popoverRef_1)} header-text="Header">
-          <stylospectrum-list-item
-            slot="opener"
-            icon="account"
-            @click=${() => popoverRef_1.value?.show()}
-          >
-            Open Popover
-          </stylospectrum-list-item>
-          <div style="padding:1rem">Content</div>
-        </stylospectrum-popover>
-
-        <stylospectrum-list-item
-          icon="account"
-          @click=${() => popoverRef.value?.hide()}
+        <stylospectrum-button
+          @click=${() => popoverRef.value?.show()}
+          slot="opener"
         >
-          Close Popover
-        </stylospectrum-list-item>
-      </div>
-    </stylospectrum-popover>
+          Open Popover
+        </stylospectrum-button>
+
+        <stylospectrum-input slot="sub-header" show-search>
+        </stylospectrum-input>
+
+        <div>
+          <stylospectrum-popover ${ref(popoverRef_1)} header-text="Header">
+            <stylospectrum-list-item
+              slot="opener"
+              icon="account"
+              @click=${() => popoverRef_1.value?.show()}
+            >
+              Open Popover
+            </stylospectrum-list-item>
+            <div style="padding:1rem">Content</div>
+          </stylospectrum-popover>
+
+          <stylospectrum-list-item
+            icon="account"
+            @click=${() => popoverRef.value?.hide()}
+          >
+            Close Popover
+          </stylospectrum-list-item>
+        </div>
+      </stylospectrum-popover>
+    </div>
   `;
 };
 

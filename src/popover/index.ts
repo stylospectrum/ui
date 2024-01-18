@@ -7,14 +7,14 @@ import {
   state,
 } from 'lit/decorators.js';
 import styles from './style/index.scss';
-import {PopoverHorizontalAlign} from '../types';
+import {Placement, PopoverHorizontalAlign} from '../types';
 import clamp from '../utils/clamp';
 import getParentElement from '../utils/getParentElement';
 import isElementContainingBlock from '../utils/isElementContainingBlock';
 import {getFocusedElement, isClickInRect} from '../utils/popup';
 import {getFirstFocusableElement} from '../utils/focusableElements';
 
-type PopupSize = {
+type PopoverSize = {
   width: number;
   height: number;
 };
@@ -47,6 +47,15 @@ class Popover extends LitElement {
   static get VIEWPORT_MARGIN() {
     return 10; // px
   }
+
+  /**
+   * Determines on which side the component is placed at.
+   *
+   * @default "Right"
+   * @public
+   */
+  @property({type: String, reflect: true})
+  placement = Placement.Bottom;
 
   /**
    * Determines whether the component arrow is hidden.
@@ -228,7 +237,7 @@ class Popover extends LitElement {
     return {left: 0, top: 0};
   }
 
-  private _getPopupSize(): PopupSize {
+  private _getPopupSize(): PopoverSize {
     const rect = this.popup!.getBoundingClientRect(),
       width = rect.width,
       height = rect.height;
@@ -238,7 +247,7 @@ class Popover extends LitElement {
 
   private _getVerticalLeft(
     targetRect: DOMRect,
-    popoverSize: PopupSize
+    popoverSize: PopoverSize
   ): number {
     let left = 0;
 
@@ -257,9 +266,16 @@ class Popover extends LitElement {
     return left;
   }
 
+  private _getHorizontalTop(
+    targetRect: DOMRect,
+    popoverSize: PopoverSize
+  ): number {
+    return targetRect.top - (popoverSize.height - targetRect.height) / 2;
+  }
+
   private _getArrowPosition(
     targetRect: DOMRect,
-    popoverSize: PopupSize,
+    popoverSize: PopoverSize,
     left: number,
     isVertical: boolean,
     borderRadius: number
@@ -303,16 +319,92 @@ class Popover extends LitElement {
     };
   }
 
+  /**
+   * Fallbacks to new placement, prioritizing <code>Left</code> and <code>Right</code> placements.
+   * @private
+   */
+  private _fallbackPlacement(
+    clientWidth: number,
+    clientHeight: number,
+    targetRect: DOMRect,
+    popoverSize: PopoverSize
+  ): Placement | undefined {
+    if (targetRect.left > popoverSize.width) {
+      return Placement.Left;
+    }
+
+    if (clientWidth - targetRect.right > targetRect.left) {
+      return Placement.Right;
+    }
+
+    if (clientHeight - targetRect.bottom > popoverSize.height) {
+      return Placement.Bottom;
+    }
+
+    if (clientHeight - targetRect.bottom < targetRect.top) {
+      return Placement.Top;
+    }
+
+    return undefined;
+  }
+
+  private _getActualPlacement(
+    targetRect: DOMRect,
+    popoverSize: PopoverSize
+  ): Placement {
+    let actualPlacement = this.placement;
+
+    const clientWidth = document.documentElement.clientWidth;
+    const clientHeight = document.documentElement.clientHeight;
+
+    switch (this.placement) {
+      case Placement.Bottom:
+        if (
+          clientHeight - targetRect.bottom < popoverSize.height &&
+          clientHeight - targetRect.bottom < targetRect.top
+        ) {
+          actualPlacement = Placement.Top;
+        }
+        break;
+      case Placement.Left:
+        if (targetRect.left < popoverSize.width) {
+          actualPlacement =
+            this._fallbackPlacement(
+              clientWidth,
+              clientHeight,
+              targetRect,
+              popoverSize
+            ) || this.placement;
+        }
+        break;
+    }
+
+    return actualPlacement;
+  }
+
   private _calcPlacement(
     targetRect: DOMRect,
-    popoverSize: PopupSize
+    popoverSize: PopoverSize
   ): CalculatedPlacement {
-    const clientWidth = document.documentElement.clientWidth;
-    const isVertical = true;
-    const arrowOffset = this.hideArrow ? 0 : ARROW_SIZE;
+    let left = 0;
+    let top = 0;
 
-    let left = this._getVerticalLeft(targetRect, popoverSize);
-    const top = targetRect.bottom + arrowOffset;
+    const clientWidth = document.documentElement.clientWidth;
+    const isVertical = this.placement === Placement.Bottom;
+    const arrowOffset = this.hideArrow ? 0 : ARROW_SIZE;
+    const placement = this._getActualPlacement(targetRect, popoverSize);
+
+    switch (placement) {
+      case Placement.Bottom:
+        left = this._getVerticalLeft(targetRect, popoverSize);
+        top = targetRect.bottom + arrowOffset;
+
+        break;
+      case Placement.Left:
+        left = Math.max(targetRect.left - popoverSize.width - arrowOffset, 0);
+        top = this._getHorizontalTop(targetRect, popoverSize);
+        break;
+    }
 
     if (isVertical) {
       if (popoverSize.width > clientWidth || left < 0) {
