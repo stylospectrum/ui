@@ -81,6 +81,12 @@ class Button extends LitElement {
   @property({type: Boolean, reflect: true})
   circle!: boolean;
 
+  /**
+   * @private
+   */
+  @property({type: Boolean, reflect: true, attribute: 'tab-selected'})
+  tabSelected!: boolean;
+
   tooltipTemplate(hovered = false) {
     if (!hovered) {
       return nothing;

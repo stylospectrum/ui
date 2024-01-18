@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://github.com/stylospectrum/ui/compare/v0.0.21...v0.0.22) (2024-01-18)
+
+### Features
+
+- **Button:** add tabSelected prop ([c6cd7c8](https://github.com/stylospectrum/ui/commit/c6cd7c8b53b438546227d9ba8fa55f610ef5ccec))
+
 ### [0.0.21](https://github.com/stylospectrum/ui/compare/v0.0.20...v0.0.21) (2024-01-17)
 
 ### Features
