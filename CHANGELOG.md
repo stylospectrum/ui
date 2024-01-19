@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.26](https://github.com/stylospectrum/ui/compare/v0.0.25...v0.0.26) (2024-01-19)
+
+### Features
+
+- **Button:** add iconRotate prop ([9563b61](https://github.com/stylospectrum/ui/commit/9563b619df77a070258405c99095150f5acacbf7))
+
 ### [0.0.25](https://github.com/stylospectrum/ui/compare/v0.0.24...v0.0.25) (2024-01-19)
 
 ### Features
