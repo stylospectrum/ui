@@ -29,7 +29,7 @@ class Menu extends LitElement {
 
   override render() {
     return html`
-      <stylospectrum-popover hide-arrow horizontal-align="Left">
+      <stylospectrum-popover hide-footer hide-arrow horizontal-align="Left">
         <slot></slot>
       </stylospectrum-popover>
     `;
