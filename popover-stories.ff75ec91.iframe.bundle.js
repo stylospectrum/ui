@@ -6,6 +6,7 @@
         ${(0,lit_directives_ref_js__WEBPACK_IMPORTED_MODULE_1__.i)(popoverRef)}
         header-text="Header"
         placement="Left"
+        hide-footer
       >
         <stylospectrum-button
           @click=${()=>popoverRef.value?.show()}
@@ -18,7 +19,7 @@
         </stylospectrum-input>
 
         <div>
-          <stylospectrum-popover ${(0,lit_directives_ref_js__WEBPACK_IMPORTED_MODULE_1__.i)(popoverRef_1)} header-text="Header">
+          <stylospectrum-popover ${(0,lit_directives_ref_js__WEBPACK_IMPORTED_MODULE_1__.i)(popoverRef_1)}>
             <stylospectrum-list-item
               slot="opener"
               icon="account"
@@ -26,7 +27,16 @@
             >
               Open Popover
             </stylospectrum-list-item>
-            <div style="padding:1rem">Content</div>
+            <div style="padding:1rem;width:20rem">Content</div>
+
+            <stylospectrum-button slot="ok-button">OK</stylospectrum-button>
+            <stylospectrum-button
+              slot="cancel-button"
+              type="Tertiary"
+              @click=${()=>popoverRef_1.value?.hide()}
+            >
+              Cancel
+            </stylospectrum-button>
           </stylospectrum-popover>
 
           <stylospectrum-list-item
@@ -39,4 +49,4 @@
       </stylospectrum-popover>
     </div>
   `}).bind({});Basic.args={}}}]);
-//# sourceMappingURL=popover-stories.91c056fa.iframe.bundle.js.map
+//# sourceMappingURL=popover-stories.ff75ec91.iframe.bundle.js.map
