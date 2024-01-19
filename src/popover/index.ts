@@ -49,6 +49,13 @@ class Popover extends LitElement {
   }
 
   /**
+   * @default false
+   * @public
+   */
+  @property({type: Boolean, attribute: 'hide-footer'})
+  hideFooter!: boolean;
+
+  /**
    * Determines on which side the component is placed at.
    *
    * @default "Right"
@@ -532,6 +539,15 @@ class Popover extends LitElement {
           <slot name="sub-header"></slot>
         </header>`
       : nothing;
+
+    const footerNode = this.hideFooter
+      ? nothing
+      : html`<footer part="footer" class="stylospectrum-popover-footer">
+          <div class="stylospectrum-popover-footer-space"></div>
+          <slot name="ok-button"></slot>
+          <slot name="cancel-button"></slot>
+        </footer>`;
+
     const arrowNode = this.hideArrow
       ? nothing
       : html`<span
@@ -552,9 +568,7 @@ class Popover extends LitElement {
             <slot></slot>
           </div>
 
-          <footer part="footer" class="stylospectrum-popover-footer">
-            <slot name="footer"></slot>
-          </footer>
+          ${footerNode}
         </section>
       </div>
     `;
