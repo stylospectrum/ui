@@ -1,5 +1,6 @@
 import {LitElement, html, css, unsafeCSS} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+import {styleMap} from 'lit/directives/style-map.js';
 import styles from './style/index.scss';
 import {getIconData} from './util';
 
@@ -16,6 +17,14 @@ class Icon extends LitElement {
    */
   @property({type: String})
   name!: string;
+
+  /**
+   * @type {number}
+   * @defaultValue 0
+   * @public
+   */
+  @property({type: Number})
+  rotate!: number;
 
   override render() {
     const iconData = getIconData(this.name);
@@ -36,6 +45,9 @@ class Icon extends LitElement {
           stroke="currentColor"
           part="root"
           aria-hidden="true"
+          style=${styleMap({
+            transform: `rotate(${this.rotate}deg)`,
+          })}
         >
           <g role="presentation">
             <path d="${iconData.pathData}" />

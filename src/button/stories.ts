@@ -30,6 +30,7 @@ const Template: UIStoryArgs<Button, StoryArgsProps> = (args) => {
     <stylospectrum-button
       ?disabled=${args.disabled}
       type=${ifDefined(args.type)}
+      iconRotate=${ifDefined(args.iconRotate)}
       icon=${ifDefined(iconName)}
       tooltip=${ifDefined(args.tooltip)}
       tooltip-placement=${ifDefined(args.tooltipPlacement)}

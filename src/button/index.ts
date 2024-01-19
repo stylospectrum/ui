@@ -35,6 +35,14 @@ class Button extends LitElement {
   icon!: string;
 
   /**
+   * @type {number}
+   * @defaultValue 0
+   * @public
+   */
+  @property()
+  iconRotate!: number;
+
+  /**
    * @type {string}
    * @defaultValue ""
    * @public
@@ -129,6 +137,7 @@ class Button extends LitElement {
       ? html`<stylospectrum-icon
           class="stylospectrum-button-icon"
           name=${this.icon}
+          rotate=${this.iconRotate}
         >
         </stylospectrum-icon>`
       : html`<slot name="icon"></slot>`;

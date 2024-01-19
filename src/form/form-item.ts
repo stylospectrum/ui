@@ -17,6 +17,7 @@ import Checkbox from '../checkbox';
 import type Input from '../input';
 import styles from './style/form-item.scss';
 import {ValueState} from '../types';
+import '../label';
 
 interface Rule {
   /** validate from a regular expression */
