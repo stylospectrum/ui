@@ -71,32 +71,6 @@
     box-sizing: border-box;
     color: #eaecee;
     font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
-
-    &::-webkit-scrollbar:horizontal {
-      height: 0.75rem;
-    }
-
-    &::-webkit-scrollbar:vertical {
-      width: 0.75rem;
-    }
-
-    &::-webkit-scrollbar {
-      background-color: #1d232a;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background-color: #647891;
-      border: 0.125rem solid #1d232a;
-      border-radius: 0.75rem;
-    }
-
-    &::-webkit-scrollbar-thumb:hover {
-      background-color: #8697ac;
-    }
-
-    &::-webkit-scrollbar-corner {
-      background-color: #1d232a;
-    }
   }
 
   &-footer {

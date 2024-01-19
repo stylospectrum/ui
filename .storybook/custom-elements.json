@@ -386,101 +386,91 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/icon/index.ts",
+      "path": "src/dialog/BlockLayer.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Icon",
+          "name": "DialogBlockLayer",
           "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            }
-          ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-icon",
+          "tagName": "stylospectrum-dialog-block-layer",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-icon",
+          "name": "stylospectrum-dialog-block-layer",
           "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/icon/util.ts",
+      "path": "src/dialog/index.ts",
       "declarations": [
         {
-          "kind": "function",
-          "name": "registerIcon",
-          "parameters": [
+          "kind": "class",
+          "description": "",
+          "name": "Dialog",
+          "members": [],
+          "attributes": [
             {
-              "name": "name",
+              "name": "headerText",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "Defines the header text.",
+              "default": "\"\"",
+              "fieldName": "headerText"
             },
             {
-              "name": "data",
+              "name": "hideFooter",
               "type": {
-                "text": "IconData"
-              }
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideFooter"
             }
           ],
-          "members": []
-        },
-        {
-          "kind": "function",
-          "name": "getIconData",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "members": []
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog",
+          "customElement": true
         }
       ],
       "exports": [
         {
-          "kind": "js",
-          "name": "registerIcon",
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog",
           "declaration": {
-            "name": "registerIcon",
-            "module": "src/icon/util.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         },
         {
           "kind": "js",
-          "name": "getIconData",
+          "name": "default",
           "declaration": {
-            "name": "getIconData",
-            "module": "src/icon/util.ts"
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -583,153 +573,101 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/dialog/BlockLayer.ts",
+      "path": "src/icon/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "DialogBlockLayer",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog-block-layer",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog-block-layer",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/dialog/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Dialog",
+          "name": "Icon",
           "members": [],
           "attributes": [
             {
-              "name": "headerText",
+              "name": "name",
               "type": {
                 "text": "string"
               },
-              "description": "Defines the header text.",
-              "default": "\"\"",
-              "fieldName": "headerText"
-            },
-            {
-              "name": "hideFooter",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "hideFooter"
+              "fieldName": "name"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-dialog",
+          "tagName": "stylospectrum-icon",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog",
+          "name": "stylospectrum-icon",
           "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
+            "name": "Icon",
+            "module": "src/icon/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
+            "name": "Icon",
+            "module": "src/icon/index.ts"
           }
         }
       ]
     },
     {
       "kind": "javascript-module",
-      "path": "src/label/index.ts",
+      "path": "src/icon/util.ts",
       "declarations": [
         {
-          "kind": "class",
-          "description": "",
-          "name": "Label",
-          "members": [],
-          "attributes": [
+          "kind": "function",
+          "name": "registerIcon",
+          "parameters": [
             {
-              "name": "for",
+              "name": "name",
               "type": {
                 "text": "string"
-              },
-              "description": "Defines the labeled input by providing its ID.",
-              "fieldName": "for"
+              }
             },
             {
-              "name": "showColon",
+              "name": "data",
               "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether colon is added to the component text.",
-              "fieldName": "showColon"
-            },
-            {
-              "name": "required",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
-              "fieldName": "required"
+                "text": "IconData"
+              }
             }
           ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-label",
-          "customElement": true
+          "members": []
+        },
+        {
+          "kind": "function",
+          "name": "getIconData",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "members": []
         }
       ],
       "exports": [
         {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-label",
+          "kind": "js",
+          "name": "registerIcon",
           "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
+            "name": "registerIcon",
+            "module": "src/icon/util.ts"
           }
         },
         {
           "kind": "js",
-          "name": "default",
+          "name": "getIconData",
           "declaration": {
-            "name": "Label",
-            "module": "src/label/index.ts"
+            "name": "getIconData",
+            "module": "src/icon/util.ts"
           }
         }
       ]
@@ -855,62 +793,62 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/link/index.ts",
+      "path": "src/label/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Link",
+          "name": "Label",
           "members": [],
           "attributes": [
             {
-              "name": "disabled",
+              "name": "for",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the labeled input by providing its ID.",
+              "fieldName": "for"
+            },
+            {
+              "name": "showColon",
               "type": {
                 "text": "boolean"
               },
-              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
-              "fieldName": "disabled"
+              "description": "Defines whether colon is added to the component text.",
+              "fieldName": "showColon"
             },
             {
-              "name": "href",
+              "name": "required",
               "type": {
-                "text": "string"
+                "text": "boolean"
               },
-              "description": "Defines the component href.",
-              "fieldName": "href"
-            },
-            {
-              "name": "target",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
-              "fieldName": "target"
+              "description": "Defines whether an asterisk character is added to the component text.\n<br><br>\n<b>Note:</b> Usually indicates that user input (bound with the <code>for</code> property) is required.\nIn that case the <code>required</> property of\nthe corresponding input should also be set.",
+              "fieldName": "required"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-link",
+          "tagName": "stylospectrum-label",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-link",
+          "name": "stylospectrum-label",
           "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
+            "name": "Label",
+            "module": "src/label/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Link",
-            "module": "src/link/index.ts"
+            "name": "Label",
+            "module": "src/label/index.ts"
           }
         }
       ]
@@ -1023,6 +961,68 @@
           "declaration": {
             "name": "ListItem",
             "module": "src/list/list-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/link/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Link",
+          "members": [],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.\n<br><br>\n<b>Note:</b> When disabled, the click event cannot be triggered by the user.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "href",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component href.",
+              "fieldName": "href"
+            },
+            {
+              "name": "target",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the component target.\n<br><br>\n<b>Notes:</b>\n<b>This property must only be used when the <code>href</code> property is set.</b>",
+              "fieldName": "target"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-link",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-link",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Link",
+            "module": "src/link/index.ts"
           }
         }
       ]
@@ -1229,6 +1229,12 @@
           "members": [],
           "attributes": [
             {
+              "name": "placement",
+              "description": "Determines on which side the component is placed at.",
+              "default": "\"Right\"",
+              "fieldName": "placement"
+            },
+            {
               "name": "hideArrow",
               "type": {
                 "text": "boolean"
@@ -1429,6 +1435,43 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Toast",
+          "members": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/tooltip/index.ts",
       "declarations": [
         {
@@ -1475,43 +1518,6 @@
           "declaration": {
             "name": "Tooltip",
             "module": "src/tooltip/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/toast/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Toast",
-          "members": [],
-          "attributes": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-toast",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
           }
         }
       ]

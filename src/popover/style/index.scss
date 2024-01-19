@@ -128,4 +128,26 @@
       background-color: #1d232a;
     }
   }
+
+  &-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    margin: 0;
+    padding: 0 1rem;
+    color: #eaecee;
+    font-size: 1rem;
+    font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
+    background-color: #1d232a;
+    border-top: 1px solid #2e3742;
+
+    &-space {
+      flex: 1;
+    }
+  }
+}
+
+::slotted([slot='cancel-button']) {
+  margin-left: 0.5rem;
 }

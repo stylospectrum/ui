@@ -23,6 +23,7 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
         ${ref(popoverRef)}
         header-text="Header"
         placement="Left"
+        hide-footer
       >
         <stylospectrum-button
           @click=${() => popoverRef.value?.show()}
@@ -35,7 +36,7 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
         </stylospectrum-input>
 
         <div>
-          <stylospectrum-popover ${ref(popoverRef_1)} header-text="Header">
+          <stylospectrum-popover ${ref(popoverRef_1)}>
             <stylospectrum-list-item
               slot="opener"
               icon="account"
@@ -43,7 +44,16 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
             >
               Open Popover
             </stylospectrum-list-item>
-            <div style="padding:1rem">Content</div>
+            <div style="padding:1rem;width:20rem">Content</div>
+
+            <stylospectrum-button slot="ok-button">OK</stylospectrum-button>
+            <stylospectrum-button
+              slot="cancel-button"
+              type="Tertiary"
+              @click=${() => popoverRef_1.value?.hide()}
+            >
+              Cancel
+            </stylospectrum-button>
           </stylospectrum-popover>
 
           <stylospectrum-list-item
