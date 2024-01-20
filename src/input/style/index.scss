@@ -29,10 +29,10 @@
 
 :host([focused]) .stylospectrum-input-wrapper::after {
   position: absolute;
-  inset: 0;
+  inset: var(--stylospectrum-input-inset, 0);
   z-index: 2;
   border: 0.125rem solid transparent;
-  border-radius: 0.25rem;
+  border-radius: var(--stylospectrum-input-border-radius, 0.25rem);
   content: '';
   pointer-events: none;
 }
@@ -96,7 +96,7 @@
   outline: none;
   appearance: none;
 
-  &::-webkit-placeholder {
+  &::placeholder {
     color: #8396a8;
     font-weight: normal;
     font-style: italic;
