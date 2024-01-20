@@ -1,11 +1,5 @@
 import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
-import {
-  customElement,
-  property,
-  query,
-  queryAssignedElements,
-  state,
-} from 'lit/decorators.js';
+import {customElement, property, query, state} from 'lit/decorators.js';
 import styles from './style/index.scss';
 import {Placement, PopoverHorizontalAlign} from '../types';
 import clamp from '../utils/clamp';
@@ -110,24 +104,21 @@ class Popover extends LitElement {
   @state()
   opened = false;
 
-  @queryAssignedElements({slot: 'opener'})
-  opener?: HTMLElement[];
-
   @query('.stylospectrum-popover-wrapper')
   popup?: HTMLElement;
 
-  _openerFromOutside?: HTMLElement;
+  _opener?: HTMLElement;
   _top?: number;
   _left?: number;
   _focusedElementBeforeOpen?: HTMLElement | null;
 
   private _isOpenerClicked(e: MouseEvent) {
     const target = e.target as HTMLElement;
-    if (target === this.mergedOpener) {
+    if (target === this._opener) {
       return true;
     }
 
-    return e.composedPath().indexOf(this.mergedOpener as EventTarget) > -1;
+    return e.composedPath().indexOf(this._opener as EventTarget) > -1;
   }
 
   private _clickHandler = (event: MouseEvent) => {
@@ -456,22 +447,19 @@ class Popover extends LitElement {
     this._focusedElementBeforeOpen = null;
   }
 
-  get mergedOpener() {
-    return this.opener?.[0] || this._openerFromOutside;
-  }
-
   public showAt(opener: HTMLElement) {
-    this._openerFromOutside = opener;
+    this._opener = opener;
     this.show();
   }
 
-  public show() {
+  private show() {
     if (this.opened) {
       return;
     }
+    this.style.display = 'block';
 
     const popupSize = this._getPopupSize();
-    const openerRect = this.mergedOpener!.getBoundingClientRect();
+    const openerRect = this._opener!.getBoundingClientRect();
 
     if (popupSize.width === 0 || popupSize.height === 0) {
       return;
@@ -514,7 +502,6 @@ class Popover extends LitElement {
     Object.assign(this.popup!.style, {
       top: `${top}px`,
       left: `${left}px`,
-      display: 'block',
     });
   }
 
@@ -527,8 +514,10 @@ class Popover extends LitElement {
     this.opened = false;
     this._resetFocus();
 
+    this.style.display = 'none';
     Object.assign(this.popup!.style, {
-      display: 'none',
+      top: '-10000px',
+      left: '-10000px',
     });
   }
 
@@ -558,8 +547,6 @@ class Popover extends LitElement {
         </span>`;
 
     return html`
-      <slot name="opener"></slot>
-
       <div class="stylospectrum-popover-wrapper">
         <section class="stylospectrum-popover">
           ${arrowNode} ${headerNode}
