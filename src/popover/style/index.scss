@@ -36,9 +36,8 @@
 
   &-wrapper {
     position: fixed;
-    top: -10000px;
-    left: -10000px;
     z-index: 1000;
+    display: none;
     box-sizing: border-box;
     max-width: calc(100% - 10px * 2);
     min-height: 2rem;
