@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.30](https://github.com/stylospectrum/ui/compare/v0.0.29...v0.0.30) (2024-01-20)
+
+### Features
+
+- **Textarea:** add 2 css vars ([a80b14b](https://github.com/stylospectrum/ui/commit/a80b14b79a4ce52bbd5b664d3409c1f9154b3c2c))
+
 ### [0.0.29](https://github.com/stylospectrum/ui/compare/v0.0.28...v0.0.29) (2024-01-20)
 
 ### Features
