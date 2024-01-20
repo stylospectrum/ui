@@ -2,6 +2,8 @@ import {Meta} from '@storybook/web-components';
 import {html} from 'lit';
 import {createRef, ref} from 'lit/directives/ref.js';
 import type Popover from '.';
+import type Button from '../button';
+import type ListItem from '../list/list-item';
 import {UIStoryArgs} from '../storybook-types';
 import '.';
 import '../list/list-item';
@@ -13,37 +15,31 @@ type StoryArgsProps = {};
 
 const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
   const popoverRef = createRef<Popover>();
+  const buttonRef = createRef<Button>();
   const popoverRef_1 = createRef<Popover>();
+  const listItemRef = createRef<ListItem>();
 
   return html`
     <div
       style="display:flex;justify-content: center;align-items: center;height:500px"
     >
+      <stylospectrum-button
+        ${ref(buttonRef)}
+        @click=${() => popoverRef.value?.showAt(buttonRef.value!)}
+      >
+        Open Popover
+      </stylospectrum-button>
       <stylospectrum-popover
         ${ref(popoverRef)}
         header-text="Header"
         placement="Left"
         hide-footer
       >
-        <stylospectrum-button
-          @click=${() => popoverRef.value?.show()}
-          slot="opener"
-        >
-          Open Popover
-        </stylospectrum-button>
-
         <stylospectrum-input slot="sub-header" show-search>
         </stylospectrum-input>
 
         <div>
           <stylospectrum-popover ${ref(popoverRef_1)}>
-            <stylospectrum-list-item
-              slot="opener"
-              icon="account"
-              @click=${() => popoverRef_1.value?.show()}
-            >
-              Open Popover
-            </stylospectrum-list-item>
             <div style="padding:1rem;width:20rem">Content</div>
 
             <stylospectrum-button slot="ok-button">OK</stylospectrum-button>
@@ -55,6 +51,14 @@ const Template: UIStoryArgs<Popover, StoryArgsProps> = () => {
               Cancel
             </stylospectrum-button>
           </stylospectrum-popover>
+
+          <stylospectrum-list-item
+            ${ref(listItemRef)}
+            icon="account"
+            @click=${() => popoverRef_1.value?.showAt(listItemRef.value!)}
+          >
+            Open Popover
+          </stylospectrum-list-item>
 
           <stylospectrum-list-item
             icon="account"

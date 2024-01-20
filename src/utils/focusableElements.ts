@@ -12,7 +12,7 @@ const getFirstFocusableElement = (
   container: HTMLElement,
   startFromContainer?: boolean
 ): FocusableElementPromise => {
-  if (!container || isElementHidden(container)) {
+  if (!container) {
     return null;
   }
 
@@ -23,7 +23,7 @@ const getLastFocusableElement = (
   container: HTMLElement,
   startFromContainer?: boolean
 ): FocusableElementPromise => {
-  if (!container || isElementHidden(container)) {
+  if (!container) {
     return null;
   }
 
