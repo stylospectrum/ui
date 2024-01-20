@@ -514,6 +514,7 @@ class Popover extends LitElement {
     Object.assign(this.popup!.style, {
       top: `${top}px`,
       left: `${left}px`,
+      display: 'block',
     });
   }
 
@@ -527,8 +528,7 @@ class Popover extends LitElement {
     this._resetFocus();
 
     Object.assign(this.popup!.style, {
-      top: '-10000px',
-      left: '-10000px',
+      display: 'none',
     });
   }
 
