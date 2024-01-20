@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.27](https://github.com/stylospectrum/ui/compare/v0.0.26...v0.0.27) (2024-01-20)
+
+### Bug Fixes
+
+- **Popover:** use display none to hide popover ([c3556e4](https://github.com/stylospectrum/ui/commit/c3556e4b2a4890a7064b64af257ee282976ba0b4))
+
 ### [0.0.26](https://github.com/stylospectrum/ui/compare/v0.0.25...v0.0.26) (2024-01-19)
 
 ### Features
