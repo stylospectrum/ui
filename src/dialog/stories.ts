@@ -25,6 +25,7 @@ const Template: UIStoryArgs<Dialog, StoryArgsProps> = (args) => {
 
       <stylospectrum-dialog
         header-text="Header"
+        hide-footer
         slot="second-dialog"
         style="display:flex;right: 22rem"
       >

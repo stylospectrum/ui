@@ -22,7 +22,6 @@
   width: 100%;
   max-width: 100vw;
   height: 100%;
-  overflow: hidden;
   background: inherit;
   border-radius: inherit;
   outline: none;
@@ -38,6 +37,7 @@
     font-size: 1rem;
     font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
     background: #1d232a;
+    border-radius: 0.75rem 0.75rem 0 0;
     outline: none;
     box-shadow:
       0 0.125rem 0.125rem 0 rgba(0, 0, 0, 0.2),
@@ -85,6 +85,7 @@
     font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
     background-color: #1d232a;
     border-top: 1px solid #2e3742;
+    border-radius: 0 0 0.75rem 0.75rem;
 
     &-space {
       flex: 1;
