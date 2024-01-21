@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.31](https://github.com/stylospectrum/ui/compare/v0.0.30...v0.0.31) (2024-01-21)
+
+### Bug Fixes
+
+- add border radius for dialog header, footer & rename placeholder in scss for textarea ([ce06619](https://github.com/stylospectrum/ui/commit/ce0661960c99d746156468c6f082dab12a8c3b5f))
+
 ### [0.0.30](https://github.com/stylospectrum/ui/compare/v0.0.29...v0.0.30) (2024-01-20)
 
 ### Features
