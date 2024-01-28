@@ -313,6 +313,102 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/form/form-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FormItem",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "rules",
+              "type": {
+                "text": "Array<Rule>"
+              },
+              "default": "[]",
+              "fieldName": "rules"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form-item",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Form",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/checkbox/index.ts",
       "declarations": [
         {
@@ -387,6 +483,97 @@
           "declaration": {
             "name": "Checkbox",
             "module": "src/checkbox/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/BlockLayer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DialogBlockLayer",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog-block-layer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog-block-layer",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Dialog",
+          "members": [],
+          "attributes": [
+            {
+              "name": "headerText",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the header text.",
+              "default": "\"\"",
+              "fieldName": "headerText"
+            },
+            {
+              "name": "hideFooter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideFooter"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
           }
         }
       ]
@@ -495,193 +682,6 @@
           "declaration": {
             "name": "getIconData",
             "module": "src/icon/util.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/form-item.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "FormItem",
-          "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "label"
-            },
-            {
-              "name": "rules",
-              "type": {
-                "text": "Array<Rule>"
-              },
-              "default": "[]",
-              "fieldName": "rules"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form-item",
-          "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Form",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/dialog/BlockLayer.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "DialogBlockLayer",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog-block-layer",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog-block-layer",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/dialog/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Dialog",
-          "members": [],
-          "attributes": [
-            {
-              "name": "headerText",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the header text.",
-              "default": "\"\"",
-              "fieldName": "headerText"
-            },
-            {
-              "name": "hideFooter",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "hideFooter"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
           }
         }
       ]

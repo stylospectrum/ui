@@ -407,6 +407,10 @@ class Popover extends LitElement {
         left = Math.max(targetRect.left - popoverSize.width - arrowOffset, 0);
         top = this._getHorizontalTop(targetRect, popoverSize);
         break;
+      case Placement.Right:
+        left = targetRect.left + targetRect.width + arrowOffset + this.offsetX;
+        top = this._getHorizontalTop(targetRect, popoverSize);
+        break;
     }
 
     if (isVertical) {

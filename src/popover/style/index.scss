@@ -35,6 +35,16 @@
   }
 }
 
+:host([placement='Right']) .stylospectrum-popover-arrow {
+  top: calc(50% - 0.5625rem);
+  left: -0.5625rem;
+  width: 0.5625rem;
+
+  &::after {
+    margin: 0.125rem 0 0 0.25rem;
+  }
+}
+
 .stylospectrum-popover {
   display: flex;
   flex-direction: column;
