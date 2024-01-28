@@ -176,8 +176,9 @@ export default {
   globs: ['src/**/*.ts'],
   exclude: [
     'src/**/{React,stories}.ts',
+    'src/**/React/*.ts',
     'src/icon/data/*',
-    'src/(utils|enums)/**/*.ts',
+    'src/(utils|enums|types)/**/*.ts',
   ],
   outdir: '.storybook',
   litelement: true,
