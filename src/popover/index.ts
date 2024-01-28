@@ -1,5 +1,5 @@
 import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
-import {customElement, property, query, state} from 'lit/decorators.js';
+import {customElement, property, state} from 'lit/decorators.js';
 import styles from './style/index.scss';
 import {Placement, PopoverHorizontalAlign} from '../types';
 import clamp from '../utils/clamp';
@@ -52,7 +52,7 @@ class Popover extends LitElement {
   /**
    * Determines on which side the component is placed at.
    *
-   * @default "Right"
+   * @default "Bottom"
    * @public
    */
   @property({type: String, reflect: true})
@@ -95,6 +95,14 @@ class Popover extends LitElement {
   @property({type: Number, attribute: 'offset-x'})
   offsetX = 0;
 
+  /**
+   * @type {number}
+   * @defaultValue 0
+   * @private
+   */
+  @property({type: Number, attribute: 'offset-y'})
+  offsetY = 0;
+
   @state()
   arrowTranslateX = 0;
 
@@ -103,9 +111,6 @@ class Popover extends LitElement {
 
   @state()
   opened = false;
-
-  @query('.stylospectrum-popover-wrapper')
-  popup?: HTMLElement;
 
   _opener?: HTMLElement;
   _top?: number;
@@ -142,7 +147,7 @@ class Popover extends LitElement {
         return;
       }
 
-      if (isClickInRect(event, popup.popup!.getBoundingClientRect())) {
+      if (isClickInRect(event, popup!.getBoundingClientRect())) {
         break;
       }
 
@@ -236,7 +241,7 @@ class Popover extends LitElement {
   }
 
   private _getPopupSize(): PopoverSize {
-    const rect = this.popup!.getBoundingClientRect(),
+    const rect = this!.getBoundingClientRect(),
       width = rect.width,
       height = rect.height;
 
@@ -395,7 +400,7 @@ class Popover extends LitElement {
     switch (placement) {
       case Placement.Bottom:
         left = this._getVerticalLeft(targetRect, popoverSize);
-        top = targetRect.bottom + arrowOffset;
+        top = targetRect.bottom + arrowOffset + this.offsetY;
 
         break;
       case Placement.Left:
@@ -499,7 +504,7 @@ class Popover extends LitElement {
     const ele = getFirstFocusableElement(this);
     ele?.focus();
 
-    Object.assign(this.popup!.style, {
+    Object.assign(this!.style, {
       top: `${top}px`,
       left: `${left}px`,
     });
@@ -515,7 +520,7 @@ class Popover extends LitElement {
     this._resetFocus();
 
     this.style.display = 'none';
-    Object.assign(this.popup!.style, {
+    Object.assign(this!.style, {
       top: '-10000px',
       left: '-10000px',
     });
@@ -547,17 +552,15 @@ class Popover extends LitElement {
         </span>`;
 
     return html`
-      <div class="stylospectrum-popover-wrapper">
-        <section class="stylospectrum-popover">
-          ${arrowNode} ${headerNode}
+      <section class="stylospectrum-popover">
+        ${arrowNode} ${headerNode}
 
-          <div part="content" class="stylospectrum-popover-content">
-            <slot></slot>
-          </div>
+        <div part="content" class="stylospectrum-popover-content">
+          <slot></slot>
+        </div>
 
-          ${footerNode}
-        </section>
-      </div>
+        ${footerNode}
+      </section>
     `;
   }
 }

@@ -18,3 +18,4 @@ export type {default as IPopover} from '../popover';
 export type {default as IList} from '../list';
 export type {default as IListItem} from '../list/list-item';
 export type {default as IMenu} from '../menu';
+export type {default as IDialog} from '../dialog';
