@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.33](https://github.com/stylospectrum/ui/compare/v0.0.32...v0.0.33) (2024-01-28)
+
+### Features
+
+- **Popover:** add Placement.Right ([dea5fc5](https://github.com/stylospectrum/ui/commit/dea5fc51bae74dbbfa805af9781b778d94c16ee3))
+
 ### [0.0.32](https://github.com/stylospectrum/ui/compare/v0.0.31...v0.0.32) (2024-01-28)
 
 ### Bug Fixes
