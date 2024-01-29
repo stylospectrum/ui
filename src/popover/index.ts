@@ -116,6 +116,7 @@ class Popover extends LitElement {
   _top?: number;
   _left?: number;
   _focusedElementBeforeOpen?: HTMLElement | null;
+  _scaleElement?: HTMLElement;
 
   private _isOpenerClicked(e: MouseEvent) {
     const target = e.target as HTMLElement;
@@ -385,12 +386,52 @@ class Popover extends LitElement {
     return actualPlacement;
   }
 
+  public setScaleElement(element: HTMLElement) {
+    this._scaleElement = element;
+  }
+
+  private _getScale() {
+    if (this._scaleElement) {
+      const {transform} = window.getComputedStyle(this._scaleElement);
+
+      if (transform && transform !== 'none') {
+        const matrix = transform.match(/^matrix\((.+)\)$/);
+
+        if (matrix) {
+          const matrixValues = matrix[1].split(', ');
+          const scaleX = parseFloat(matrixValues[0]);
+          const scaleY = parseFloat(matrixValues[3]);
+          return {scaleX, scaleY};
+        }
+      }
+      return {scaleX: 1, scaleY: 1};
+    }
+
+    return {scaleX: 1, scaleY: 1};
+  }
+
   private _calcPlacement(
     targetRect: DOMRect,
     popoverSize: PopoverSize
   ): CalculatedPlacement {
     let left = 0;
     let top = 0;
+    const scale = this._getScale();
+
+    targetRect = {
+      ...targetRect,
+      width: targetRect.width / scale.scaleX,
+      height: targetRect.height / scale.scaleY,
+      left: targetRect.left / scale.scaleX,
+      right: targetRect.right / scale.scaleX,
+      top: targetRect.top / scale.scaleY,
+      bottom: targetRect.bottom / scale.scaleY,
+    };
+
+    popoverSize = {
+      width: popoverSize.width / scale.scaleX,
+      height: popoverSize.height / scale.scaleY,
+    };
 
     const clientWidth = document.documentElement.clientWidth;
     const isVertical = this.placement === Placement.Bottom;
