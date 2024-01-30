@@ -232,7 +232,6 @@ class Popover extends LitElement {
 
     while (parentElement) {
       if (isElementContainingBlock(parentElement)) {
-        console.log(parentElement, parentElement.getBoundingClientRect());
         return parentElement.getBoundingClientRect();
       }
 
@@ -354,7 +353,6 @@ class Popover extends LitElement {
   }
 
   private _getScale() {
-    this._scaleElement = document.body;
     if (this._scaleElement) {
       const {transform} = window.getComputedStyle(this._scaleElement);
 
