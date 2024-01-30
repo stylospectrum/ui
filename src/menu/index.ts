@@ -1,5 +1,5 @@
 import {LitElement, html} from 'lit';
-import {customElement, queryAll} from 'lit/decorators.js';
+import {customElement, query} from 'lit/decorators.js';
 import {ContextProvider} from '@lit/context';
 import {IPopover} from '../types';
 import {menuContext} from './context';
@@ -7,22 +7,24 @@ import '../popover';
 
 @customElement('stylospectrum-menu')
 class Menu extends LitElement {
-  @queryAll('stylospectrum-popover')
-  popovers!: NodeListOf<IPopover>;
+  @query('stylospectrum-popover')
+  popoverNode!: IPopover;
 
   private _provider = new ContextProvider(this, {context: menuContext});
 
   public showAt(opener: HTMLElement) {
-    const popover = this.popovers[0];
-    popover.showAt(opener);
+    this.popoverNode.showAt(opener);
+  }
+
+  public setScaleElement(element: HTMLElement) {
+    this.popoverNode.setScaleElement(element);
   }
 
   override connectedCallback(): void {
     super.connectedCallback();
     this._provider.setValue({
       hidePopover: () => {
-        const popover = this.popovers[0];
-        popover.hide();
+        this.popoverNode.hide();
       },
     });
   }
