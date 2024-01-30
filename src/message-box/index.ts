@@ -33,7 +33,7 @@ class MessageBox extends LitElement {
 
   public show() {
     this.dialogNode.show();
-    this.okButtonNodes?.[0].shadowRoot?.querySelector('button')?.focus();
+    this.okButtonNodes?.[0]?.shadowRoot?.querySelector('button')?.focus();
   }
 
   public hide() {

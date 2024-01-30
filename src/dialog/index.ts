@@ -57,7 +57,7 @@ class Dialog extends LitElement {
     this.opened = true;
     this.style.display = 'flex';
 
-    this.okButtonNodes?.[0].shadowRoot?.querySelector('button')?.focus();
+    this.okButtonNodes?.[0]?.shadowRoot?.querySelector('button')?.focus();
   }
 
   public hide() {
