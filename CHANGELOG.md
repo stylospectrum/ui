@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.36](https://github.com/stylospectrum/ui/compare/v0.0.35...v0.0.36) (2024-01-30)
+
+### Bug Fixes
+
+- **Popover:** remove console ([cb34a4e](https://github.com/stylospectrum/ui/commit/cb34a4e6875d5f945be5d369403b2ea788f0ca74))
+
 ### [0.0.35](https://github.com/stylospectrum/ui/compare/v0.0.34...v0.0.35) (2024-01-30)
 
 ### Bug Fixes
