@@ -1,7 +1,13 @@
 import {LitElement, html, css, unsafeCSS, render, nothing} from 'lit';
-import {customElement, property, state} from 'lit/decorators.js';
+import {
+  customElement,
+  property,
+  queryAssignedElements,
+  state,
+} from 'lit/decorators.js';
 import styles from './style/index.scss';
 import './BlockLayer';
+import '../icon';
 
 @customElement('stylospectrum-dialog')
 class Dialog extends LitElement {
@@ -25,19 +31,33 @@ class Dialog extends LitElement {
   @property({type: Boolean, attribute: 'hide-footer'})
   hideFooter!: boolean;
 
+  /**
+   * @default ""
+   * @public
+   */
+  @property({type: String, attribute: 'header-icon'})
+  headerIcon!: string;
+
   @state()
   opened = false;
 
+  @queryAssignedElements({slot: 'ok-button'})
+  okButtonNodes!: HTMLElement[];
+
   blockLayerTemplate(hidden = false) {
     return html`<stylospectrum-dialog-block-layer
+      @click=${() => this.hide()}
       ?hidden=${hidden}
-    ></stylospectrum-dialog-block-layer>`;
+    >
+    </stylospectrum-dialog-block-layer>`;
   }
 
   public show() {
     render(this.blockLayerTemplate(), document.body);
     this.opened = true;
     this.style.display = 'flex';
+
+    this.okButtonNodes?.[0].shadowRoot?.querySelector('button')?.focus();
   }
 
   public hide() {
@@ -58,12 +78,23 @@ class Dialog extends LitElement {
           <slot name="cancel-button"></slot>
         </footer>`;
 
+    const headerIconNode = this.headerIcon
+      ? html`<stylospectrum-icon
+          class="stylospectrum-dialog-header-icon"
+          name=${this.headerIcon}
+        >
+        </stylospectrum-icon>`
+      : nothing;
+
     return html`
       <slot name="second-dialog"></slot>
 
       <section class="stylospectrum-dialog" role="dialog" aria-modal="true">
         <header class="stylospectrum-dialog-header" part="header">
-          <h1 class="stylospectrum-dialog-header-text">${this.headerText}</h1>
+          <div class="stylospectrum-dialog-header-text-wrapper">
+            ${headerIconNode}
+            <h1 class="stylospectrum-dialog-header-text">${this.headerText}</h1>
+          </div>
           <slot name="sub-header"></slot>
         </header>
 

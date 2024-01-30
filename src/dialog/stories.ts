@@ -39,13 +39,13 @@ const Template: UIStoryArgs<Dialog, StoryArgsProps> = (args) => {
 
       <stylospectrum-button
         slot="ok-button"
-        type="Tertiary"
         @click=${() => dialogRef.value?.hide()}
       >
         Save
       </stylospectrum-button>
       <stylospectrum-button
         slot="cancel-button"
+        type="Tertiary"
         @click=${() => dialogRef.value?.hide()}
       >
         Close

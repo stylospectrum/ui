@@ -1,0 +1,15 @@
+:host {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1250;
+  transform: translate(-50%, -50%);
+}
+
+.stylospectrum-message-box {
+  position: relative;
+
+  &-content {
+    padding: 1rem;
+  }
+}
