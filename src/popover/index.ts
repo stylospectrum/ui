@@ -232,6 +232,7 @@ class Popover extends LitElement {
 
     while (parentElement) {
       if (isElementContainingBlock(parentElement)) {
+        console.log(parentElement, parentElement.getBoundingClientRect());
         return parentElement.getBoundingClientRect();
       }
 
@@ -352,14 +353,36 @@ class Popover extends LitElement {
     return undefined;
   }
 
+  private _getScale() {
+    this._scaleElement = document.body;
+    if (this._scaleElement) {
+      const {transform} = window.getComputedStyle(this._scaleElement);
+
+      if (transform && transform !== 'none') {
+        const matrix = transform.match(/^matrix\((.+)\)$/);
+
+        if (matrix) {
+          const matrixValues = matrix[1].split(', ');
+          const scaleX = parseFloat(matrixValues[0]);
+          const scaleY = parseFloat(matrixValues[3]);
+          return {scaleX, scaleY};
+        }
+      }
+      return {scaleX: 1, scaleY: 1};
+    }
+
+    return {scaleX: 1, scaleY: 1};
+  }
+
   private _getActualPlacement(
     targetRect: DOMRect,
     popoverSize: PopoverSize
   ): Placement {
     let actualPlacement = this.placement;
 
-    const clientWidth = document.documentElement.clientWidth;
-    const clientHeight = document.documentElement.clientHeight;
+    const scale = this._getScale();
+    const clientWidth = document.documentElement.clientWidth / scale.scaleX;
+    const clientHeight = document.documentElement.clientHeight / scale.scaleY;
 
     switch (this.placement) {
       case Placement.Bottom:
@@ -390,26 +413,6 @@ class Popover extends LitElement {
     this._scaleElement = element;
   }
 
-  private _getScale() {
-    if (this._scaleElement) {
-      const {transform} = window.getComputedStyle(this._scaleElement);
-
-      if (transform && transform !== 'none') {
-        const matrix = transform.match(/^matrix\((.+)\)$/);
-
-        if (matrix) {
-          const matrixValues = matrix[1].split(', ');
-          const scaleX = parseFloat(matrixValues[0]);
-          const scaleY = parseFloat(matrixValues[3]);
-          return {scaleX, scaleY};
-        }
-      }
-      return {scaleX: 1, scaleY: 1};
-    }
-
-    return {scaleX: 1, scaleY: 1};
-  }
-
   private _calcPlacement(
     targetRect: DOMRect,
     popoverSize: PopoverSize
@@ -433,7 +436,7 @@ class Popover extends LitElement {
       height: popoverSize.height / scale.scaleY,
     };
 
-    const clientWidth = document.documentElement.clientWidth;
+    const clientWidth = document.documentElement.clientWidth / scale.scaleX;
     const isVertical = this.placement === Placement.Bottom;
     const arrowOffset = this.hideArrow ? 0 : ARROW_SIZE;
     const placement = this._getActualPlacement(targetRect, popoverSize);
@@ -516,22 +519,18 @@ class Popover extends LitElement {
     }
 
     const placement = this._calcPlacement(openerRect!, popupSize);
+    const scale = this._getScale();
+    const doc = document.documentElement;
+    const maxWidth =
+      (doc.clientWidth - popupSize.width - Popover.VIEWPORT_MARGIN) /
+      scale.scaleX;
+    const maxHeight =
+      (doc.clientHeight - popupSize.height - Popover.VIEWPORT_MARGIN) /
+      scale.scaleY;
 
-    let left = clamp(
-      this._left!,
-      Popover.VIEWPORT_MARGIN,
-      document.documentElement.clientWidth -
-        popupSize.width -
-        Popover.VIEWPORT_MARGIN
-    );
+    let left = clamp(this._left!, Popover.VIEWPORT_MARGIN, maxWidth);
+    let top = clamp(this._top!, Popover.VIEWPORT_MARGIN, maxHeight);
 
-    let top = clamp(
-      this._top!,
-      Popover.VIEWPORT_MARGIN,
-      document.documentElement.clientHeight -
-        popupSize.height -
-        Popover.VIEWPORT_MARGIN
-    );
     top = Math.max(top, this._top!);
 
     this.arrowTranslateX = placement.arrow.x;
@@ -539,8 +538,8 @@ class Popover extends LitElement {
 
     const containingBlockClientLocation =
       this._getContainingBlockClientLocation();
-    left -= containingBlockClientLocation.left;
-    top -= containingBlockClientLocation.top;
+    left -= containingBlockClientLocation.left / scale.scaleX;
+    top -= containingBlockClientLocation.top / scale.scaleY;
 
     this._addOpenedPopover(this);
     this.opened = true;

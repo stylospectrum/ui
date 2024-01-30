@@ -313,6 +313,86 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/checkbox/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Checkbox",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-checkbox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-checkbox",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/dialog/BlockLayer.ts",
       "declarations": [
         {
@@ -404,80 +484,96 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/checkbox/index.ts",
+      "path": "src/form/form-item.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Checkbox",
+          "name": "FormItem",
           "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<boolean>"
-              },
-              "description": "Fired when the component checked state changes.",
-              "fieldName": "change"
-            }
-          ],
           "attributes": [
             {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is displayed as partially checked.",
-              "fieldName": "indeterminate"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
-              "fieldName": "checked"
-            },
-            {
-              "name": "text",
+              "name": "name",
               "type": {
                 "text": "string"
               },
-              "description": "Defines the text of the component.",
-              "fieldName": "text"
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "rules",
+              "type": {
+                "text": "Array<Rule>"
+              },
+              "default": "[]",
+              "fieldName": "rules"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-checkbox",
+          "tagName": "stylospectrum-form-item",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-checkbox",
+          "name": "stylospectrum-form-item",
           "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Form",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
           }
         }
       ]
@@ -586,102 +682,6 @@
           "declaration": {
             "name": "getIconData",
             "module": "src/icon/util.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/form-item.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "FormItem",
-          "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "label"
-            },
-            {
-              "name": "rules",
-              "type": {
-                "text": "Array<Rule>"
-              },
-              "default": "[]",
-              "fieldName": "rules"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form-item",
-          "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Form",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
           }
         }
       ]
@@ -1457,43 +1457,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/toast/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Toast",
-          "members": [],
-          "attributes": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-toast",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/tooltip/index.ts",
       "declarations": [
         {
@@ -1540,6 +1503,43 @@
           "declaration": {
             "name": "Tooltip",
             "module": "src/tooltip/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Toast",
+          "members": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
           }
         }
       ]

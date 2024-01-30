@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.35](https://github.com/stylospectrum/ui/compare/v0.0.34...v0.0.35) (2024-01-30)
+
+### Bug Fixes
+
+- **Popover:** the position is incorrect when the parent is scaled 2 ([e7b9383](https://github.com/stylospectrum/ui/commit/e7b938360586b34143835f037e96bd2d45d1609d))
+
 ### [0.0.34](https://github.com/stylospectrum/ui/compare/v0.0.33...v0.0.34) (2024-01-29)
 
 ### Bug Fixes
