@@ -55,6 +55,16 @@ class Input extends LitElement {
   value!: string;
 
   /**
+   * Defines the default value of the component.
+   *
+   * @type {string}
+   * @defaultValue ""
+   * @public
+   */
+  @property({type: String})
+  defaultValue!: string;
+
+  /**
    * Defines the value state of the component.
    *
    * @type {ValueState}
@@ -257,7 +267,7 @@ class Input extends LitElement {
     return html`
       <span class="stylospectrum-input-wrapper">
         <input
-          .value=${this._innerValue}
+          .value=${this._innerValue || this.defaultValue}
           @focus=${this._handleFocus}
           @blur=${this._handleBlur}
           @input=${this._handleInput}
