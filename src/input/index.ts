@@ -267,7 +267,7 @@ class Input extends LitElement {
     return html`
       <span class="stylospectrum-input-wrapper">
         <input
-          .value=${this._innerValue || this.defaultValue}
+          .value=${this._innerValue || this.defaultValue || ''}
           @focus=${this._handleFocus}
           @blur=${this._handleBlur}
           @input=${this._handleInput}
