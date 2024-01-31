@@ -116,7 +116,7 @@ class Popover extends LitElement {
   _top?: number;
   _left?: number;
   _focusedElementBeforeOpen?: HTMLElement | null;
-  _scaleElement?: HTMLElement;
+  _scaleElement?: HTMLElement | null;
 
   private _isOpenerClicked(e: MouseEvent) {
     const target = e.target as HTMLElement;
@@ -227,18 +227,18 @@ class Popover extends LitElement {
     }
   };
 
-  private _getContainingBlockClientLocation() {
+  private _getContainingBlockClient() {
     let parentElement = getParentElement(this);
 
     while (parentElement) {
       if (isElementContainingBlock(parentElement)) {
-        return parentElement.getBoundingClientRect();
+        return parentElement;
       }
 
       parentElement = getParentElement(parentElement);
     }
 
-    return {left: 0, top: 0};
+    return null;
   }
 
   private _getPopupSize(): PopoverSize {
@@ -353,6 +353,10 @@ class Popover extends LitElement {
   }
 
   private _getScale() {
+    if (!this._scaleElement) {
+      this._scaleElement = this._getContainingBlockClient();
+    }
+
     if (this._scaleElement) {
       const {transform} = window.getComputedStyle(this._scaleElement);
 
@@ -405,10 +409,6 @@ class Popover extends LitElement {
     }
 
     return actualPlacement;
-  }
-
-  public setScaleElement(element: HTMLElement) {
-    this._scaleElement = element;
   }
 
   private _calcPlacement(
@@ -534,10 +534,14 @@ class Popover extends LitElement {
     this.arrowTranslateX = placement.arrow.x;
     this.arrowTranslateY = placement.arrow.y;
 
+    const containingBlockClient = this._getContainingBlockClient();
     const containingBlockClientLocation =
-      this._getContainingBlockClientLocation();
-    left -= containingBlockClientLocation.left / scale.scaleX;
-    top -= containingBlockClientLocation.top / scale.scaleY;
+      containingBlockClient?.getBoundingClientRect();
+
+    if (containingBlockClientLocation) {
+      left -= containingBlockClientLocation.left / scale.scaleX;
+      top -= containingBlockClientLocation.top / scale.scaleY;
+    }
 
     this._addOpenedPopover(this);
     this.opened = true;

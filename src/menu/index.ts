@@ -16,10 +16,6 @@ class Menu extends LitElement {
     this.popoverNode.showAt(opener);
   }
 
-  public setScaleElement(element: HTMLElement) {
-    this.popoverNode.setScaleElement(element);
-  }
-
   override connectedCallback(): void {
     super.connectedCallback();
     this._provider.setValue({
