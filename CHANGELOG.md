@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.41](https://github.com/stylospectrum/ui/compare/v0.0.40...v0.0.41) (2024-01-31)
+
+### Features
+
+- **Input:** add defaultValue prop ([895213b](https://github.com/stylospectrum/ui/commit/895213bcca44620d13eed33a2f08947c4db0f5dd))
+
 ### [0.0.40](https://github.com/stylospectrum/ui/compare/v0.0.39...v0.0.40) (2024-01-31)
 
 ### Features
