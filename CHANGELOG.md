@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.40](https://github.com/stylospectrum/ui/compare/v0.0.39...v0.0.40) (2024-01-31)
+
+### Features
+
+- **Dialog:** support mask click event ([2ce5a07](https://github.com/stylospectrum/ui/commit/2ce5a079fb68c2924db01ef8b8e1d5e9bdb1cc3b))
+- **Input:** support escape event ([f47472e](https://github.com/stylospectrum/ui/commit/f47472e33ae137627a588c86662ca5219b7a5b61))
+
 ### [0.0.39](https://github.com/stylospectrum/ui/compare/v0.0.38...v0.0.39) (2024-01-31)
 
 ### Bug Fixes

@@ -9,5 +9,6 @@ export default createComponent({
   events: {
     onChange: 'change',
     onEnter: 'enter',
+    onEscape: 'escape',
   },
 });

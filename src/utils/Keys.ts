@@ -122,3 +122,8 @@ export const isSpace = (event: KeyboardEvent): boolean =>
 export const isTabNext = (event: KeyboardEvent): boolean =>
   (event.key ? event.key === 'Tab' : event.keyCode === KeyCodes.TAB) &&
   !hasModifierKeys(event);
+
+export const isEscape = (event: KeyboardEvent): boolean =>
+  (event.key
+    ? event.key === 'Escape' || event.key === 'Esc'
+    : event.keyCode === KeyCodes.ESCAPE) && !hasModifierKeys(event);

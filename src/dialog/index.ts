@@ -8,6 +8,7 @@ import {
 import styles from './style/index.scss';
 import './BlockLayer';
 import '../icon';
+import {EventEmitter, event} from '../utils';
 
 @customElement('stylospectrum-dialog')
 class Dialog extends LitElement {
@@ -38,6 +39,13 @@ class Dialog extends LitElement {
   @property({type: String, attribute: 'header-icon'})
   headerIcon!: string;
 
+  /**
+   * @event
+   * @public
+   */
+  @event({name: 'mask-click'})
+  maskClickEvent!: EventEmitter<void>;
+
   @state()
   opened = false;
 
@@ -46,7 +54,10 @@ class Dialog extends LitElement {
 
   blockLayerTemplate(hidden = false) {
     return html`<stylospectrum-dialog-block-layer
-      @click=${() => this.hide()}
+      @click=${() => {
+        this.maskClickEvent.emit();
+        this.hide();
+      }}
       ?hidden=${hidden}
     >
     </stylospectrum-dialog-block-layer>`;

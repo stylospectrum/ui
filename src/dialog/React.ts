@@ -6,4 +6,7 @@ export default createComponent({
   tagName: 'stylospectrum-dialog',
   elementClass: Dialog,
   react: React,
+  events: {
+    onMaskClick: 'mask-click',
+  },
 });

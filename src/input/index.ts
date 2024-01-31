@@ -10,7 +10,7 @@ import {
 import {customElement, property, query, state} from 'lit/decorators.js';
 import {InputType, ValueState} from '../types';
 import {EventEmitter, event} from '../utils';
-import {isEnter} from '../utils/Keys';
+import {isEnter, isEscape} from '../utils/Keys';
 import styles from './style/index.scss';
 import '../icon';
 import '../icon/data/decline';
@@ -146,6 +146,13 @@ class Input extends LitElement {
   @event({name: 'enter'})
   enterEvent!: EventEmitter<string>;
 
+  /**
+   * @event
+   * @public
+   */
+  @event({name: 'escape'})
+  escapeEvent!: EventEmitter<void>;
+
   @query('input')
   input!: HTMLInputElement;
 
@@ -181,6 +188,10 @@ class Input extends LitElement {
   private _handleKeyDown(e: KeyboardEvent) {
     if (isEnter(e)) {
       this.enterEvent.emit(this._innerValue);
+    }
+
+    if (isEscape(e)) {
+      this.escapeEvent.emit();
     }
   }
 
