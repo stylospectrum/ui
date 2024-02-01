@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.43](https://github.com/stylospectrum/ui/compare/v0.0.42...v0.0.43) (2024-02-01)
+
+### Features
+
+- **Textarea:** add defaultValue prop ([6077677](https://github.com/stylospectrum/ui/commit/6077677274deacf726c86c2684654788985f3b7b))
+
 ### [0.0.42](https://github.com/stylospectrum/ui/compare/v0.0.41...v0.0.42) (2024-01-31)
 
 ### Bug Fixes
