@@ -61,7 +61,7 @@ class Input extends LitElement {
    * @defaultValue ""
    * @public
    */
-  @property({type: String})
+  @property({type: String, attribute: 'default-value'})
   defaultValue!: string;
 
   /**
