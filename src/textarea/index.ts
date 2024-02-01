@@ -56,6 +56,16 @@ class Textarea extends LitElement {
   value!: string;
 
   /**
+   * Defines the default value of the component.
+   *
+   * @type {string}
+   * @defaultValue ""
+   * @public
+   */
+  @property({type: String, attribute: 'default-value'})
+  defaultValue!: string;
+
+  /**
    * Defines the value state of the component.
    *
    * @type {ValueState}
@@ -197,7 +207,7 @@ class Textarea extends LitElement {
       <span class="stylospectrum-textarea-wrapper">
         ${growingNode}
         <textarea
-          .value=${this._innerValue}
+          .value=${this._innerValue || this.defaultValue || ''}
           @focus=${this._handleFocus}
           @blur=${this._handleBlur}
           @input=${this._handleInput}

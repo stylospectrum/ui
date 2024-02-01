@@ -20,3 +20,4 @@ export type {default as IListItem} from '../list/list-item';
 export type {default as IMenu} from '../menu';
 export type {default as IDialog} from '../dialog';
 export type {default as IMessageBox} from '../message-box';
+export type {default as ITextarea} from '../textarea';
