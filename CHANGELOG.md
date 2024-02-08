@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.44](https://github.com/stylospectrum/ui/compare/v0.0.43...v0.0.44) (2024-02-08)
+
+### Bug Fixes
+
+- **Input:** disabled prop not working in React lib ([bb09038](https://github.com/stylospectrum/ui/commit/bb09038bedfb635b29ca8b044d08f53758d3642d))
+
 ### [0.0.43](https://github.com/stylospectrum/ui/compare/v0.0.42...v0.0.43) (2024-02-01)
 
 ### Features
