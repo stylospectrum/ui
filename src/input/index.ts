@@ -30,7 +30,7 @@ class Input extends LitElement {
    * @defaultValue false
    * @public
    */
-  @property({type: Boolean})
+  @property({type: Boolean, reflect: true})
   disabled!: boolean;
 
   /**
