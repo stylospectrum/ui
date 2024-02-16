@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.45](https://github.com/stylospectrum/ui/compare/v0.0.44...v0.0.45) (2024-02-16)
+
+### Bug Fixes
+
+- expose avatar for react lib ([5086db6](https://github.com/stylospectrum/ui/commit/5086db676cb6c8db52aa0db251be740fb2d41d81))
+
 ### [0.0.44](https://github.com/stylospectrum/ui/compare/v0.0.43...v0.0.44) (2024-02-08)
 
 ### Bug Fixes
