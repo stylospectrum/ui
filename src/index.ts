@@ -18,3 +18,4 @@ export {default as MenuButton} from './menu-button/React';
 export {default as Menu} from './menu/React/Menu';
 export {default as MenuItem} from './menu/React/MenuItem';
 export {default as MessageBox} from './message-box/React';
+export {default as Avatar} from './avatar/React';
