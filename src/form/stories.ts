@@ -1,16 +1,27 @@
 import {html} from 'lit';
 import {createRef, ref} from 'lit/directives/ref.js';
+import {isTabNext} from '../utils/Keys';
 import type Form from '.';
 import type Input from '../input';
 import type Link from '../link';
 import '.';
 import './form-item';
+import './form-list';
 import '../input';
 import '../checkbox';
 import '../button';
 import '../link';
+import '../multi-input';
+import '../textarea';
+import '../icon/data/less';
 
-const Template = () => {
+export default {
+  title: 'Form',
+  component: 'stylospectrum-form',
+  tags: ['autodocs'],
+};
+
+export const LoginForm = () => {
   const formRef = createRef<Form>();
   const passwordRef = createRef<Input>();
   const forgotPassRef = createRef<Link>();
@@ -32,10 +43,12 @@ const Template = () => {
       >
         <stylospectrum-input
           style="width: 100%"
-          @keydown="${() => {
-            requestAnimationFrame(() => {
-              passwordRef.value?.shadowRoot?.querySelector('input')?.focus();
-            });
+          @keydown="${(e: KeyboardEvent) => {
+            if (isTabNext(e)) {
+              requestAnimationFrame(() => {
+                passwordRef.value?.shadowRoot?.querySelector('input')?.focus();
+              });
+            }
           }}"
         ></stylospectrum-input>
       </stylospectrum-form-item>
@@ -87,10 +100,103 @@ const Template = () => {
   `;
 };
 
-export default {
-  title: 'Form',
-  component: 'stylospectrum-form',
-  tags: ['autodocs'],
-};
+export const BotEntityForm = () => {
+  const formRef = createRef<Form>();
 
-export const Basic = Template.bind({});
+  return html`
+    <stylospectrum-form
+      ${ref(formRef)}
+      .initialValues=${{
+        name: 'size',
+        options: [
+          {
+            id: '1',
+            name: 'XL',
+            synonyms: [{id: '2', name: 'extra large'}],
+          },
+          {
+            id: '2',
+            name: 'L',
+            synonyms: [{id: '2', name: 'large'}],
+          },
+        ],
+      }}
+      style="width: 27.75rem; display:block"
+    >
+      <stylospectrum-form-item
+        label="Name"
+        name="name"
+        .rules="${[{required: true, message: 'Enter your name'}]}"
+      >
+        <stylospectrum-input></stylospectrum-input>
+      </stylospectrum-form-item>
+
+      <div style="display:flex;gap:.5rem">
+        <div
+          style="color: #FFF;font-size: 0.875rem;text-align:center;width: 13.75rem;"
+        >
+          Option
+        </div>
+
+        <div
+          style="color: #FFF;font-size: 0.875rem;text-align:center;width: 18.75rem;"
+        >
+          Synonyms
+        </div>
+      </div>
+
+      <stylospectrum-form-list
+        name="options"
+        .renderChild=${(name: number) => {
+          return html`<div style="display:flex;gap:.5rem">
+            <stylospectrum-form-item .name=${[name, 'name']}>
+              <stylospectrum-input></stylospectrum-input>
+            </stylospectrum-form-item>
+
+            <stylospectrum-form-item .name=${[name, 'synonyms']}>
+              <stylospectrum-multi-input></stylospectrum-multi-input>
+            </stylospectrum-form-item>
+
+            <stylospectrum-button
+              icon="less"
+              @click=${() => formRef.value?.list.options.delete(name)}
+            ></stylospectrum-button>
+          </div> `;
+        }}
+      >
+      </stylospectrum-form-list>
+    </stylospectrum-form>
+
+    <stylospectrum-button @click=${() => formRef.value?.list.options.add()}>
+      Add
+    </stylospectrum-button>
+
+    <stylospectrum-button
+      @click=${async () => console.log(await formRef.value?.validateFields())}
+    >
+      Submit
+    </stylospectrum-button>
+
+    <stylospectrum-button
+      @click=${() =>
+        formRef.value?.setFieldsValue({
+          name: 'color',
+          options: [
+            {
+              id: '1',
+              name: 'blue',
+              synonyms: [],
+            },
+          ],
+        })}
+    >
+      set field values
+    </stylospectrum-button>
+
+    <stylospectrum-button
+      @click=${() => console.log(formRef.value?.resetFields())}
+    >
+      Reset field
+    </stylospectrum-button>
+  `;
+};

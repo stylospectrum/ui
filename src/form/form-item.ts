@@ -14,10 +14,20 @@ import {
 } from 'lit/decorators.js';
 import AsyncValidator from 'async-validator';
 import Checkbox from '../checkbox';
+import MultiInput, {type MultiInputOption} from '../multi-input';
 import type Input from '../input';
 import styles from './style/form-item.scss';
 import {ValueState} from '../types';
+import {
+  FormContext,
+  FormListContext,
+  formContext,
+  formListContext,
+} from './context';
+import {consume} from '@lit/context';
 import '../label';
+import {getValue} from './utils';
+import {type StoreValue} from './interface';
 
 interface Rule {
   /** validate from a regular expression */
@@ -40,7 +50,7 @@ class FormItem extends LitElement {
    * @public
    */
   @property()
-  name!: string;
+  name!: string | string[];
 
   /**
    * @type {string}
@@ -56,7 +66,7 @@ class FormItem extends LitElement {
    * @private
    */
   @property()
-  value!: string | boolean;
+  value!: StoreValue;
 
   /**
    * @type {Array<Rule>}
@@ -69,32 +79,93 @@ class FormItem extends LitElement {
   @queryAssignedElements({flatten: true})
   slotEls!: Array<FormItem>;
 
+  @consume({context: formContext, subscribe: true})
+  _formConsumer!: FormContext;
+
+  @consume({context: formListContext, subscribe: true})
+  _formListConsumer!: FormListContext;
+
+  cancelRegisterFunc: Function | null = null;
+
+  override connectedCallback(): void {
+    super.connectedCallback();
+
+    this.value = getValue(
+      this.getNamePath(),
+      this._formConsumer.getStore()
+    ) as StoreValue;
+
+    requestAnimationFrame(() => {
+      if (!(this.slotEls[0] instanceof Checkbox) && this.value) {
+        this.slotEls[0].value = this.value;
+      }
+    });
+
+    if (this._formConsumer) {
+      this.cancelRegisterFunc = this._formConsumer.registerField(this);
+    }
+  }
+
+  override disconnectedCallback(): void {
+    super.disconnectedCallback();
+    this.cancelRegisterFunc?.();
+  }
+
+  public getNamePath() {
+    const namePath = Array.isArray(this.name) ? this.name : [this.name];
+    return this._formListConsumer
+      ? [this._formListConsumer.listName, ...namePath]
+      : namePath;
+  }
+
+  public getFieldId() {
+    return this.getNamePath().join('_');
+  }
+
   private _handleChange(e: CustomEvent) {
-    this.value = e.detail;
-    this.validateRules();
+    if (!(e.target instanceof MultiInput)) {
+      this.value = e.detail;
+      this._formConsumer.setStore(this.getNamePath(), this.value);
+      this.validateRules();
+    }
+  }
+
+  private _handleEnter(e: CustomEvent) {
+    if (e.target instanceof MultiInput) {
+      this.value = [...((this.value as MultiInputOption[]) || []), e.detail];
+      this._formConsumer.setStore(this.getNamePath(), this.value);
+      this.validateRules();
+    }
+  }
+
+  private _handleTokenDelete(e: CustomEvent) {
+    this.value = (this.value as MultiInputOption[]).filter(
+      (item) => item.id !== e.detail
+    );
+    this._formConsumer.setStore(this.getNamePath(), this.value);
   }
 
   private _handleSlotChange(): void {
     const formControl = this.slotEls?.[0];
 
     if (formControl) {
-      formControl.id = this.name;
+      formControl.id = this.getFieldId();
     }
   }
 
   private async _validateRule(rule: Rule) {
     const validator = new AsyncValidator({
-      [this.name]: [rule],
+      [this.getFieldId()]: [rule],
     });
 
     let result = [];
 
     try {
-      await Promise.resolve(validator.validate({[this.name]: this.value}));
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      await Promise.resolve(
+        validator.validate({[this.getFieldId()]: this.value})
+      );
     } catch (errObj: any) {
       if (errObj.errors) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         result = errObj.errors.map(({message}: any) => {
           return message;
         });
@@ -161,6 +232,8 @@ class FormItem extends LitElement {
         <slot
           @slotchange=${this._handleSlotChange}
           @change="${this._handleChange}"
+          @enter=${this._handleEnter}
+          @token-delete=${this._handleTokenDelete}
         >
         </slot>
       </div>

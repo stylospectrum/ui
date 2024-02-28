@@ -1,7 +1,6 @@
 import type {ReactiveElement} from 'lit';
 
 type Constructor<T = Record<string, unknown>> = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   new (...args: any[]): T;
   prototype: T;
 };
@@ -38,7 +37,6 @@ export const decorateProperty =
   (
     protoOrDescriptor: ReactiveElement | ClassElement,
     name?: PropertyKey
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   ): void | any => {
     if (name !== undefined) {
       const ctor = (protoOrDescriptor as ReactiveElement).constructor;
@@ -48,7 +46,7 @@ export const decorateProperty =
       finisher?.(ctor as typeof ReactiveElement, name);
     } else {
       const key: PropertyKey =
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
+        // @typescript-eslint/no-unsafe-member-access
         ((protoOrDescriptor as unknown as any).originalKey as PropertyKey) ??
         (protoOrDescriptor as ClassElement).key;
       const info: ClassElement =

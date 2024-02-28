@@ -1,41 +1,67 @@
+import {ContextProvider} from '@lit/context';
 import {LitElement, TemplateResult, html} from 'lit';
-import {customElement, queryAssignedElements} from 'lit/decorators.js';
+import {customElement, property, state} from 'lit/decorators.js';
 import {ValueState} from '../types';
 import Input from '../input';
-import FormItem from './form-item';
+import type FormItem from './form-item';
+import type FormList from './form-list';
+import {formContext} from './context';
+import {cloneByNamePathList, setValue} from './utils';
+import {type Store} from './interface';
 
 @customElement('stylospectrum-form')
 class Form extends LitElement {
-  @queryAssignedElements({flatten: true})
-  slotEls!: Array<HTMLElement>;
+  private _provider = new ContextProvider(this, {context: formContext});
+  private _formItems: FormItem[] = [];
+  public list: {[name: string]: FormList} = {};
 
-  getFormItems() {
-    return this.slotEls.filter((el) => el instanceof FormItem) as FormItem[];
-  }
+  /**
+   * @type {Store}
+   * @defaultValue {}
+   * @public
+   */
+  @property({attribute: 'initial-values', type: Object, reflect: false})
+  initialValues!: Store;
+
+  @state()
+  store: Store = {};
 
   getFieldsValue() {
-    const values = this.getFormItems().map((el) => [el.name, el.value]);
-    return Object.fromEntries(values);
+    return cloneByNamePathList(
+      this.store,
+      this._formItems.map((el) => el.getNamePath())
+    );
   }
 
-  setFieldsValue(values: {[k: string]: string | undefined}) {
+  setFieldsValue(store: Store) {
     const formItems = Object.fromEntries(
-      this.getFormItems().map((el) => [el.name, el])
+      this._formItems.map((el) => [el.getFieldId(), el])
+    );
+    const formList = Object.fromEntries(
+      Object.values(this.list).map((el) => [el.name, el])
     );
 
-    Object.keys(values).forEach((key) => {
-      formItems[key].value = values[key]!;
+    Object.keys(store).forEach((key) => {
+      if (formItems?.[key]) {
+        formItems[key].value = store[key]!;
+        this.store = setValue(
+          this.store,
+          formItems[key].getNamePath(),
+          store[key]
+        );
+      }
+
+      if (formList[key]) {
+        formList[key].values = store[key]!;
+        this.store = setValue(this.store, [formList[key].name], store[key]);
+      }
     });
   }
 
   resetFields() {
-    const formItems = this.getFormItems();
-    const values = Object.fromEntries(
-      this.getFormItems().map((el) => [el.name, undefined])
-    );
-    this.setFieldsValue(values);
+    this.setFieldsValue(this.initialValues);
 
-    formItems.forEach((item) => {
+    this._formItems.forEach((item) => {
       const slot = item.shadowRoot?.querySelector('slot');
       const node = slot?.assignedElements({flatten: true})?.[0];
 
@@ -50,7 +76,7 @@ class Form extends LitElement {
     let hasError = false;
 
     try {
-      await Promise.all(this.getFormItems().map((el) => el.validateRules()));
+      await Promise.all(this._formItems.map((el) => el.validateRules()));
     } catch (e) {
       hasError = true;
     }
@@ -60,6 +86,32 @@ class Form extends LitElement {
     }
 
     return null;
+  }
+
+  override connectedCallback(): void {
+    super.connectedCallback();
+
+    this.store = this.initialValues;
+    this._provider.setValue({
+      getStore: () => this.store,
+      setStore: (namePath, value) => {
+        this.store = setValue(this.store, namePath, value);
+      },
+      registerField: (formItem) => {
+        this._formItems.push(formItem);
+
+        return () => {
+          this._formItems = this._formItems.filter((el) => el !== formItem);
+
+          if (!formItem._formListConsumer) {
+            setValue(this.store, formItem.getNamePath(), undefined, true);
+          }
+        };
+      },
+      registerList: (name, entity) => {
+        this.list[name] = entity;
+      },
+    });
   }
 
   override render(): TemplateResult {

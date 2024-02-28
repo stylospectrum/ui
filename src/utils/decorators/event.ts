@@ -33,7 +33,6 @@ export class EventEmitter<T> {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function event(options?: EventOptions): any {
   return decorateProperty({
     descriptor: (key: PropertyKey) => {
