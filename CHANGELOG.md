@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.46](https://github.com/stylospectrum/ui/compare/v0.0.45...v0.0.46) (2024-02-28)
+
+### Features
+
+- introduce new component: MultiInput ([c516d3a](https://github.com/stylospectrum/ui/commit/c516d3ab9ecf1909f06db3622974617a4ff220da))
+
 ### [0.0.45](https://github.com/stylospectrum/ui/compare/v0.0.44...v0.0.45) (2024-02-16)
 
 ### Bug Fixes
