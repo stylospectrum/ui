@@ -70,7 +70,6 @@ const findFocusableElement = (
     const originalChild: HTMLElement | undefined = child;
 
     if (child instanceof LitElement) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       child = (child as any)?.getFocusDomRef?.();
     }
 

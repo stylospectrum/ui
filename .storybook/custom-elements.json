@@ -166,6 +166,14 @@
             "name": "default",
             "module": "./message-box/React"
           }
+        },
+        {
+          "kind": "js",
+          "name": "Avatar",
+          "declaration": {
+            "name": "default",
+            "module": "./avatar/React"
+          }
         }
       ]
     },
@@ -321,102 +329,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/form/form-item.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "FormItem",
-          "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "label"
-            },
-            {
-              "name": "rules",
-              "type": {
-                "text": "Array<Rule>"
-              },
-              "default": "[]",
-              "fieldName": "rules"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form-item",
-          "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "FormItem",
-            "module": "src/form/form-item.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/form/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Form",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-form",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-form",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Form",
-            "module": "src/form/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/dialog/BlockLayer.ts",
       "declarations": [
         {
@@ -519,6 +431,315 @@
           "declaration": {
             "name": "Dialog",
             "module": "src/dialog/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/context.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "formContext",
+          "members": []
+        },
+        {
+          "kind": "variable",
+          "name": "formListContext",
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "formContext",
+          "declaration": {
+            "name": "formContext",
+            "module": "src/form/context.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "formListContext",
+          "declaration": {
+            "name": "formListContext",
+            "module": "src/form/context.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/form-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FormItem",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "label"
+            },
+            {
+              "name": "rules",
+              "type": {
+                "text": "Array<Rule>"
+              },
+              "default": "[]",
+              "fieldName": "rules"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form-item",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "FormItem",
+            "module": "src/form/form-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/form-list.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "FormList",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "renderChild",
+              "type": {
+                "text": "Function"
+              },
+              "fieldName": "renderChild"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form-list",
+          "declaration": {
+            "name": "FormList",
+            "module": "src/form/form-list.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "FormList",
+            "module": "src/form/form-list.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Form",
+          "members": [],
+          "attributes": [
+            {
+              "name": "initialValues",
+              "type": {
+                "text": "Store"
+              },
+              "fieldName": "initialValues"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-form",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-form",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Form",
+            "module": "src/form/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/interface.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/form/utils.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "getValue",
+          "parameters": [
+            {
+              "name": "path",
+              "type": {
+                "text": "(string | number | symbol)[] | readonly (string | number | symbol)[]"
+              }
+            },
+            {
+              "name": "entity",
+              "type": {
+                "text": "any"
+              }
+            }
+          ],
+          "members": []
+        },
+        {
+          "kind": "function",
+          "name": "setValue",
+          "return": {
+            "type": {
+              "text": "Output"
+            }
+          },
+          "parameters": [
+            {
+              "name": "entity",
+              "type": {
+                "text": "Entity"
+              }
+            },
+            {
+              "name": "paths",
+              "type": {
+                "text": "Path"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "Value"
+              }
+            },
+            {
+              "name": "removeIfUndefined",
+              "default": "false",
+              "type": {
+                "text": "boolean"
+              }
+            }
+          ],
+          "members": []
+        },
+        {
+          "kind": "function",
+          "name": "cloneByNamePathList",
+          "return": {
+            "type": {
+              "text": "Record<string, unknown>"
+            }
+          },
+          "parameters": [
+            {
+              "name": "store",
+              "type": {
+                "text": "Record<string, unknown>"
+              }
+            },
+            {
+              "name": "namePathList",
+              "type": {
+                "text": "string[][]"
+              }
+            }
+          ],
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "getValue",
+          "declaration": {
+            "name": "getValue",
+            "module": "src/form/utils.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "setValue",
+          "declaration": {
+            "name": "setValue",
+            "module": "src/form/utils.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "cloneByNamePathList",
+          "declaration": {
+            "name": "cloneByNamePathList",
+            "module": "src/form/utils.ts"
           }
         }
       ]
@@ -1238,42 +1459,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/message-strip/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "MessageStrip",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-message-strip",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-message-strip",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/message-box/index.ts",
       "declarations": [
         {
@@ -1315,6 +1500,113 @@
           "declaration": {
             "name": "MessageBox",
             "module": "src/message-box/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/message-strip/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MessageStrip",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-message-strip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-message-strip",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/multi-input/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MultiInput",
+          "members": [],
+          "events": [
+            {
+              "name": "token-delete",
+              "type": {
+                "text": "EventEmitter<string | null>"
+              },
+              "fieldName": "token-delete"
+            },
+            {
+              "name": "enter",
+              "type": {
+                "text": "EventEmitter<{name: string; id: string}>"
+              },
+              "fieldName": "enter"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "MultiInputOption[]"
+              },
+              "default": "[]",
+              "description": "Defines the value of the component.",
+              "fieldName": "value"
+            },
+            {
+              "name": "defaultValue",
+              "type": {
+                "text": "MultiInputOption[]"
+              },
+              "default": "[]",
+              "fieldName": "defaultValue"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-multi-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-multi-input",
+          "declaration": {
+            "name": "MultiInput",
+            "module": "src/multi-input/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MultiInput",
+            "module": "src/multi-input/index.ts"
           }
         }
       ]
@@ -1445,43 +1737,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/toast/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Toast",
-          "members": [],
-          "attributes": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-toast",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/textarea/index.ts",
       "declarations": [
         {
@@ -1525,6 +1780,14 @@
               },
               "description": "Defines the value of the component.",
               "fieldName": "value"
+            },
+            {
+              "name": "defaultValue",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the default value of the component.",
+              "fieldName": "defaultValue"
             },
             {
               "name": "valueState",
@@ -1575,6 +1838,43 @@
           "declaration": {
             "name": "Textarea",
             "module": "src/textarea/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Toast",
+          "members": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
           }
         }
       ]

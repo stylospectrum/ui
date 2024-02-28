@@ -113,6 +113,14 @@ class Input extends LitElement {
   type = InputType.Text;
 
   /**
+   * @type {boolean}
+   * @defaultValue false
+   * @private
+   */
+  @property({attribute: 'tokenizer-available', type: Boolean, reflect: true})
+  tokenizerAvailable!: boolean;
+
+  /**
    * Defines whether the clear icon is visible.
    *
    * @type {boolean}
@@ -153,7 +161,7 @@ class Input extends LitElement {
    * @event
    * @public
    */
-  @event({name: 'enter'})
+  @event({name: 'enter', composed: false})
   enterEvent!: EventEmitter<string>;
 
   /**
@@ -165,6 +173,10 @@ class Input extends LitElement {
 
   @query('input')
   input!: HTMLInputElement;
+
+  public clear() {
+    this._handleClear();
+  }
 
   private _handleClear() {
     this._innerValue = '';
@@ -266,6 +278,7 @@ class Input extends LitElement {
 
     return html`
       <span class="stylospectrum-input-wrapper">
+        <slot name="tokenizer"></slot>
         <input
           .value=${this._innerValue || this.defaultValue || ''}
           @focus=${this._handleFocus}

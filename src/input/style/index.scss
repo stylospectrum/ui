@@ -76,6 +76,14 @@
   }
 }
 
+:host([tokenizer-available]) input {
+  padding-inline-start: 0.125rem;
+}
+
+:host(:not([tokenizer-available])) slot {
+  display: none;
+}
+
 .stylospectrum-input {
   flex: 1 1 0%;
   box-sizing: border-box;
