@@ -6,4 +6,7 @@ export default createComponent({
   tagName: 'stylospectrum-table',
   elementClass: Table,
   react: React,
+  events: {
+    onSelect: 'select',
+  },
 });
