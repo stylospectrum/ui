@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.47](https://github.com/stylospectrum/ui/compare/v0.0.46...v0.0.47) (2024-03-02)
+
+### Features
+
+- introduce new component: Table ([dd8dffd](https://github.com/stylospectrum/ui/commit/dd8dffd38ad1f5575ab538549c788265cdeb6c57))
+
 ### [0.0.46](https://github.com/stylospectrum/ui/compare/v0.0.45...v0.0.46) (2024-02-28)
 
 ### Features
