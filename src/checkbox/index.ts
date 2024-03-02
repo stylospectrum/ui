@@ -68,6 +68,9 @@ class Checkbox extends LitElement {
   @state()
   private _innerChecked = false;
 
+  @state()
+  _controlled = false;
+
   /**
    * Fired when the component checked state changes.
    *
@@ -112,7 +115,7 @@ class Checkbox extends LitElement {
       return;
     }
 
-    if (!this.checked) {
+    if (!this._controlled) {
       this._innerChecked = checked;
     }
 
@@ -123,6 +126,7 @@ class Checkbox extends LitElement {
     super.willUpdate(_changedProperties);
 
     if (_changedProperties.has('checked') && !this.indeterminate) {
+      this._controlled = true;
       this._innerChecked = this.checked;
     }
   }

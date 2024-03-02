@@ -68,7 +68,8 @@ class MultiInput extends LitElement {
     super.willUpdate(_changedProperties);
 
     if (_changedProperties.has('value')) {
-      this._innerValue = this.value.length > 0 ? this.value : this.defaultValue;
+      this._innerValue =
+        this.value?.length > 0 ? this.value : this.defaultValue;
     }
   }
 
