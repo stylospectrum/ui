@@ -122,7 +122,7 @@ class FormList extends LitElement {
         }
         return key;
       },
-      (_, index) => this.renderChild(index)
+      (value, index) => this.renderChild(index, value)
     );
   }
 }

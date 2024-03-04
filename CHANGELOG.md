@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.49](https://github.com/stylospectrum/ui/compare/v0.0.48...v0.0.49) (2024-03-04)
+
+### Features
+
+- **Form:** add value param for renderChild func in list ([f5641d4](https://github.com/stylospectrum/ui/commit/f5641d45feba598b99bdf07820198f8e4a16d7b4))
+
 ### [0.0.48](https://github.com/stylospectrum/ui/compare/v0.0.47...v0.0.48) (2024-03-02)
 
 ### Bug Fixes
