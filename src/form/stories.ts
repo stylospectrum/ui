@@ -147,7 +147,7 @@ export const BotEntityForm = () => {
 
       <stylospectrum-form-list
         name="options"
-        .renderChild=${(name: number) => {
+        .renderChild=${(name: number, value: Record<string, any>) => {
           return html`<div style="display:flex;gap:.5rem">
             <stylospectrum-form-item .name=${[name, 'name']}>
               <stylospectrum-input></stylospectrum-input>
@@ -159,7 +159,10 @@ export const BotEntityForm = () => {
 
             <stylospectrum-button
               icon="less"
-              @click=${() => formRef.value?.list.options.delete(name)}
+              @click=${() => {
+                formRef.value?.list.options.delete(name);
+                console.log(value);
+              }}
             ></stylospectrum-button>
           </div> `;
         }}
