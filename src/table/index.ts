@@ -46,6 +46,14 @@ class Table extends LitElement {
   @event({name: 'select', composed: false})
   selectedEvent!: EventEmitter<AnyObject[]>;
 
+  public uncheckedAll() {
+    this._selected = false;
+    this._selectedRowGroups = [];
+    this._rowGroups.forEach((row) => {
+      row.updateSelected(false);
+    });
+  }
+
   private _handleSelect() {
     this._selected = !this._selected;
     this._rowGroups.forEach((row) => {

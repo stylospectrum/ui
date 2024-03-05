@@ -4,34 +4,25 @@
 
 .stylospectrum-table {
   &-row {
-    background-color: #1d232a;
     color: #eaecee;
+    background-color: #1d232a;
     border-bottom: 1px solid #2e3742;
 
     &-selected {
       background-color: #1d2d3e;
-      border-bottom: 1px solid #4db1ff;
     }
-  }
-
-  &-multi-select-cell {
-    border-right: 1px solid #2e3742;
-  }
-
-  &-multi-select-checkbox {
-    display: block;
   }
 }
 
 td {
-  border-right: 0.0625rem solid #2e3742;
-  font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
-  font-size: 0.875rem;
-  height: 2rem;
   box-sizing: border-box;
+  height: 2rem;
   color: #eaecee;
-  word-break: break-word;
+  font-size: 0.875rem;
+  font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
   vertical-align: middle;
+  word-break: break-word;
+  border-right: 0.0625rem solid #2e3742;
   user-select: none;
 
   span {

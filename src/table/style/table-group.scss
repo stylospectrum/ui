@@ -5,15 +5,14 @@
 .stylospectrum-table {
   &-group-row {
     height: 2rem;
-    border-bottom: 1px solid #768ea5;
-    background-color: #0c0f13;
     color: #eaecee;
-    font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
     font-size: 0.875rem;
+    font-family: '72override', '72', '72full', Arial, Helvetica, sans-serif;
+    background-color: #0c0f13;
+    border-bottom: 1px solid #768ea5;
 
     &-selected {
       background-color: #1d2d3e;
-      border-bottom: 1px solid #4db1ff;
     }
   }
 
@@ -26,18 +25,18 @@
   }
 
   &-expand-icon {
-    margin-left: 0.5rem;
     width: 2rem;
+    margin-left: 0.5rem;
     font-size: 0.875rem;
     cursor: pointer;
   }
 }
 
 td {
-  border-right: 0.0625rem solid #2e3742;
-  word-break: break-word;
-  vertical-align: middle;
-  text-align: start;
   padding: 0;
+  text-align: start;
+  vertical-align: middle;
+  word-break: break-word;
+  border-right: 0.0625rem solid #2e3742;
   user-select: none;
 }
