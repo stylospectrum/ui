@@ -1,6 +1,7 @@
 import {LitElement, css, html, nothing, unsafeCSS} from 'lit';
 import {repeat} from 'lit/directives/repeat.js';
 import {customElement, property, queryAll, state} from 'lit/decorators.js';
+import {styleMap} from 'lit/directives/style-map.js';
 import {classMap} from 'lit/directives/class-map.js';
 import type {AnyObject, TableColumnInfo} from './interface';
 import type TableRow from './TableRow';
@@ -87,21 +88,6 @@ class TableGroupRow extends LitElement {
     });
   }
 
-  private _handleSelectRow(e: CustomEvent) {
-    if (e.detail.selected) {
-      this._selectedRows.push(e.detail.data);
-    } else {
-      this._selectedRows = this._selectedRows.filter(
-        (row) => row.id !== e.detail.data.id
-      );
-    }
-    this.selected = this._selectedRows.length === this.record.children.length;
-    this.selectedEvent.emit({
-      ...this.record,
-      children: this._selectedRows,
-    });
-  }
-
   public updateSelected(selected: boolean) {
     this.selected = selected;
     this._selectedRows = selected ? this.record.children : [];
@@ -116,6 +102,10 @@ class TableGroupRow extends LitElement {
         class=${classMap({
           ['stylospectrum-table-group-row']: true,
           ['stylospectrum-table-group-row-selected']: this.selected,
+        })}
+        style=${styleMap({
+          'border-bottom-color':
+            this.selected && !this._expanded ? '#4db1ff' : '#768ea5',
         })}
         part="group-row"
       >
@@ -154,11 +144,11 @@ class TableGroupRow extends LitElement {
         ? repeat(
             this.record.children,
             (child: AnyObject) => child.id,
-            (child) =>
+            (child, index) =>
               html`<stylospectrum-table-row
-                @select=${this._handleSelectRow}
                 .record=${child}
                 .columnDefs=${this.columnDefs}
+                ?lastRow=${index === this.record.children.length - 1}
               >
               </stylospectrum-table-row>`
           )

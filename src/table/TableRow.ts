@@ -2,8 +2,8 @@ import {LitElement, css, html, unsafeCSS} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {repeat} from 'lit/directives/repeat.js';
 import {classMap} from 'lit/directives/class-map.js';
+import {styleMap} from 'lit/directives/style-map.js';
 import type {AnyObject, TableColumnInfo} from './interface';
-import {EventEmitter, event} from '../utils';
 import styles from './style/table-row.scss';
 import '../checkbox';
 
@@ -38,19 +38,12 @@ class TableRow extends LitElement {
   selected!: boolean;
 
   /**
-   * @event
+   * @type {boolean}
+   * @defaultValue {}
    * @public
    */
-  @event({name: 'select', composed: false})
-  selectedEvent!: EventEmitter<{selected: boolean; data: AnyObject}>;
-
-  private _handleSelect() {
-    this.selected = !this.selected;
-    this.selectedEvent.emit({
-      selected: this.selected,
-      data: this.record,
-    });
-  }
+  @property({type: Boolean})
+  lastRow!: boolean;
 
   override render() {
     return html`
@@ -59,31 +52,24 @@ class TableRow extends LitElement {
           ['stylospectrum-table-row']: true,
           ['stylospectrum-table-row-selected']: this.selected,
         })}
+        style=${styleMap({
+          'border-bottom-color':
+            this.lastRow && this.selected ? '#4db1ff' : '#2e3742',
+        })}
       >
-        <td
-          class="table-multi-select-cell"
-          aria-hidden="true"
-          role="presentation"
-        >
-          <stylospectrum-checkbox
-            ?checked=${this.selected}
-            @change=${this._handleSelect}
-            class="stylospectrum-table-multi-select-checkbox"
-          >
-          </stylospectrum-checkbox>
-        </td>
+        <td></td>
 
         ${repeat(
           this.columnDefs,
           (column) => column.field,
           (column) => {
             return html`<td>
-              <span
-                >${column.cellRenderer?.({
+              <span>
+                ${column.cellRenderer?.({
                   value: this.record[column.field],
                   data: this.record,
-                }) || this.record[column.field]}</span
-              >
+                }) || this.record[column.field]}
+              </span>
             </td>`;
           }
         )}

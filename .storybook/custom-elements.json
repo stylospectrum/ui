@@ -433,222 +433,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/dialog/BlockLayer.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "DialogBlockLayer",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog-block-layer",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog-block-layer",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "DialogBlockLayer",
-            "module": "src/dialog/BlockLayer.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/dialog/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Dialog",
-          "members": [],
-          "events": [
-            {
-              "name": "mask-click",
-              "type": {
-                "text": "EventEmitter<void>"
-              },
-              "fieldName": "mask-click"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "headerText",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the header text.",
-              "default": "\"\"",
-              "fieldName": "headerText"
-            },
-            {
-              "name": "hideFooter",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "fieldName": "hideFooter"
-            },
-            {
-              "name": "headerIcon",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "fieldName": "headerIcon"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-dialog",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-dialog",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Dialog",
-            "module": "src/dialog/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icon/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Icon",
-          "members": [],
-          "attributes": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              },
-              "fieldName": "name"
-            },
-            {
-              "name": "rotate",
-              "type": {
-                "text": "number"
-              },
-              "fieldName": "rotate"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-icon",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-icon",
-          "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icon/util.ts",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "registerIcon",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "data",
-              "type": {
-                "text": "IconData"
-              }
-            }
-          ],
-          "members": []
-        },
-        {
-          "kind": "function",
-          "name": "getIconData",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "members": []
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "registerIcon",
-          "declaration": {
-            "name": "registerIcon",
-            "module": "src/icon/util.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getIconData",
-          "declaration": {
-            "name": "getIconData",
-            "module": "src/icon/util.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/form/context.ts",
       "declarations": [
         {
@@ -958,6 +742,222 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/dialog/BlockLayer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DialogBlockLayer",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog-block-layer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog-block-layer",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "DialogBlockLayer",
+            "module": "src/dialog/BlockLayer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/dialog/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Dialog",
+          "members": [],
+          "events": [
+            {
+              "name": "mask-click",
+              "type": {
+                "text": "EventEmitter<void>"
+              },
+              "fieldName": "mask-click"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "headerText",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the header text.",
+              "default": "\"\"",
+              "fieldName": "headerText"
+            },
+            {
+              "name": "hideFooter",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "fieldName": "hideFooter"
+            },
+            {
+              "name": "headerIcon",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "headerIcon"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-dialog",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Dialog",
+            "module": "src/dialog/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Icon",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "rotate",
+              "type": {
+                "text": "number"
+              },
+              "fieldName": "rotate"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-icon",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/util.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "registerIcon",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "IconData"
+              }
+            }
+          ],
+          "members": []
+        },
+        {
+          "kind": "function",
+          "name": "getIconData",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "registerIcon",
+          "declaration": {
+            "name": "registerIcon",
+            "module": "src/icon/util.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getIconData",
+          "declaration": {
+            "name": "getIconData",
+            "module": "src/icon/util.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/input/index.ts",
       "declarations": [
         {
@@ -1216,109 +1216,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/menu/context.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "menuContext",
-          "members": []
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "menuContext",
-          "declaration": {
-            "name": "menuContext",
-            "module": "src/menu/context.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/menu/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Menu",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-menu",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-menu",
-          "declaration": {
-            "name": "Menu",
-            "module": "src/menu/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Menu",
-            "module": "src/menu/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/menu/menu-item.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "MenuItem",
-          "members": [],
-          "attributes": [
-            {
-              "name": "icon",
-              "type": {
-                "text": "string"
-              },
-              "default": "\"\"",
-              "fieldName": "icon"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-menu-item",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-menu-item",
-          "declaration": {
-            "name": "MenuItem",
-            "module": "src/menu/menu-item.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "MenuItem",
-            "module": "src/menu/menu-item.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/list/context.ts",
       "declarations": [
         {
@@ -1431,6 +1328,109 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/menu/context.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "menuContext",
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "menuContext",
+          "declaration": {
+            "name": "menuContext",
+            "module": "src/menu/context.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/menu/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Menu",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-menu",
+          "declaration": {
+            "name": "Menu",
+            "module": "src/menu/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Menu",
+            "module": "src/menu/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/menu/menu-item.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MenuItem",
+          "members": [],
+          "attributes": [
+            {
+              "name": "icon",
+              "type": {
+                "text": "string"
+              },
+              "default": "\"\"",
+              "fieldName": "icon"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-menu-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-menu-item",
+          "declaration": {
+            "name": "MenuItem",
+            "module": "src/menu/menu-item.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MenuItem",
+            "module": "src/menu/menu-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/menu-button/index.ts",
       "declarations": [
         {
@@ -1477,42 +1477,6 @@
           "declaration": {
             "name": "MenuButton",
             "module": "src/menu-button/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/message-strip/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "MessageStrip",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-message-strip",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-message-strip",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
           }
         }
       ]
@@ -1714,6 +1678,42 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/message-strip/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MessageStrip",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-message-strip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-message-strip",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/progress-indicator/index.ts",
       "declarations": [
         {
@@ -1755,6 +1755,43 @@
           "declaration": {
             "name": "ProgressIndicator",
             "module": "src/progress-indicator/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Toast",
+          "members": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
           }
         }
       ]
@@ -1868,43 +1905,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/toast/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Toast",
-          "members": [],
-          "attributes": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-toast",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/table/TableGroupRow.ts",
       "declarations": [
         {
@@ -1980,15 +1980,6 @@
           "description": "",
           "name": "TableRow",
           "members": [],
-          "events": [
-            {
-              "name": "select",
-              "type": {
-                "text": "EventEmitter<{selected: boolean; data: AnyObject}>"
-              },
-              "fieldName": "select"
-            }
-          ],
           "attributes": [
             {
               "name": "record",
@@ -2003,13 +1994,6 @@
                 "text": "TableColumnInfo[]"
               },
               "fieldName": "columnDefs"
-            },
-            {
-              "name": "selected",
-              "type": {
-                "text": "boolean"
-              },
-              "fieldName": "selected"
             }
           ],
           "superclass": {

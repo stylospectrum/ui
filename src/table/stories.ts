@@ -1,9 +1,11 @@
 import * as uuid from 'uuid';
 import {Meta} from '@storybook/web-components';
 import {html} from 'lit';
+import {createRef, ref} from 'lit/directives/ref.js';
 import type Table from '.';
 import {UIStoryArgs} from '../storybook-types';
 import '.';
+import '../button';
 
 const mockData = [
   {
@@ -171,8 +173,15 @@ const mockData = [
 type StoryArgsProps = {};
 
 const Template: UIStoryArgs<Table, StoryArgsProps> = () => {
+  const tableRef = createRef<Table>();
+
   return html`
+    <stylospectrum-button @click=${() => tableRef.value?.uncheckedAll()}>
+      un checked all
+    </stylospectrum-button>
+
     <stylospectrum-table
+      ${ref(tableRef)}
       .rowData=${mockData.map((data) => {
         return {
           id: data.id,

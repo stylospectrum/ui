@@ -23,3 +23,4 @@ export type {default as IDialog} from '../dialog';
 export type {default as IMessageBox} from '../message-box';
 export type {default as ITextarea} from '../textarea';
 export type {default as IProgressIndicator} from '../progress-indicator';
+export type {default as ITable} from '../table';
