@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.50](https://github.com/stylospectrum/ui/compare/v0.0.49...v0.0.50) (2024-03-05)
+
+### Features
+
+- **Table:** add uncheckedAll method ([c35a793](https://github.com/stylospectrum/ui/commit/c35a793351935cad38eca6f86b6fd44e2b0a865f))
+
 ### [0.0.49](https://github.com/stylospectrum/ui/compare/v0.0.48...v0.0.49) (2024-03-04)
 
 ### Features
