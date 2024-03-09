@@ -22,3 +22,4 @@ export {default as MessageBox} from './message-box/React';
 export {default as Avatar} from './avatar/React';
 export {default as MultiInput} from './multi-input/React';
 export {default as Table} from './table/React';
+export {default as Select} from './select/React';

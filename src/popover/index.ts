@@ -7,6 +7,7 @@ import getParentElement from '../utils/getParentElement';
 import isElementContainingBlock from '../utils/isElementContainingBlock';
 import {getFocusedElement, isClickInRect} from '../utils/popup';
 import {getFirstFocusableElement} from '../utils/focusableElements';
+import {EventEmitter, event} from '../utils';
 
 type PopoverSize = {
   width: number;
@@ -117,6 +118,20 @@ class Popover extends LitElement {
   _left?: number;
   _focusedElementBeforeOpen?: HTMLElement | null;
   _scaleElement?: HTMLElement | null;
+
+  /**
+   * @event
+   * @public
+   */
+  @event({name: 'close'})
+  closeEvent!: EventEmitter<void>;
+
+  /**
+   * @event
+   * @public
+   */
+  @event({name: 'open'})
+  openEvent!: EventEmitter<void>;
 
   private _isOpenerClicked(e: MouseEvent) {
     const target = e.target as HTMLElement;
@@ -498,16 +513,22 @@ class Popover extends LitElement {
     this._focusedElementBeforeOpen = null;
   }
 
-  public showAt(opener: HTMLElement) {
+  public showAt(opener: HTMLElement, width?: number) {
     this._opener = opener;
-    this.show();
+    this.show(width);
   }
 
-  private show() {
+  private show(width?: number) {
     if (this.opened) {
       return;
     }
+
+    if (width) {
+      this.style.width = `${width}px`;
+    }
+
     this.style.display = 'block';
+    this.openEvent.emit();
 
     const popupSize = this._getPopupSize();
     const openerRect = this._opener!.getBoundingClientRect();
@@ -570,6 +591,8 @@ class Popover extends LitElement {
       top: '-10000px',
       left: '-10000px',
     });
+
+    this.closeEvent.emit();
   }
 
   override render() {

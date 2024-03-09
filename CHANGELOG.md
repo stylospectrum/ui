@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.51](https://github.com/stylospectrum/ui/compare/v0.0.50...v0.0.51) (2024-03-09)
+
+### Features
+
+- introduce new component: Select ([823d696](https://github.com/stylospectrum/ui/commit/823d69647ce8e00165c1708c548f262e67931741))
+
 ### [0.0.50](https://github.com/stylospectrum/ui/compare/v0.0.49...v0.0.50) (2024-03-05)
 
 ### Features
