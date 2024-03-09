@@ -16,6 +16,13 @@ class MenuItem extends LitElement {
   @property({type: String})
   icon!: string;
 
+  /**
+   * @default false
+   * @private
+   */
+  @property({type: Boolean, attribute: 'disable-focused'})
+  disableFocused!: boolean;
+
   @state()
   focused = false;
 
@@ -36,7 +43,8 @@ class MenuItem extends LitElement {
   override render() {
     return html`
       <stylospectrum-list-item
-        ?focused=${this.focused}
+        .id=${this.id}
+        ?focused=${this.focused && !this.disableFocused}
         @mouseenter=${this.handleMouseEnter}
         @mouseleave=${this.handleMouseLeave}
         @click=${this.handleClick}

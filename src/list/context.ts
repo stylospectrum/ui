@@ -1,7 +1,8 @@
 import {createContext} from '@lit/context';
 
 export interface ListContext {
-  selectedId: string;
+  defaultSelectedId?: string;
+  selectedId?: string;
   onChangeId?: (id: string) => void;
 }
 

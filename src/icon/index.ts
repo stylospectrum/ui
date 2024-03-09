@@ -24,7 +24,7 @@ class Icon extends LitElement {
    * @public
    */
   @property({type: Number})
-  rotate!: number;
+  rotate: number = 0;
 
   override render() {
     const iconData = getIconData(this.name);
