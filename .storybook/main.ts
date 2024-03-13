@@ -11,19 +11,17 @@ const config: StorybookConfig = {
       },
     },
     '@storybook/addon-docs',
+    '@storybook/addon-webpack5-compiler-babel',
   ],
   framework: {
     name: '@storybook/web-components-webpack5',
     options: {},
   },
-  features: {
-    storyStoreV7: true,
-  },
   docs: {
     autodocs: true,
   },
   typescript: {
-    skipBabel: true,
+    skipCompiler: true,
   },
   webpackFinal: async (config) => {
     config.module!.rules!.push(
