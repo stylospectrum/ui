@@ -11,6 +11,7 @@ import {
   customElement,
   property,
   queryAssignedElements,
+  state,
 } from 'lit/decorators.js';
 import AsyncValidator from 'async-validator';
 import Checkbox from '../checkbox';
@@ -85,6 +86,9 @@ class FormItem extends LitElement {
   @consume({context: formListContext, subscribe: true})
   _formListConsumer!: FormListContext;
 
+  @state()
+  listName: string = '';
+
   cancelRegisterFunc: Function | null = null;
 
   override connectedCallback(): void {
@@ -104,6 +108,8 @@ class FormItem extends LitElement {
     if (this._formConsumer) {
       this.cancelRegisterFunc = this._formConsumer.registerField(this);
     }
+
+    this.listName = (this._formListConsumer?.listNamePath || []).join('_');
   }
 
   override disconnectedCallback(): void {
@@ -114,7 +120,7 @@ class FormItem extends LitElement {
   public getNamePath() {
     const namePath = Array.isArray(this.name) ? this.name : [this.name];
     return this._formListConsumer
-      ? [this._formListConsumer.listName, ...namePath]
+      ? [...this._formListConsumer.listNamePath, ...namePath]
       : namePath;
   }
 

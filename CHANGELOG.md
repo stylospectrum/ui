@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.52](https://github.com/stylospectrum/ui/compare/v0.0.51...v0.0.52) (2024-03-14)
+
+### Features
+
+- **Form:** support nested list ([81e3b13](https://github.com/stylospectrum/ui/commit/81e3b1363053716983dfe2543160dd1265fd2367))
+
 ### [0.0.51](https://github.com/stylospectrum/ui/compare/v0.0.50...v0.0.51) (2024-03-09)
 
 ### Features

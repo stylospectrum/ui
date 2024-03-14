@@ -2,6 +2,7 @@ import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {consume} from '@lit/context';
 import {classMap} from 'lit/directives/class-map.js';
+import {styleMap} from 'lit/directives/style-map.js';
 import {ListContext, listContext} from './context';
 import styles from './style/list-item.scss';
 import '../icon';
@@ -39,6 +40,9 @@ class ListItem extends LitElement {
         'stylospectrum-list-item': true,
         'stylospectrum-list-item-selected': selected,
         'stylospectrum-list-item-focused': this.focused,
+      })}
+      style=${styleMap({
+        'padding-left': this.icon ? '0' : '0.75rem',
       })}
       @click=${() => {
         this._consumer?.onChangeId?.(this.id);

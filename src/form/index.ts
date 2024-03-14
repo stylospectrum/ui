@@ -93,6 +93,7 @@ class Form extends LitElement {
 
     this.store = this.initialValues;
     this._provider.setValue({
+      getFormItems: () => this._formItems,
       getStore: () => this.store,
       setStore: (namePath, value) => {
         this.store = setValue(this.store, namePath, value);
@@ -110,6 +111,10 @@ class Form extends LitElement {
       },
       registerList: (name, entity) => {
         this.list[name] = entity;
+
+        return () => {
+          delete this.list[name];
+        };
       },
     });
   }
