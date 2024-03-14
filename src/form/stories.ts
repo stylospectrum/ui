@@ -14,6 +14,7 @@ import '../link';
 import '../multi-input';
 import '../textarea';
 import '../icon/data/less';
+import './demo/rule-builder-form';
 
 export default {
   title: 'Form',
@@ -147,7 +148,7 @@ export const BotEntityForm = () => {
 
       <stylospectrum-form-list
         name="options"
-        .renderChild=${(name: number, value: Record<string, any>) => {
+        .renderChild=${(name: number) => {
           return html`<div style="display:flex;gap:.5rem">
             <stylospectrum-form-item .name=${[name, 'name']}>
               <stylospectrum-input></stylospectrum-input>
@@ -161,7 +162,6 @@ export const BotEntityForm = () => {
               icon="less"
               @click=${() => {
                 formRef.value?.list.options.delete(name);
-                console.log(value);
               }}
             ></stylospectrum-button>
           </div> `;
@@ -202,4 +202,8 @@ export const BotEntityForm = () => {
       Reset field
     </stylospectrum-button>
   `;
+};
+
+export const RuleBuilderForm = () => {
+  return html`<rule-builder-form></rule-builder-form>`;
 };
