@@ -206,6 +206,14 @@
             "name": "default",
             "module": "./select/React"
           }
+        },
+        {
+          "kind": "js",
+          "name": "BusyIndicator",
+          "declaration": {
+            "name": "default",
+            "module": "./busy-indicator/React"
+          }
         }
       ]
     },
@@ -265,6 +273,42 @@
           "declaration": {
             "name": "Avatar",
             "module": "src/avatar/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/busy-indicator/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BusyIndicator",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-busy-indicator",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-busy-indicator",
+          "declaration": {
+            "name": "BusyIndicator",
+            "module": "src/busy-indicator/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "BusyIndicator",
+            "module": "src/busy-indicator/index.ts"
           }
         }
       ]
@@ -355,86 +399,6 @@
           "declaration": {
             "name": "Button",
             "module": "src/button/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/checkbox/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Checkbox",
-          "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<boolean>"
-              },
-              "description": "Fired when the component checked state changes.",
-              "fieldName": "change"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is displayed as partially checked.",
-              "fieldName": "indeterminate"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
-              "fieldName": "checked"
-            },
-            {
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the text of the component.",
-              "fieldName": "text"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-checkbox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-checkbox",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -549,109 +513,80 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/icon/index.ts",
+      "path": "src/checkbox/index.ts",
       "declarations": [
         {
           "kind": "class",
           "description": "",
-          "name": "Icon",
+          "name": "Checkbox",
           "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
           "attributes": [
             {
-              "name": "name",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
               "type": {
                 "text": "string"
               },
-              "fieldName": "name"
-            },
-            {
-              "name": "rotate",
-              "type": {
-                "text": "number"
-              },
-              "default": "0",
-              "fieldName": "rotate"
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
             }
           ],
           "superclass": {
             "name": "LitElement",
             "package": "lit"
           },
-          "tagName": "stylospectrum-icon",
+          "tagName": "stylospectrum-checkbox",
           "customElement": true
         }
       ],
       "exports": [
         {
           "kind": "custom-element-definition",
-          "name": "stylospectrum-icon",
+          "name": "stylospectrum-checkbox",
           "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         },
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "name": "Icon",
-            "module": "src/icon/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icon/util.ts",
-      "declarations": [
-        {
-          "kind": "function",
-          "name": "registerIcon",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "data",
-              "type": {
-                "text": "IconData"
-              }
-            }
-          ],
-          "members": []
-        },
-        {
-          "kind": "function",
-          "name": "getIconData",
-          "parameters": [
-            {
-              "name": "name",
-              "type": {
-                "text": "string"
-              }
-            }
-          ],
-          "members": []
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "registerIcon",
-          "declaration": {
-            "name": "registerIcon",
-            "module": "src/icon/util.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getIconData",
-          "declaration": {
-            "name": "getIconData",
-            "module": "src/icon/util.ts"
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -969,6 +904,115 @@
           "declaration": {
             "name": "cloneByNamePathList",
             "module": "src/form/utils.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Icon",
+          "members": [],
+          "attributes": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              },
+              "fieldName": "name"
+            },
+            {
+              "name": "rotate",
+              "type": {
+                "text": "number"
+              },
+              "default": "0",
+              "fieldName": "rotate"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-icon",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Icon",
+            "module": "src/icon/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icon/util.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "registerIcon",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "IconData"
+              }
+            }
+          ],
+          "members": []
+        },
+        {
+          "kind": "function",
+          "name": "getIconData",
+          "parameters": [
+            {
+              "name": "name",
+              "type": {
+                "text": "string"
+              }
+            }
+          ],
+          "members": []
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "registerIcon",
+          "declaration": {
+            "name": "registerIcon",
+            "module": "src/icon/util.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getIconData",
+          "declaration": {
+            "name": "getIconData",
+            "module": "src/icon/util.ts"
           }
         }
       ]
@@ -1516,6 +1560,42 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/message-strip/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MessageStrip",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-message-strip",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-message-strip",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MessageStrip",
+            "module": "src/message-strip/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/multi-input/index.ts",
       "declarations": [
         {
@@ -1581,42 +1661,6 @@
           "declaration": {
             "name": "MultiInput",
             "module": "src/multi-input/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/message-strip/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "MessageStrip",
-          "members": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-message-strip",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-message-strip",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "MessageStrip",
-            "module": "src/message-strip/index.ts"
           }
         }
       ]
@@ -1878,6 +1922,113 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/textarea/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Textarea",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<string>"
+              },
+              "description": "Fired when the value of the component changes at each keystroke.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Indicates whether the user can interact with the component or not.",
+              "default": "false",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "placeholder",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Defines a short hint intended to aid the user with data entry when the component has no value.",
+              "fieldName": "placeholder"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the value of the component.",
+              "fieldName": "value"
+            },
+            {
+              "name": "defaultValue",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the default value of the component.",
+              "fieldName": "defaultValue"
+            },
+            {
+              "name": "valueState",
+              "description": "Defines the value state of the component.",
+              "type": {
+                "text": "ValueState"
+              },
+              "fieldName": "valueState"
+            },
+            {
+              "name": "valueStateMessage",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the value state message that will be displayed as pop up under the component.",
+              "fieldName": "valueStateMessage"
+            },
+            {
+              "name": "growing",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Enables the component to automatically grow and shrink dynamically with its content.",
+              "default": "false",
+              "fieldName": "growing"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-textarea",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-textarea",
+          "declaration": {
+            "name": "Textarea",
+            "module": "src/textarea/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Textarea",
+            "module": "src/textarea/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/table/TableGroupRow.ts",
       "declarations": [
         {
@@ -2076,113 +2227,6 @@
       "path": "src/table/interface.ts",
       "declarations": [],
       "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/textarea/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Textarea",
-          "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<string>"
-              },
-              "description": "Fired when the value of the component changes at each keystroke.",
-              "fieldName": "change"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Indicates whether the user can interact with the component or not.",
-              "default": "false",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "placeholder",
-              "type": {
-                "text": "string"
-              },
-              "default": "''",
-              "description": "Defines a short hint intended to aid the user with data entry when the component has no value.",
-              "fieldName": "placeholder"
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the value of the component.",
-              "fieldName": "value"
-            },
-            {
-              "name": "defaultValue",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the default value of the component.",
-              "fieldName": "defaultValue"
-            },
-            {
-              "name": "valueState",
-              "description": "Defines the value state of the component.",
-              "type": {
-                "text": "ValueState"
-              },
-              "fieldName": "valueState"
-            },
-            {
-              "name": "valueStateMessage",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the value state message that will be displayed as pop up under the component.",
-              "fieldName": "valueStateMessage"
-            },
-            {
-              "name": "growing",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Enables the component to automatically grow and shrink dynamically with its content.",
-              "default": "false",
-              "fieldName": "growing"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-textarea",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-textarea",
-          "declaration": {
-            "name": "Textarea",
-            "module": "src/textarea/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Textarea",
-            "module": "src/textarea/index.ts"
-          }
-        }
-      ]
     },
     {
       "kind": "javascript-module",

@@ -23,3 +23,4 @@ export {default as Avatar} from './avatar/React';
 export {default as MultiInput} from './multi-input/React';
 export {default as Table} from './table/React';
 export {default as Select} from './select/React';
+export {default as BusyIndicator} from './busy-indicator/React';
