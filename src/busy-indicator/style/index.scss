@@ -1,11 +1,4 @@
-:host {
-  display: inline-block;
-}
-
 :host(:not([global])) {
-  width: 3rem;
-  max-width: 15rem;
-
   .stylospectrum-busy-indicator {
     display: inline-flex;
   }
