@@ -1,6 +1,5 @@
 import {Meta} from '@storybook/web-components';
-import {createRef, ref} from 'lit/directives/ref.js';
-import {html} from 'lit';
+import {html, render} from 'lit';
 import type MessageBox from '.';
 import {UIStoryArgs} from '../storybook-types';
 import '.';
@@ -8,30 +7,25 @@ import '.';
 type StoryArgsProps = {};
 
 const Template: UIStoryArgs<MessageBox, StoryArgsProps> = () => {
-  const messageBoxRef = createRef<MessageBox>();
-
   return html`
-    <stylospectrum-button @click=${() => messageBoxRef.value?.show()}>
-      Open Popover
+    <stylospectrum-button
+      @click=${() =>
+        render(
+          html` <stylospectrum-message-box header-text="Delete block">
+            Are you sure you want to delete selected entity?
+
+            <stylospectrum-button slot="ok-button">
+              Confirm
+            </stylospectrum-button>
+            <stylospectrum-button slot="cancel-button" type="Tertiary">
+              Cancel
+            </stylospectrum-button>
+          </stylospectrum-message-box>`,
+          document.body
+        )}
+    >
+      Open message box
     </stylospectrum-button>
-
-    <stylospectrum-message-box header-text="Delete block" ${ref(messageBoxRef)}>
-      Are you sure you want to delete selected entity?
-
-      <stylospectrum-button
-        slot="ok-button"
-        @click=${() => messageBoxRef.value?.hide()}
-      >
-        Confirm
-      </stylospectrum-button>
-      <stylospectrum-button
-        slot="cancel-button"
-        type="Tertiary"
-        @click=${() => messageBoxRef.value?.hide()}
-      >
-        Cancel
-      </stylospectrum-button>
-    </stylospectrum-message-box>
   `;
 };
 

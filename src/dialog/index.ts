@@ -1,14 +1,13 @@
-import {LitElement, html, css, unsafeCSS, render, nothing} from 'lit';
+import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
 import {
   customElement,
   property,
   queryAssignedElements,
   state,
 } from 'lit/decorators.js';
-import styles from './style/index.scss';
-import './BlockLayer';
-import '../icon';
 import {EventEmitter, event} from '../utils';
+import styles from './style/index.scss';
+import '../icon';
 
 @customElement('stylospectrum-dialog')
 class Dialog extends LitElement {
@@ -33,6 +32,13 @@ class Dialog extends LitElement {
   hideFooter!: boolean;
 
   /**
+   * @default false
+   * @public
+   */
+  @property({type: Boolean, attribute: 'hide-mask'})
+  hideMask!: boolean;
+
+  /**
    * @default ""
    * @public
    */
@@ -52,32 +58,9 @@ class Dialog extends LitElement {
   @queryAssignedElements({slot: 'ok-button'})
   okButtonNodes!: HTMLElement[];
 
-  blockLayerTemplate(hidden = false) {
-    return html`<stylospectrum-dialog-block-layer
-      @click=${() => {
-        this.maskClickEvent.emit();
-        this.hide();
-      }}
-      ?hidden=${hidden}
-    >
-    </stylospectrum-dialog-block-layer>`;
-  }
-
-  public show() {
-    render(this.blockLayerTemplate(), document.body);
-    this.opened = true;
-    this.style.display = 'flex';
-
-    this.okButtonNodes?.[0]?.shadowRoot?.querySelector('button')?.focus();
-  }
-
-  public hide() {
-    if (!this.opened) {
-      return;
-    }
-    render(this.blockLayerTemplate(true), document.body);
-    this.opened = false;
-    this.style.display = 'none';
+  private _handleMaskClick(e: KeyboardEvent | MouseEvent) {
+    e.preventDefault();
+    this.maskClickEvent.emit();
   }
 
   override render() {
@@ -98,23 +81,41 @@ class Dialog extends LitElement {
       : nothing;
 
     return html`
-      <slot name="second-dialog"></slot>
+      ${this.hideMask
+        ? nothing
+        : html`<div
+            class="stylospectrum-dialog-block-layer"
+            tabindex="0"
+            @keydown=${this._handleMaskClick}
+            @mousedown=${this._handleMaskClick}
+          ></div>`}
 
-      <section class="stylospectrum-dialog" role="dialog" aria-modal="true">
-        <header class="stylospectrum-dialog-header" part="header">
-          <div class="stylospectrum-dialog-header-text-wrapper">
-            ${headerIconNode}
-            <h1 class="stylospectrum-dialog-header-text">${this.headerText}</h1>
+      <div part="wrap" class="stylospectrum-dialog-wrap">
+        <slot name="second-dialog"></slot>
+
+        <section
+          style=${this.style.cssText}
+          class="stylospectrum-dialog"
+          role="dialog"
+          aria-modal="true"
+        >
+          <header class="stylospectrum-dialog-header" part="header">
+            <div class="stylospectrum-dialog-header-text-wrapper">
+              ${headerIconNode}
+              <h1 class="stylospectrum-dialog-header-text">
+                ${this.headerText}
+              </h1>
+            </div>
+            <slot name="sub-header"></slot>
+          </header>
+
+          <div class="stylospectrum-dialog-content" part="content">
+            <slot></slot>
           </div>
-          <slot name="sub-header"></slot>
-        </header>
 
-        <div class="stylospectrum-dialog-content" part="content">
-          <slot></slot>
-        </div>
-
-        ${footerNode}
-      </section>
+          ${footerNode}
+        </section>
+      </div>
     `;
   }
 }

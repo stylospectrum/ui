@@ -206,6 +206,14 @@
             "name": "default",
             "module": "./select/React"
           }
+        },
+        {
+          "kind": "js",
+          "name": "BusyIndicator",
+          "declaration": {
+            "name": "default",
+            "module": "./busy-indicator/React"
+          }
         }
       ]
     },
@@ -265,6 +273,57 @@
           "declaration": {
             "name": "Avatar",
             "module": "src/avatar/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/busy-indicator/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "BusyIndicator",
+          "members": [],
+          "attributes": [
+            {
+              "name": "global",
+              "type": {
+                "text": "boolean"
+              },
+              "fieldName": "global"
+            },
+            {
+              "name": "size",
+              "description": "Defines the size of the component.",
+              "default": "\"Medium\"",
+              "fieldName": "size"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-busy-indicator",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-busy-indicator",
+          "declaration": {
+            "name": "BusyIndicator",
+            "module": "src/busy-indicator/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "BusyIndicator",
+            "module": "src/busy-indicator/index.ts"
           }
         }
       ]
@@ -355,86 +414,6 @@
           "declaration": {
             "name": "Button",
             "module": "src/button/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/checkbox/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Checkbox",
-          "members": [],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "EventEmitter<boolean>"
-              },
-              "description": "Fired when the component checked state changes.",
-              "fieldName": "change"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is disabled.",
-              "fieldName": "disabled"
-            },
-            {
-              "name": "indeterminate",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines whether the component is displayed as partially checked.",
-              "fieldName": "indeterminate"
-            },
-            {
-              "name": "checked",
-              "type": {
-                "text": "boolean"
-              },
-              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
-              "fieldName": "checked"
-            },
-            {
-              "name": "text",
-              "type": {
-                "text": "string"
-              },
-              "description": "Defines the text of the component.",
-              "fieldName": "text"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-checkbox",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-checkbox",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Checkbox",
-            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -969,6 +948,86 @@
           "declaration": {
             "name": "cloneByNamePathList",
             "module": "src/form/utils.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/checkbox/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Checkbox",
+          "members": [],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "EventEmitter<boolean>"
+              },
+              "description": "Fired when the component checked state changes.",
+              "fieldName": "change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is disabled.",
+              "fieldName": "disabled"
+            },
+            {
+              "name": "indeterminate",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines whether the component is displayed as partially checked.",
+              "fieldName": "indeterminate"
+            },
+            {
+              "name": "checked",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Defines if the component is checked.\n<br><br>\n<b>Note:</b> The property can be changed with user interaction,\neither by cliking/tapping on the component, or by\npressing the Enter or Space key.",
+              "fieldName": "checked"
+            },
+            {
+              "name": "text",
+              "type": {
+                "text": "string"
+              },
+              "description": "Defines the text of the component.",
+              "fieldName": "text"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-checkbox",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-checkbox",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Checkbox",
+            "module": "src/checkbox/index.ts"
           }
         }
       ]
@@ -1516,77 +1575,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/multi-input/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "MultiInput",
-          "members": [],
-          "events": [
-            {
-              "name": "token-delete",
-              "type": {
-                "text": "EventEmitter<string | null>"
-              },
-              "fieldName": "token-delete"
-            },
-            {
-              "name": "enter",
-              "type": {
-                "text": "EventEmitter<{name: string; id: string}>"
-              },
-              "fieldName": "enter"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "value",
-              "type": {
-                "text": "MultiInputOption[]"
-              },
-              "default": "[]",
-              "description": "Defines the value of the component.",
-              "fieldName": "value"
-            },
-            {
-              "name": "defaultValue",
-              "type": {
-                "text": "MultiInputOption[]"
-              },
-              "default": "[]",
-              "fieldName": "defaultValue"
-            }
-          ],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-multi-input",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-multi-input",
-          "declaration": {
-            "name": "MultiInput",
-            "module": "src/multi-input/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "MultiInput",
-            "module": "src/multi-input/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/message-strip/index.ts",
       "declarations": [
         {
@@ -1664,6 +1652,77 @@
           "declaration": {
             "name": "MessageBox",
             "module": "src/message-box/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/multi-input/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "MultiInput",
+          "members": [],
+          "events": [
+            {
+              "name": "token-delete",
+              "type": {
+                "text": "EventEmitter<string | null>"
+              },
+              "fieldName": "token-delete"
+            },
+            {
+              "name": "enter",
+              "type": {
+                "text": "EventEmitter<{name: string; id: string}>"
+              },
+              "fieldName": "enter"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "value",
+              "type": {
+                "text": "MultiInputOption[]"
+              },
+              "default": "[]",
+              "description": "Defines the value of the component.",
+              "fieldName": "value"
+            },
+            {
+              "name": "defaultValue",
+              "type": {
+                "text": "MultiInputOption[]"
+              },
+              "default": "[]",
+              "fieldName": "defaultValue"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-multi-input",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-multi-input",
+          "declaration": {
+            "name": "MultiInput",
+            "module": "src/multi-input/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "MultiInput",
+            "module": "src/multi-input/index.ts"
           }
         }
       ]
@@ -2079,6 +2138,43 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "Toast",
+          "members": [],
+          "attributes": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "stylospectrum-toast",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "stylospectrum-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/index.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/textarea/index.ts",
       "declarations": [
         {
@@ -2180,43 +2276,6 @@
           "declaration": {
             "name": "Textarea",
             "module": "src/textarea/index.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/toast/index.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "",
-          "name": "Toast",
-          "members": [],
-          "attributes": [],
-          "superclass": {
-            "name": "LitElement",
-            "package": "lit"
-          },
-          "tagName": "stylospectrum-toast",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "custom-element-definition",
-          "name": "stylospectrum-toast",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "name": "Toast",
-            "module": "src/toast/index.ts"
           }
         }
       ]
