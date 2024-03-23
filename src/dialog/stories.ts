@@ -1,5 +1,4 @@
-import {createRef, ref} from 'lit/directives/ref.js';
-import {html} from 'lit';
+import {html, render} from 'lit';
 import {Meta} from '@storybook/web-components';
 import type Dialog from '.';
 import {UIStoryArgs} from '../storybook-types';
@@ -8,49 +7,49 @@ import '../input';
 
 type StoryArgsProps = {};
 
-const Template: UIStoryArgs<Dialog, StoryArgsProps> = (args) => {
-  const dialogRef = createRef<Dialog>();
-
+const Template: UIStoryArgs<Dialog, StoryArgsProps> = () => {
   return html`
-    <stylospectrum-button @click=${() => dialogRef.value?.show()}>
-      Open Popover
-    </stylospectrum-button>
+    <style>
+      .first-dialog::part(wrap) {
+        top: 0.375rem;
+        right: 1rem;
+      }
 
-    <stylospectrum-dialog
-      header-text=${args.headerText}
-      ${ref(dialogRef)}
-      style="top:0.375rem;right:1rem"
+      .second-dialog::part(wrap) {
+        right: 22rem;
+      }
+    </style>
+    <stylospectrum-button
+      @click=${() =>
+        render(
+          html`<stylospectrum-dialog header-text="Header" class="first-dialog">
+            Content
+
+            <stylospectrum-dialog
+              header-text="Header"
+              hide-footer
+              slot="second-dialog"
+              class="second-dialog"
+              hide-mask
+            >
+              Content
+            </stylospectrum-dialog>
+
+            <stylospectrum-input
+              slot="sub-header"
+              style="width:100%"
+            ></stylospectrum-input>
+
+            <stylospectrum-button slot="ok-button"> Save </stylospectrum-button>
+            <stylospectrum-button slot="cancel-button" type="Tertiary">
+              Close
+            </stylospectrum-button>
+          </stylospectrum-dialog>`,
+          document.body
+        )}
     >
-      Content
-
-      <stylospectrum-dialog
-        header-text="Header"
-        hide-footer
-        slot="second-dialog"
-        style="display:flex;right: 22rem"
-      >
-        Content
-      </stylospectrum-dialog>
-
-      <stylospectrum-input
-        slot="sub-header"
-        style="width:100%"
-      ></stylospectrum-input>
-
-      <stylospectrum-button
-        slot="ok-button"
-        @click=${() => dialogRef.value?.hide()}
-      >
-        Save
-      </stylospectrum-button>
-      <stylospectrum-button
-        slot="cancel-button"
-        type="Tertiary"
-        @click=${() => dialogRef.value?.hide()}
-      >
-        Close
-      </stylospectrum-button>
-    </stylospectrum-dialog>
+      Open Dialog
+    </stylospectrum-button>
   `;
 };
 

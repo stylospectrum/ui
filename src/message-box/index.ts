@@ -31,13 +31,12 @@ class MessageBox extends LitElement {
   @queryAssignedElements({slot: 'ok-button'})
   okButtonNodes!: HTMLElement[];
 
-  public show() {
-    this.dialogNode.show();
-    this.okButtonNodes?.[0]?.shadowRoot?.querySelector('button')?.focus();
-  }
+  override connectedCallback(): void {
+    super.connectedCallback();
 
-  public hide() {
-    this.dialogNode.hide();
+    requestAnimationFrame(() => {
+      this.okButtonNodes?.[0]?.shadowRoot?.querySelector('button')?.focus();
+    });
   }
 
   override render() {
@@ -45,7 +44,7 @@ class MessageBox extends LitElement {
       <stylospectrum-dialog
         header-text=${this.headerText}
         header-icon="incident"
-        class="stylospectrum-message-box"
+        wrap-class="stylospectrum-message-box"
       >
         <div class="stylospectrum-message-box-content">
           <slot></slot>

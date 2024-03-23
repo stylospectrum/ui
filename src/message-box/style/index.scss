@@ -6,10 +6,10 @@
   transform: translate(-50%, -50%);
 }
 
-.stylospectrum-message-box {
+stylospectrum-dialog::part(wrap) {
   position: relative;
+}
 
-  &-content {
-    padding: 1rem;
-  }
+stylospectrum-dialog::part(content) {
+  padding: 1rem;
 }
