@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.53](https://github.com/stylospectrum/ui/compare/v0.0.52...v0.0.53) (2024-03-23)
+
+### Features
+
+- **BusyIndicator:** add global & size props ([9f1bc44](https://github.com/stylospectrum/ui/commit/9f1bc444f978cb6cd1a3130628bb56d7e841ff10))
+- **Dialog:** remove show & hide method ([fb6d31a](https://github.com/stylospectrum/ui/commit/fb6d31a1611403459e6a99f1121c4de66e30f1dd))
+- introduce new component: BusyIndicator ([e2d9ccb](https://github.com/stylospectrum/ui/commit/e2d9ccbd587d602300907e5c83b2c90584780771))
+
 ### [0.0.52](https://github.com/stylospectrum/ui/compare/v0.0.51...v0.0.52) (2024-03-14)
 
 ### Features
