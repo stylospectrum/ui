@@ -6,6 +6,7 @@ import {styleMap} from 'lit/directives/style-map.js';
 import type {AnyObject, TableColumnInfo} from './interface';
 import styles from './style/table-row.scss';
 import '../checkbox';
+import {EventEmitter, event} from '../utils';
 
 @customElement('stylospectrum-table-row')
 class TableRow extends LitElement {
@@ -31,7 +32,7 @@ class TableRow extends LitElement {
 
   /**
    * @type {boolean}
-   * @defaultValue {}
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean})
@@ -39,11 +40,26 @@ class TableRow extends LitElement {
 
   /**
    * @type {boolean}
-   * @defaultValue {}
+   * @defaultValue false
    * @public
    */
   @property({type: Boolean})
   lastRow!: boolean;
+
+  /**
+   * @type {boolean}
+   * @defaultValue false
+   * @public
+   */
+  @property({type: Boolean})
+  showCheckbox!: boolean;
+
+  /**
+   * @event
+   * @public
+   */
+  @event({name: 'select', composed: false})
+  selectedEvent!: EventEmitter<void>;
 
   override render() {
     return html`
@@ -57,8 +73,20 @@ class TableRow extends LitElement {
             this.lastRow && this.selected ? '#4db1ff' : '#2e3742',
         })}
       >
-        <td></td>
-
+        ${this.showCheckbox
+          ? html`<td
+              class="stylospectrum-table-multi-select-cell"
+              aria-hidden="true"
+              role="presentation"
+            >
+              <stylospectrum-checkbox
+                ?checked=${this.selected}
+                @change=${() => this.selectedEvent.emit()}
+                class="stylospectrum-table-multi-select-checkbox"
+              >
+              </stylospectrum-checkbox>
+            </td>`
+          : html`<td></td>`}
         ${repeat(
           this.columnDefs,
           (column) => column.field,
