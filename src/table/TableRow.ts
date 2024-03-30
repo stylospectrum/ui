@@ -1,4 +1,4 @@
-import {LitElement, css, html, unsafeCSS} from 'lit';
+import {LitElement, TemplateResult, css, html, nothing, unsafeCSS} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {repeat} from 'lit/directives/repeat.js';
 import {classMap} from 'lit/directives/class-map.js';
@@ -52,6 +52,14 @@ class TableRow extends LitElement {
    * @public
    */
   @property({type: Boolean})
+  allowSelect!: boolean;
+
+  /**
+   * @type {boolean}
+   * @defaultValue false
+   * @public
+   */
+  @property({type: Boolean})
   showCheckbox!: boolean;
 
   /**
@@ -62,6 +70,25 @@ class TableRow extends LitElement {
   selectedEvent!: EventEmitter<void>;
 
   override render() {
+    let checkboxNode: TemplateResult | symbol = nothing;
+
+    if (this.allowSelect) {
+      checkboxNode = html`<td
+        class="stylospectrum-table-multi-select-cell"
+        aria-hidden="true"
+        role="presentation"
+      >
+        <stylospectrum-checkbox
+          ?checked=${this.selected}
+          @change=${() => this.selectedEvent.emit()}
+          class="stylospectrum-table-multi-select-checkbox"
+        >
+        </stylospectrum-checkbox>
+      </td>`;
+    } else if (this.showCheckbox) {
+      checkboxNode = html`<td></td>`;
+    }
+
     return html`
       <tr
         class=${classMap({
@@ -73,20 +100,7 @@ class TableRow extends LitElement {
             this.lastRow && this.selected ? '#4db1ff' : '#2e3742',
         })}
       >
-        ${this.showCheckbox
-          ? html`<td
-              class="stylospectrum-table-multi-select-cell"
-              aria-hidden="true"
-              role="presentation"
-            >
-              <stylospectrum-checkbox
-                ?checked=${this.selected}
-                @change=${() => this.selectedEvent.emit()}
-                class="stylospectrum-table-multi-select-checkbox"
-              >
-              </stylospectrum-checkbox>
-            </td>`
-          : html`<td></td>`}
+        ${checkboxNode}
         ${repeat(
           this.columnDefs,
           (column) => column.field,

@@ -1,6 +1,7 @@
-import {LitElement, html, css, unsafeCSS, nothing} from 'lit';
+import {LitElement, html, css, unsafeCSS, nothing, TemplateResult} from 'lit';
 import {customElement, property, queryAll, state} from 'lit/decorators.js';
 import {repeat} from 'lit/directives/repeat.js';
+import {styleMap} from 'lit/directives/style-map.js';
 import styles from './style/index.scss';
 import type {AnyObject, TableColumnInfo} from './interface';
 import {EventEmitter, event} from '../utils';
@@ -21,6 +22,14 @@ class Table extends LitElement {
    */
   @property()
   columnDefs!: TableColumnInfo[];
+
+  /**
+   * @type {boolean}
+   * @defaultValue true
+   * @public
+   */
+  @property({type: Boolean})
+  allowSelect!: boolean;
 
   /**
    * @type {AnyObject[]}
@@ -98,6 +107,7 @@ class Table extends LitElement {
       (record) =>
         html`<stylospectrum-table-group-row
           @select=${this._handleSelectGroupRow}
+          ?allowSelect=${this.allowSelect}
           .record=${record}
           .columnDefs=${this.columnDefs}
         >
@@ -106,26 +116,36 @@ class Table extends LitElement {
   }
 
   override render() {
+    let checkboxNode: TemplateResult | symbol = nothing;
+
+    if (this.rowData.length > 0 && this.allowSelect) {
+      checkboxNode = html`<th class="stylospectrum-table-select-all-column">
+        <stylospectrum-checkbox
+          ?checked=${this._selected}
+          @change=${this._handleSelect}
+          class="stylospectrum-table-select-all-checkbox"
+        >
+        </stylospectrum-checkbox>
+      </th>`;
+    }
+
     return html`
       <div class="stylospectrum-table-container">
         <table border="0" cellspacing="0" cellpadding="0" role="table">
           <thead>
             <tr class="stylospectrum-table-header-row">
-              ${this.rowData.length > 0
-                ? html`<th class="stylospectrum-table-select-all-column">
-                    <stylospectrum-checkbox
-                      ?checked=${this._selected}
-                      @change=${this._handleSelect}
-                      class="stylospectrum-table-select-all-checkbox"
-                    >
-                    </stylospectrum-checkbox>
-                  </th>`
-                : nothing}
+              ${checkboxNode}
               ${repeat(
                 this.columnDefs,
                 (column) => column.field,
                 (column) => {
-                  return html`<th><span>${column.headerName}</span></th>`;
+                  return html`<th
+                    style=${styleMap({
+                      width: column.width ? `${column.width}px` : 'auto',
+                    })}
+                  >
+                    <span>${column.headerName}</span>
+                  </th>`;
                 }
               )}
             </tr>

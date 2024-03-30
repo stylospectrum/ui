@@ -19,6 +19,14 @@ class TableGroupRow extends LitElement {
   `;
 
   /**
+   * @type {boolean}
+   * @defaultValue true
+   * @public
+   */
+  @property({type: Boolean})
+  allowSelect!: boolean;
+
+  /**
    * @type {AnyObject}
    * @defaultValue {}
    * @public
@@ -89,9 +97,9 @@ class TableGroupRow extends LitElement {
         @select=${this._handleSelect}
         .record=${this.record}
         .columnDefs=${this.columnDefs}
-        .selected=${this.selected}
-        .lastRow=${true}
-        .showCheckbox=${true}
+        ?selected=${this.selected}
+        ?lastRow=${true}
+        ?allowSelect=${this.allowSelect}
       >
       </stylospectrum-table-row>`;
     }
@@ -108,18 +116,20 @@ class TableGroupRow extends LitElement {
         })}
         part="group-row"
       >
-        <td
-          class="stylospectrum-table-multi-select-cell"
-          aria-hidden="true"
-          role="presentation"
-        >
-          <stylospectrum-checkbox
-            ?checked=${this.selected}
-            @change=${this._handleSelect}
-            class="stylospectrum-table-multi-select-checkbox"
-          >
-          </stylospectrum-checkbox>
-        </td>
+        ${this.allowSelect
+          ? html`<td
+              class="stylospectrum-table-multi-select-cell"
+              aria-hidden="true"
+              role="presentation"
+            >
+              <stylospectrum-checkbox
+                ?checked=${this.selected}
+                @change=${this._handleSelect}
+                class="stylospectrum-table-multi-select-checkbox"
+              >
+              </stylospectrum-checkbox>
+            </td>`
+          : nothing}
         <td>
           <stylospectrum-icon
             class="stylospectrum-table-expand-icon"
@@ -147,6 +157,8 @@ class TableGroupRow extends LitElement {
               html`<stylospectrum-table-row
                 .record=${child}
                 .columnDefs=${this.columnDefs}
+                ?showCheckbox=${true}
+                ?allowSelect=${false}
                 ?lastRow=${index === this.record.children.length - 1}
               >
               </stylospectrum-table-row>`

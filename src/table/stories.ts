@@ -182,26 +182,27 @@ const Template: UIStoryArgs<Table, StoryArgsProps> = () => {
 
     <stylospectrum-table
       ${ref(tableRef)}
+      ?allowSelect=${true}
       .rowData=${mockData.map((data) => {
         return {
           id: data.id,
           name: data.name,
-          children: data.options.map((option: any) => ({
-            id: option.id,
-            option: option.name,
-            synonyms: option.synonyms || [],
-          })),
+          // children: data.options.map((option: any) => ({
+          //   id: option.id,
+          //   option: option.name,
+          //   synonyms: option.synonyms || [],
+          // })),
         };
       })}
       .columnDefs=${[
-        {headerName: 'Name', field: 'name'},
-        {headerName: 'option', field: 'option'},
-        {
-          headerName: 'synonyms',
-          field: 'synonyms',
-          cellRenderer: ({value}: any) =>
-            value.map((synonym: any) => synonym.name).join(', '),
-        },
+        {headerName: 'Name', field: 'name', width: 10},
+        // {headerName: 'option', field: 'option'},
+        // {
+        //   headerName: 'synonyms',
+        //   field: 'synonyms',
+        //   cellRenderer: ({value}: any) =>
+        //     value.map((synonym: any) => synonym.name).join(', '),
+        // },
       ]}
       @select=${(e: CustomEvent) => {
         console.log(e.detail);

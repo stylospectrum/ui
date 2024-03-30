@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.56](https://github.com/stylospectrum/ui/compare/v0.0.55...v0.0.56) (2024-03-30)
+
+### Features
+
+- **Table:** add allowSelect & width prop ([a9202dc](https://github.com/stylospectrum/ui/commit/a9202dc87dd3e6a73a1d3f101261d44d3261e069))
+
 ### [0.0.55](https://github.com/stylospectrum/ui/compare/v0.0.54...v0.0.55) (2024-03-30)
 
 ### Bug Fixes
