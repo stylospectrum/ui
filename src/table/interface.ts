@@ -9,5 +9,5 @@ export interface TableColumnInfo {
   headerName: string;
   field: string;
   cellRenderer?: (params: CellRendererParams) => string;
-  rowGroup?: boolean;
+  width?: number;
 }
