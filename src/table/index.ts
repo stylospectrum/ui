@@ -70,11 +70,11 @@ class Table extends LitElement {
 
   private _handleSelectGroupRow(e: CustomEvent) {
     this._selectedRowGroups = this._selectedRowGroups.filter(
-      (row) => row.id !== e.detail.id
+      (row) => row.id !== e.detail.record.id
     );
 
-    if (e.detail.children.length > 0) {
-      this._selectedRowGroups.push(e.detail);
+    if (e.detail.selected) {
+      this._selectedRowGroups.push(e.detail.record);
     }
 
     this._selected = this._selectedRowGroups.length === this.rowData.length;

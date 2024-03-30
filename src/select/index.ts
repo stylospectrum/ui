@@ -30,7 +30,7 @@ class Select extends LitElement {
    * @public
    */
   @property({type: Array})
-  options!: Option[];
+  options: Option[] = [];
 
   /**
    * @type {string}
@@ -79,6 +79,10 @@ class Select extends LitElement {
   private _menuRef = createRef<IMenu>();
 
   private _handleClick() {
+    if (this.options.length === 0) {
+      return;
+    }
+
     if (this.opened) {
       this._menuRef.value?.hide();
     } else {

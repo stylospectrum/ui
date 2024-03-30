@@ -45,9 +45,6 @@ class TableGroupRow extends LitElement {
   @state()
   private _expanded = true;
 
-  @state()
-  private _selectedRows: AnyObject[] = [];
-
   @queryAll('stylospectrum-table-row')
   private _rows!: NodeListOf<TableRow>;
 
@@ -76,27 +73,29 @@ class TableGroupRow extends LitElement {
       row.selected = this.selected;
     });
 
-    if (this.selected) {
-      this._selectedRows = this.record.children;
-    } else {
-      this._selectedRows = [];
-    }
-
-    this.selectedEvent.emit({
-      ...this.record,
-      children: this._selectedRows,
-    });
+    this.selectedEvent.emit({record: this.record, selected: this.selected});
   }
 
   public updateSelected(selected: boolean) {
     this.selected = selected;
-    this._selectedRows = selected ? this.record.children : [];
     this._rows.forEach((row) => {
       row.selected = selected;
     });
   }
 
   override render() {
+    if (!this.record.children) {
+      return html`<stylospectrum-table-row
+        @select=${this._handleSelect}
+        .record=${this.record}
+        .columnDefs=${this.columnDefs}
+        .selected=${this.selected}
+        .lastRow=${true}
+        .showCheckbox=${true}
+      >
+      </stylospectrum-table-row>`;
+    }
+
     return html`
       <tr
         class=${classMap({

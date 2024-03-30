@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.55](https://github.com/stylospectrum/ui/compare/v0.0.54...v0.0.55) (2024-03-30)
+
+### Bug Fixes
+
+- **Table:** support row data that does not have a children field ([dcca59d](https://github.com/stylospectrum/ui/commit/dcca59dde31ee07f3ed0d382751c727d60ec3a98))
+
 ### [0.0.54](https://github.com/stylospectrum/ui/compare/v0.0.53...v0.0.54) (2024-03-23)
 
 ### [0.0.53](https://github.com/stylospectrum/ui/compare/v0.0.52...v0.0.53) (2024-03-23)
