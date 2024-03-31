@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.57](https://github.com/stylospectrum/ui/compare/v0.0.56...v0.0.57) (2024-03-31)
+
+### Features
+
+- **Popover:** add Placement.Top ([f904d3b](https://github.com/stylospectrum/ui/commit/f904d3b80a9e7392e93a567d1ed57546e7c1a3ad))
+
 ### [0.0.56](https://github.com/stylospectrum/ui/compare/v0.0.55...v0.0.56) (2024-03-30)
 
 ### Features

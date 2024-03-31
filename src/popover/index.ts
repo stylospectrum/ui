@@ -421,6 +421,25 @@ class Popover extends LitElement {
             ) || this.placement;
         }
         break;
+      case Placement.Top:
+        if (
+          targetRect.top < popoverSize.height &&
+          targetRect.top < clientHeight - targetRect.bottom
+        ) {
+          actualPlacement = Placement.Bottom;
+        }
+        break;
+      case Placement.Right:
+        if (clientWidth - targetRect.right < popoverSize.width) {
+          actualPlacement =
+            this._fallbackPlacement(
+              clientWidth,
+              clientHeight,
+              targetRect,
+              popoverSize
+            ) || this.placement;
+        }
+        break;
     }
 
     return actualPlacement;
@@ -450,6 +469,7 @@ class Popover extends LitElement {
     };
 
     const clientWidth = document.documentElement.clientWidth / scale.scaleX;
+    const clientHeight = document.documentElement.clientHeight / scale.scaleY;
     const isVertical = this.placement === Placement.Bottom;
     const arrowOffset = this.hideArrow ? 0 : ARROW_SIZE;
     const placement = this._getActualPlacement(targetRect, popoverSize);
@@ -468,6 +488,10 @@ class Popover extends LitElement {
         left = targetRect.left + targetRect.width + arrowOffset + this.offsetX;
         top = this._getHorizontalTop(targetRect, popoverSize);
         break;
+      case Placement.Top:
+        left = this._getVerticalLeft(targetRect, popoverSize);
+        top = Math.max(targetRect.top - popoverSize.height - arrowOffset, 0);
+        break;
     }
 
     if (isVertical) {
@@ -475,6 +499,12 @@ class Popover extends LitElement {
         left = 0;
       } else if (left + popoverSize.width > clientWidth) {
         left -= left + popoverSize.width - clientWidth;
+      }
+    } else {
+      if (popoverSize.height > clientHeight || top < 0) {
+        top = 0;
+      } else if (top + popoverSize.height > clientHeight) {
+        top -= top + popoverSize.height - clientHeight;
       }
     }
 
